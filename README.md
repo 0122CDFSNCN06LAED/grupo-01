@@ -5,7 +5,7 @@ Nuestro proyecto consiste en un e-commerce de café de especialidad.
 Brindamos una oferta de productos únicos de alta calidad para paladares sofisticados que gustan del buen café.
 Nuestro café es cultivado por pequeños caficultores de todo el mundo que trabajan sus tierras de manera consciente 
 y sostenible.
-Todos nuestros procesos de producción y manufatura se realizan acorde a nuestros valores sobre el cuidado 
+Todos nuestros procesos de producción y manufactura se realizan acorde a nuestros valores sobre el cuidado 
 medioambiental y la sustentabilidad de nuestros recursos.
 
 Nos inspiramos en empresas como:
