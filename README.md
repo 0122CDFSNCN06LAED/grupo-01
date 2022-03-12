@@ -2,7 +2,8 @@
 ## 
 # grupo-01
 
-Somos una empresa dedicada a venta de café en todas sus variedades que ofrecemos a todo aquel que le guste el café y desee adquirir nuestro café.
+Somos una empresa dedicada a venta de café en todas sus variedades.
+Ofrecemos cafe de diversas zonas de America latina
 
 Conformamos el equipo:
 
@@ -19,3 +20,4 @@ https://www.dafiti.com.ar/              venta de calzados
 https://smart-menu.com.ar/viandas/      venta de menues de viandas
 
 https://cocorokeen.com/                 pollos organicos
+
