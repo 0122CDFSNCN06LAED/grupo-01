@@ -1,0 +1,85 @@
+* {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    
+}
+/*         COLORES         */
+.bg-verde-oscuro {
+background-color: #0C3A2D;
+}
+.color-verde-oscuro{
+    color: #0C3A2D;
+}
+.bg-verde-claro {
+    background-color: #6D9773;
+}
+.color-verde-claro{
+    color: #6D9773;
+}
+.bg-amarillo {
+    background-color: #FFB902;
+}
+.color-amarillo {
+    color: #FFB902;
+}
+.color-blanco {
+    color: white;
+}
+.color-negro{
+    color:#232525;
+}
+
+/*          TIPOGRAFIAS            */
+
+
+.titular-banner {
+    
+font-size: 35px;
+font-weight: 100;
+}
+
+.parrafo {
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 160%;
+}
+
+/*       MEDIDAS         */
+.width-100 {
+    width: 100%;
+}
+
+/* HEADER */
+nav{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+nav .menu-derecha{
+    position: absolute;
+    right: 15px;
+    }
+nav .menu-derecha img{
+    margin: 0 10px;
+}
+nav .menu-izquierda{
+    position: absolute;
+    left:15px;
+   }
+
+/*      button     */
+.button-amarillo {
+    color:white;
+    font-weight: 700;
+font-size: 20px;
+line-height: 160%;
+    width: 150px;
+    height: 43px;
+background: #FFB902;
+border-radius: 20px;
+border:none;
+}
