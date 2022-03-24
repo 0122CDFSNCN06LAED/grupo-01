@@ -1,0 +1,136 @@
+
+/* LOGO - VERTICAL - unicamente en HOME */
+.logo {
+    position: absolute;
+    z-index: 1000;
+    top:29px;
+    left:135px;
+    
+}
+.nav-iconos .login-button {
+    display: none;
+}
+
+/*FONDO */
+.fondo{
+    width: 100%;
+    height: 700px;
+    margin-bottom: 50px;
+    border-radius: 0 0 30px 30px;
+}
+
+
+/* imagenes promo */
+.imagenes-promo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.fondo-cafe{
+    margin-top: 20px;
+    width: 100%;
+}
+.fondo-cafe-tablet {
+    display: none;
+}
+
+.contenedor-principal{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.product-promo{
+    width: 210px;
+    height: 250px;
+position: absolute;
+top: 190px;
+
+}
+
+.texto{
+margin-top: 75px;
+    padding: 0 45px;
+}
+.texto p{
+    margin-bottom:35px;
+}
+
+/*  SECCION CARACTERISTICAS DE NUESTROS PRODUCTOS */
+
+
+.caracteristicas-productos{
+    width: 100%;
+    height: 630px;
+}
+.estrellas{
+    width: 100px;
+}
+.icono{
+    width: 80px;
+}
+.caracteristicas-productos p{
+    width: 150px;
+    margin-top:8px;
+    text-align: center;
+}
+/*section "destacados" */
+.destacados{
+   height: 530px;
+    width: 100%;
+}
+
+.container-destacados{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.flechas{
+    width: 24px;
+    margin:10px;
+}
+.card-container.card-tablet{
+    display: none;
+}
+.card-container.card-desktop {
+    display: none;
+}
+
+.enlaces-footer-desktop{
+    display: none;
+}
+
+
+/* footer   */
+footer {
+    padding: 35px;
+    height: 450px;
+   width: 100%;
+
+    }
+.logo-footer{
+    width: 60%;
+    margin-left: -5px;
+    margin-bottom: 30px;
+}
+footer li, footer a{
+  list-style: none;  
+  margin-left: -20px;
+ align-items: center;
+  text-decoration: none;
+  color: white;
+}
+.enlaces-footer{
+    text-align: center;
+}
+
+.redes {
+    width: 60%;
+}
+
+

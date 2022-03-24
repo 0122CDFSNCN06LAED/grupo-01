@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //Levantar el servidor
 app.listen(3000, () => {
     console.log("servidor corriendo http://localhost:3000/")
-});
+});//el link me permite acceder rápidamente desde la terminal
 
 //creamos las rutas
 app.get("/", (req,res) => {
