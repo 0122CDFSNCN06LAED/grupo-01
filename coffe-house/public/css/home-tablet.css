@@ -1,7 +1,7 @@
 
 @media (min-width:768px) {
     .nav-iconos .login-button {
-        display: block;
+        display: none;
     }
     .fondo-cafe{
         display:none;
@@ -54,6 +54,13 @@
     display: block;
 }
 .card-container.card-desktop{
+    display: none;
+}
+
+
+
+/* seccion comments y newsletter solo desktop */
+.only-desktop {
     display: none;
 }
 
