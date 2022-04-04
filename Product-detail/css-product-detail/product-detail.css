@@ -1,0 +1,481 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header-nav {
+  justify-content: space-between;
+}
+
+.header-nav a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-decoration: none;
+}
+
+.icon-flecha {
+  width: 16px;
+  height: 15.56px;
+}
+
+.nav-iconos {
+  display: flex;
+}
+
+.btn-bolso-lupa {
+  border: none;
+}
+
+.text-cart {
+  width: 93px;
+  height: 34px;
+  margin-right: 22px;
+}
+
+.header-paragraph-cart {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 35px;
+  letter-spacing: 0.05em;
+}
+
+#main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main-bg-product img {
+  height: 238px;
+  width: 100%;
+}
+
+.main-figure-guatemala {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-figure-guatemala img {
+  height: 309px;
+  width: 142px;
+  position: absolute;
+  left: 30.28%;
+  right: 30.28%;
+  top: 13.62%;
+  bottom: 47.75%;
+}
+
+#input-radio-1 {
+  position: absolute;
+  left: 41.11%;
+  right: 56.11%;
+  top: 56.75%;
+  bottom: 42%;
+}
+
+#input-radio-2 {
+  position: absolute;
+  left: 48.61%;
+  right: 48.61%;
+  top: 56.75%;
+  bottom: 42%;
+}
+
+#input-radio-3 {
+  position: absolute;
+  left: 56.11%;
+  right: 41.11%;
+  top: 56.75%;
+  bottom: 42%;
+}
+.main-form-radio {
+  height: 10px;
+  width: 10px;
+  left: 148px;
+  top: 454px;
+  border-radius: 0px;
+}
+
+#categoria-1 {
+  position: absolute;
+  left: 8.89%;
+  right: 17.78%;
+  top: 62.38%;
+  bottom: 32.38%;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 35px;
+  /* or 219% */
+
+  letter-spacing: 0.05em;
+}
+
+#product-name {
+  height: 42px;
+  width: 264px;
+  left: 32px;
+  top: 525px;
+  position: absolute;
+  left: 8.89%;
+  right: 17.78%;
+  top: 65.62%;
+  bottom: 29.12%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 35px;
+  letter-spacing: 0.05em;
+}
+
+#main-corazon {
+  height: 19.75px;
+  width: 22.65px;
+  left: 303px;
+  top: 505px;
+  border-radius: 0px;
+  position: absolute;
+  left: 84.17%;
+  right: 9.54%;
+  top: 63.12%;
+  bottom: 34.41%;
+}
+
+#form-peso {
+  position: absolute;
+  left: 8.89%;
+  right: 17.78%;
+  top: 71.62%;
+  bottom: 29.12%;
+  display: flex;
+}
+
+#peso {
+  margin-right: 91px;
+  height: 48px;
+  width: 96px;
+  border-radius: 4px;
+  padding: 12px, 16px, 12px, 16px;
+  border: 1px solid #adaabf;
+  box-shadow: 0px 1px 2px 0px #322b5f14;
+  padding: 12px 16px;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+#molienda {
+  height: 48px;
+  width: 126px;
+  border-radius: 4px;
+  padding: 12px, 16px, 12px, 16px;
+  border: 1px solid #adaabf;
+  box-shadow: 0px 1px 2px 0px #322b5f14;
+  padding: 12px 16px;
+}
+
+.main-p-text {
+  height: 72px;
+  width: 297px;
+  left: 32px;
+  top: 653px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: absolute;
+  left: 8.89%;
+  right: 8.61%;
+  top: 81.62%;
+  bottom: 9.38%;
+}
+
+#main-p-price {
+  height: 42px;
+  width: 111px;
+  left: 30px;
+  top: 728px;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 35px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  position: absolute;
+  left: 8.33%;
+  right: 60.83%;
+  top: 91%;
+  bottom: 3.75%;
+}
+
+.main-form-btn {
+  position: absolute;
+  left: 45.56%;
+  right: 8.61%;
+  top: 90.62%;
+  bottom: 3.5%;
+}
+
+.bolso-btn {
+  height: 16.8px;
+  width: 21.2px;
+  border-radius: 0px;
+  margin-left: 5px;
+}
+
+.btn-yellow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer {
+  position: absolute;
+  top: 100%;
+}
+
+/* -------------------------------------------------------- */
+
+footer {
+  width: 100%;
+  padding: 35px;
+  margin-top: 79.03px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-img-logo {
+  margin-bottom: 30px;
+  width: 60%;
+  margin-left: -5px;
+}
+
+.footer-nav {
+  height: auto;
+  display: block;
+  text-align: center;
+  flex-direction: column;
+}
+
+.footer-nav a {
+  height: 25px;
+  width: 110px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-nav ul {
+  flex-direction: column;
+  list-style: none;
+}
+
+.footer-redes {
+  justify-content: center;
+}
+
+.btn-redes {
+  margin-top: 30px;
+  flex-grow: 0.1;
+}
+
+@media (min-width: 480px) {
+  .icon-flecha,
+  .header-paragraph-cart {
+    display: none;
+  }
+
+  .logo-burger {
+    height: 15px;
+    width: 24px;
+    display: flex;
+  }
+
+  .nav-iconos {
+    display: flex;
+  }
+
+  .btn-bolso-lupa {
+    border: none;
+  }
+
+  .header-nav-ul {
+    display: none;
+  }
+  .header-nav a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .main-section-article-img {
+    max-width: 275.55px;
+    max-height: 198px;
+  }
+
+  footer {
+    height: 200px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .footer-img-logo {
+    width: 75%;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 60px;
+  }
+
+  .nav-ul li {
+    width: 100%;
+    display: flex;
+    padding: 0 12px;
+  }
+
+  .footer-nav a {
+    width: 100%;
+  }
+
+  .footer-redes {
+    width: 25%;
+    padding: 10px;
+  }
+
+  .btn-redes {
+    margin: 0;
+  }
+
+  .btn-redes img {
+    width: 35px;
+    margin: 5px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-nav {
+    height: auto;
+  }
+
+  nav .menu-izquierda {
+    left: 41px;
+  }
+
+  .login-button {
+    margin-right: 41.8px;
+  }
+
+  .nav-tablet {
+    width: 550px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav-tablet a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-decoration: none;
+    color: #0c3a2d;
+  }
+
+  .nav-iconos {
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-login,
+  .header-nav-ul,
+  .logo-coffee {
+    display: flex;
+  }
+
+  .logo-coffee {
+    margin-left: 113px;
+  }
+
+  .btn-bolso-lupa {
+    display: flex;
+  }
+
+  #main {
+    width: 55%;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .main-bg-product {
+    display: none;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+  }
+
+  .footer-nav ul {
+    flex-direction: row;
+  }
+}
+
+/* CODIGO DE LUDMILA ------------------------------------------------------------*/
+
+.height {
+  height: 35vh;
+}
+
+.product-carrusel {
+  position: absolute;
+  top: 5%;
+  left: 35%;
+  width: 32vw;
+  height: 40vh;
+  max-width: max-content;
+  box-shadow: 0px 0px 40px rgb(100, 100, 100);
+}
+
+.color-black {
+  color: black;
+}
+
+.input-radio {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.radio {
+  border: none;
+}
