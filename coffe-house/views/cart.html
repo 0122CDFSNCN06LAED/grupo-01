@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Fuente Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Estilos-->
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/theme-shopping-cart.css" />
+    <link rel="stylesheet" href="/css/cart.css" />
+    <title>Shopping cart</title>
+  </head>
+  <body class="bg-white">
+    <header>
+      <nav class="header-nav">
+        <figure class="menu-izquierda">
+          <img
+            class="display-none logo-burger color-negro"
+            src="/img/iconos/burger.svg"
+            alt="menu"
+          />
+        </figure>
+
+        <h1 class="display-none logo-coffee">
+          <a href="#"
+            ><img src="/img/iconos/logo-horizontal.svg" alt="logo"
+          /></a>
+        </h1>
+
+        <div class="menu-derecha">
+          <ul class="nav-tablet header-nav-ul display-none">
+            <li><a href="#">Quienes somos</a></li>
+            <li><a href="#">Nuestros cafés</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+
+          <figure class="nav-iconos display-none header-nav-figure-lupa-bolso">
+            <form action="#" method="post">
+              <button class="btn-bolso-lupa bg-white">
+                <img
+                  class="icon-lupa-bolso color-negro"
+                  src="/img/iconos/lupa.svg"
+                  alt="buscar"
+                />
+              </button>
+            </form>
+            <a href="#"
+              ><img
+                class="icon-lupa-bolso color-negro"
+                src="/img/iconos/bolso.svg"
+                alt="compras"
+            /></a>
+            <form class="display-none form-login" action="#" method="post">
+              <button class="login-button">Login in</button>
+            </form>
+          </figure>
+        </div>
+
+        <figure class="header-nav-figure-icon-arrow margin-left-32">
+          <img
+            class="icon-flecha color-negro"
+            src="/img/iconos/flecha-izq.svg"
+            alt="Imagen no cargada"
+          />
+        </figure>
+        <section class="text-cart">
+          <p class="header-paragraph-cart color-negro">Carrito</p>
+        </section>
+      </nav>
+    </header>
+    <main id="main">
+      <section>
+        <p id="main-title-carrito-compras" class="color-verde-oscuro">
+          Carrito de compras
+        </p>
+      </section>
+      <article class="main-section-article display-flex" id="cart-1">
+        <img
+          class="main-section-article-img"
+          src="/img/products/colombia.png"
+          alt="Imagen no cargada"
+        /><img
+          class="main-section-article-img margin-right-10 main-img-2"
+          src="/img/products/nicaragua.png"
+          alt="Imaben no cargada"
+        />
+        <section class="main-section-product-name display-flex">
+          <article class="main-section-title-products display-flex width-100">
+            <p class="main-section-paragraph-1 color-verde-oscuro">
+              Nombre producto
+            </p>
+            <img
+              class="main-img-xmark"
+              src="/img/iconos-cart/xmark.svg"
+              alt="Imagen no cargada"
+            />
+            <p class="main-section-paragraph-2 color-negro">
+              Lorem ipsum dolor sit.
+            </p>
+          </article>
+
+          <section class="main-section-product-form display-flex width-100">
+            <form class="form-cart-add display-flex" action="#" method="post">
+              <button class="btn-cart">-</button>
+              <input
+                class="input-count-cart"
+                type="text"
+                name="number-cart"
+                id="number-cart-1"
+                value="1"
+              />
+              <button class="btn-cart-2">+</button>
+            </form>
+            <p class="paragraph-price-tipography">$555</p>
+          </section>
+        </section>
+      </article>
+      <article class="main-section-article display-flex" id="cart-2">
+        <img
+          class="main-section-article-img"
+          src="/img/products/colombia.png"
+          alt="Imagen no cargada"
+        /><img
+          class="main-section-article-img margin-right-10 main-img-2"
+          src="/img/products/nicaragua.png"
+          alt="Imaben no cargada"
+        />
+        <section class="main-section-product-name display-flex">
+          <article class="main-section-title-products display-flex width-100">
+            <p class="main-section-paragraph-1 color-verde-oscuro">
+              Nombre producto
+            </p>
+            <img
+              class="main-img-xmark"
+              src="/img/iconos-cart/xmark.svg"
+              alt="Imagen no cargada"
+            />
+            <p class="main-section-paragraph-2 color-negro">
+              Lorem ipsum dolor sit.
+            </p>
+          </article>
+
+          <section class="main-section-product-form display-flex width-100">
+            <form class="form-cart-add display-flex" action="#" method="post">
+              <button class="btn-cart">-</button>
+              <input
+                class="input-count-cart"
+                type="text"
+                name="number-cart"
+                id="number-cart-2"
+                value="1"
+              />
+              <button class="btn-cart-2">+</button>
+            </form>
+            <p class="paragraph-price-tipography">$555</p>
+          </section>
+        </section>
+      </article>
+      <article class="main-section-article display-flex" id="cart-3">
+        <img
+          class="main-section-article-img"
+          src="/img/products/colombia.png"
+          alt="Imagen no cargada"
+        /><img
+          class="main-section-article-img margin-right-10 main-img-2"
+          src="/img/products/nicaragua.png"
+          alt="Imaben no cargada"
+        />
+        <section class="main-section-product-name display-flex">
+          <article class="main-section-title-products display-flex width-100">
+            <p class="main-section-paragraph-1 color-verde-oscuro">
+              Nombre producto
+            </p>
+            <img
+              class="main-img-xmark"
+              src="/img/iconos-cart/xmark.svg"
+              alt="Imagen no cargada"
+            />
+            <p class="main-section-paragraph-2 color-negro">
+              Lorem ipsum dolor sit.
+            </p>
+          </article>
+
+          <section class="main-section-product-form display-flex width-100">
+            <form class="form-cart-add display-flex" action="#" method="post">
+              <button class="btn-cart">-</button>
+              <input
+                class="input-count-cart"
+                type="text"
+                name="number-cart"
+                id="number-cart-3"
+                value="1"
+              />
+              <button class="btn-cart-2">+</button>
+            </form>
+            <p class="paragraph-price-tipography">$555</p>
+          </section>
+        </section>
+      </article>
+      <section class="main-section-total display-flex">
+        <article class="main-article-p display-flex">
+          <p class="main-total-title">Subtotal</p>
+          <p class="main-p-price">$555</p>
+        </article>
+        <article class="main-article-p display-flex" id="discount">
+          <p class="main-total-title">Descuentos</p>
+          <p class="main-p-price">$555</p>
+        </article>
+        <article class="main-article-p display-flex">
+          <p id="main-total-end">TOTAL</p>
+          <p id="main-p-total-price">$555</p>
+        </article>
+      </section>
+      <form class="main-form-btn display-flex" action="#" method="post">
+        <button class="button-amarillo">Comprar</button>
+      </form>
+    </main>
+    <footer class="bg-verde-oscuro display-flex" id="footer">
+      <a class="footer-a-img" href="#"
+        ><img
+          class="footer-img-logo"
+          src="/img/iconos/logo-horizontal-blanco.svg"
+          alt="logo"
+      /></a>
+      <nav class="footer-nav">
+        <ul class="nav-ul display-flex width-100">
+          <li><a href="#">Breve historia</a></li>
+          <li><a href="#">Abastecimiento ético</a></li>
+          <li><a href="#">Defensa del consumidor</a></li>
+        </ul>
+
+        <ul class="nav-ul display-flex width-100">
+          <li><a href="#">Nuestra empresa</a></li>
+          <li><a href="#">Reciclaje</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <figure
+        class="footer-redes display-flex width-100"
+        action="#"
+        method="post"
+      >
+        <a class="btn-redes">
+          <img src="/img/iconos/facebook.svg" alt="Imagen no cargada" />
+        </a>
+        <a class="btn-redes">
+          <img src="/img/iconos/twitter.svg" alt="Imagen no cargada" />
+        </a>
+        <a class="btn-redes">
+          <img src="/img/iconos/instagram.svg" alt="Imagen no cargada" />
+        </a>
+      </figure>
+    </footer>
+  </body>
+</html>
