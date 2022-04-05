@@ -204,7 +204,6 @@ footer {
   .footer-nav {
     display: flex;
     flex-direction: row;
-    padding-left: 60px;
   }
 
   .nav-ul li {
@@ -288,6 +287,8 @@ footer {
   }
 
   .footer-nav {
+    width: 80%;
+    padding-left: 60px;
     flex-direction: column;
   }
 
