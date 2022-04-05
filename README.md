@@ -27,5 +27,10 @@ Al acceder al detalle de cada producto, el usuario podrá leer una breve descrip
 seleccionar el peso y la molienda que desee.
 Finalmente, podrá agregar los productos al carrito de compras.
 
+
+Tablero SCRUM en Trello:
+https://trello.com/invite/b/qXxwDT5T/94c58c685ad833e9ef6762843772d388/scrum-board
+
+
 Integrantes del proyecto:
 Ludmila Wagner, Raúl Aggio, Tadeo Marino, Nicolás Aguero Avalos, Rubén Veinticinque.
