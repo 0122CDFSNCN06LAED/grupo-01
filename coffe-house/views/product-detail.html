@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Fuente Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Estilos-->
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/theme-product-detail.css" />
+    <link rel="stylesheet" href="/css/product-detail.css" />
+    <title>Product detail</title>
+  </head>
+  <body class="bg-white">
+    <header>
+      <nav class="header-nav">
+        <figure class="menu-izquierda">
+          <img
+            class="logo-burger color-negro"
+            src="/img/iconos/burger.svg"
+            alt="menu"
+          />
+        </figure>
+
+        <h1 class="display-none logo-coffee">
+          <a href="#"
+            ><img src="/img/iconos/logo-horizontal.svg" alt="logo"
+          /></a>
+        </h1>
+
+        <div class="menu-derecha">
+          <ul class="nav-tablet header-nav-ul display-none">
+            <li><a href="#">Quienes somos</a></li>
+            <li><a href="#">Nuestros cafés</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+
+          <figure class="nav-iconos header-nav-figure-lupa-bolso">
+            <form action="#" method="post">
+              <button class="btn-bolso-lupa bg-white">
+                <img
+                  class="icon-lupa-bolso color-negro"
+                  src="/img/iconos/lupa.svg"
+                  alt="buscar"
+                />
+              </button>
+            </form>
+
+            <a href="#"
+              ><img
+                class="icon-lupa-bolso color-negro"
+                src="/img/iconos/bolso.svg"
+                alt="compras"
+            /></a>
+
+            <form class="display-none form-login" action="#" method="post">
+              <button class="login-button">Login in</button>
+            </form>
+          </figure>
+        </div>
+
+        <figure
+          class="header-nav-figure-icon-arrow margin-left-32 display-none"
+        >
+          <img
+            class="icon-flecha color-negro"
+            src="/img/iconos/flecha-izq.svg"
+            alt="Imagen no cargada"
+          />
+        </figure>
+        <section class="text-cart display-none">
+          <p class="header-paragraph-cart color-negro">Carrito</p>
+        </section>
+      </nav>
+    </header>
+    <main id="main">
+      <figure class="main-bg-product">
+        <img
+          src="/img/img-product-detail/bg-product.png"
+          alt="Imagen no cargada"
+        />
+      </figure>
+      <figure class="main-figure-guatemala">
+        <img src="/img/products/guatemala.png" alt="Imagen no cargada" />
+      </figure>
+      <form class="form-radio" action="#" method="post">
+        <label class="display-none" for="input-radio">Galeria</label>
+        <input
+          class="radio main-form-radio bg-gray"
+          type="radio"
+          name="input-radio"
+          id="input-radio-1"
+        />
+        <input
+          class="radio main-form-radio bg-gray"
+          type="radio"
+          name="input-radio"
+          id="input-radio-2"
+        />
+        <input
+          class="radio main-form-radio bg-gray"
+          type="radio"
+          name="input-radio"
+          id="input-radio-3"
+        />
+      </form>
+      <article class="main-article-categoria color-negro" id="categoria-1">
+        <p>Categoria</p>
+      </article>
+      <article class="main-article-categoria color-negro" id="product-name">
+        <p>Nombre producto</p>
+      </article>
+
+      <img
+        id="main-corazon"
+        src="/img/iconos/corazon.svg"
+        alt="Imagen no cargada"
+      />
+
+      <form class="color-blanco" id="form-peso" action="#" method="post">
+        <label class="display-none" for="form-selet-peso">Peso</label>
+        <select class="color-negro" name="peso" id="peso">
+          <option value="">Peso</option>
+          <option value="">Peso</option>
+          <option value="">Peso</option>
+        </select>
+        <label class="display-none" for="form-selet-molienda">Molienda</label>
+        <select class="color-negro" name="molienda" id="molienda">
+          <option value="">Molienda</option>
+          <option value="">Molienda</option>
+          <option value="">Molienda</option>
+        </select>
+      </form>
+      <p class="main-p-text color-negro">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Phasellus in
+        sapien felis.
+      </p>
+      <p class="color-negro" id="main-p-price">$555</p>
+
+      <form class="main-form-btn display-flex" action="#" method="post">
+        <label class="display-none" for="button-agregar">Agregar</label>
+        <button class="button-amarillo btn-yellow" name="button-agregar">
+          Agregar
+          <img
+            class="bolso-btn"
+            src="/img/iconos/bolso.svg"
+            alt="Imagen no cargada"
+          />
+        </button>
+      </form>
+    </main>
+    <footer class="bg-verde-oscuro display-flex" id="footer">
+      <a class="footer-a-img" href="#"
+        ><img
+          class="footer-img-logo"
+          src="/img/iconos/logo-horizontal-blanco.svg"
+          alt="logo"
+      /></a>
+      <nav class="footer-nav">
+        <ul class="nav-ul display-flex width-100">
+          <li><a href="#">Breve historia</a></li>
+          <li><a href="#">Abastecimiento ético</a></li>
+          <li><a href="#">Defensa del consumidor</a></li>
+        </ul>
+
+        <ul class="nav-ul display-flex width-100">
+          <li><a href="#">Nuestra empresa</a></li>
+          <li><a href="#">Reciclaje</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <figure
+        class="footer-redes display-flex width-100"
+        action="#"
+        method="post"
+      >
+        <a class="btn-redes">
+          <img src="/img/iconos/facebook.svg" alt="Imagen no cargada" />
+        </a>
+        <a class="btn-redes">
+          <img src="/img/iconos/twitter.svg" alt="Imagen no cargada" />
+        </a>
+        <a class="btn-redes">
+          <img src="/img/iconos/instagram.svg" alt="Imagen no cargada" />
+        </a>
+      </figure>
+    </footer>
+  </body>
+</html>
