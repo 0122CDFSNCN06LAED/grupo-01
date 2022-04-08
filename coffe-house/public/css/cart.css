@@ -1,11 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .header-nav {
   justify-content: space-between;
+}
+
+.btn-icon-arrow {
+  border: none;
 }
 
 .icon-flecha {
@@ -140,6 +143,11 @@ footer {
     display: none;
   }
 
+  .btn-burger {
+    display: flex;
+    border: none;
+  }
+
   .logo-burger {
     display: flex;
   }
@@ -200,6 +208,10 @@ footer {
     max-height: 198px;
   }
 
+  .main-form-btn {
+    justify-content: flex-end;
+  }
+
   footer {
     height: 200px;
     flex-direction: row;
@@ -244,13 +256,8 @@ footer {
   .header-nav {
     height: auto;
   }
-
   nav .menu-izquierda {
     left: 41px;
-  }
-
-  .login-button {
-    margin-right: 41.8px;
   }
 
   .nav-tablet {
@@ -276,7 +283,6 @@ footer {
 
   .nav-iconos {
     width: 240px;
-    display: flex;
     justify-content: space-between;
   }
 
@@ -292,6 +298,7 @@ footer {
 
   .btn-bolso-lupa {
     display: flex;
+    align-items: center;
   }
 
   #main {

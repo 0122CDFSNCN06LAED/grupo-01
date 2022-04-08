@@ -1,15 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Roboto", sans-serif;
-}
-
-.header-nav {
-  justify-content: space-between;
 }
 
 .header-nav a {
@@ -22,12 +12,16 @@ body {
 }
 
 .icon-flecha {
-  width: 16px;
-  height: 15.56px;
+  display: none;
+}
+
+.btn-burger {
+  border: none;
 }
 
 .nav-iconos {
   display: flex;
+  align-items: center;
 }
 
 .btn-bolso-lupa {
@@ -38,6 +32,7 @@ body {
   width: 93px;
   height: 34px;
   margin-right: 22px;
+  display: none;
 }
 
 .header-paragraph-cart {
@@ -49,8 +44,14 @@ body {
 }
 
 #main {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.main-article {
+  position: relative;
+  padding-bottom: 114px;
 }
 
 .main-bg-product img {
@@ -73,64 +74,45 @@ body {
   bottom: 47.75%;
 }
 
-#input-radio-1 {
-  position: absolute;
-  left: 41.11%;
-  right: 56.11%;
-  top: 56.75%;
-  bottom: 42%;
+.main-figure-muestra-3 {
+  display: none;
 }
 
-#input-radio-2 {
-  position: absolute;
-  left: 48.61%;
-  right: 48.61%;
-  top: 56.75%;
-  bottom: 42%;
+.figure-radio-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36px;
 }
 
-#input-radio-3 {
-  position: absolute;
-  left: 56.11%;
-  right: 41.11%;
-  top: 56.75%;
-  bottom: 42%;
-}
-.main-form-radio {
+.main-figure-radio {
   height: 10px;
   width: 10px;
-  left: 148px;
-  top: 454px;
-  border-radius: 0px;
+  flex-grow: 0.045;
+  background-color: transparent;
+}
+
+.main-section-description {
+  margin: 35px 31px 0 32px;
+  display: flex;
+  flex-direction: column;
 }
 
 #categoria-1 {
-  position: absolute;
-  left: 8.89%;
-  right: 17.78%;
-  top: 62.38%;
-  bottom: 32.38%;
-
-  font-family: "Roboto";
+  width: 100%;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 35px;
-  /* or 219% */
-
   letter-spacing: 0.05em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #product-name {
   height: 42px;
   width: 264px;
-  left: 32px;
-  top: 525px;
-  position: absolute;
-  left: 8.89%;
-  right: 17.78%;
-  top: 65.62%;
-  bottom: 29.12%;
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
@@ -144,20 +126,12 @@ body {
   left: 303px;
   top: 505px;
   border-radius: 0px;
-  position: absolute;
-  left: 84.17%;
-  right: 9.54%;
-  top: 63.12%;
-  bottom: 34.41%;
 }
 
 #form-peso {
-  position: absolute;
-  left: 8.89%;
-  right: 17.78%;
-  top: 71.62%;
-  bottom: 29.12%;
   display: flex;
+  align-items: center;
+  margin: 12px 0;
 }
 
 #peso {
@@ -165,10 +139,8 @@ body {
   height: 48px;
   width: 96px;
   border-radius: 4px;
-  padding: 12px, 16px, 12px, 16px;
   border: 1px solid #adaabf;
   box-shadow: 0px 1px 2px 0px #322b5f14;
-  padding: 12px 16px;
   font-family: "Inter";
   font-size: 16px;
   font-weight: 400;
@@ -181,52 +153,37 @@ body {
   height: 48px;
   width: 126px;
   border-radius: 4px;
-  padding: 12px, 16px, 12px, 16px;
   border: 1px solid #adaabf;
   box-shadow: 0px 1px 2px 0px #322b5f14;
-  padding: 12px 16px;
 }
 
 .main-p-text {
   height: 72px;
-  width: 297px;
-  left: 32px;
-  top: 653px;
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
   letter-spacing: 0em;
   text-align: left;
-  position: absolute;
-  left: 8.89%;
-  right: 8.61%;
-  top: 81.62%;
-  bottom: 9.38%;
 }
 
 #main-p-price {
+  margin-top: 3px;
   height: 42px;
   width: 111px;
-  left: 30px;
-  top: 728px;
   font-size: 30px;
   font-weight: 900;
   line-height: 35px;
   letter-spacing: 0.05em;
   text-align: left;
-  position: absolute;
-  left: 8.33%;
-  right: 60.83%;
-  top: 91%;
-  bottom: 3.75%;
 }
 
 .main-form-btn {
-  position: absolute;
-  left: 45.56%;
-  right: 8.61%;
-  top: 90.62%;
-  bottom: 3.5%;
+  margin: 0;
+}
+
+.main-section-btn-and-price {
+  margin-bottom: 30px;
+  align-items: center;
 }
 
 .bolso-btn {
@@ -242,17 +199,12 @@ body {
   align-items: center;
 }
 
-#footer {
-  position: absolute;
-  top: 100%;
-}
-
-/* -------------------------------------------------------- */
+/* footer */
 
 footer {
   width: 100%;
   padding: 35px;
-  margin-top: 79.03px;
+  margin: 0;
   flex-direction: column;
   text-align: center;
 }
@@ -302,18 +254,8 @@ footer {
     display: none;
   }
 
-  .logo-burger {
-    height: 15px;
-    width: 24px;
-    display: flex;
-  }
-
   .nav-iconos {
     display: flex;
-  }
-
-  .btn-bolso-lupa {
-    border: none;
   }
 
   .header-nav-ul {
@@ -330,16 +272,6 @@ footer {
 }
 
 @media (min-width: 768px) {
-  main {
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .main-section-article-img {
-    max-width: 275.55px;
-    max-height: 198px;
-  }
-
   footer {
     height: 200px;
     flex-direction: row;
@@ -381,18 +313,6 @@ footer {
 }
 
 @media (min-width: 1280px) {
-  .header-nav {
-    height: auto;
-  }
-
-  nav .menu-izquierda {
-    left: 41px;
-  }
-
-  .login-button {
-    margin-right: 41.8px;
-  }
-
   .nav-tablet {
     width: 550px;
     display: flex;
@@ -430,13 +350,100 @@ footer {
   }
 
   #main {
-    width: 55%;
-    margin: 0 auto;
-    max-width: 1200px;
+    padding: 0 100px;
+    margin: 114px auto;
+    display: flex;
+    max-width: 1280px;
+  }
+
+  .main-article {
+    padding: 0;
+  }
+
+  .main-article-categoria {
+    width: 100%;
   }
 
   .main-bg-product {
     display: none;
+  }
+
+  .main-figure-guatemala {
+    display: none;
+  }
+
+  .main-figure-muestra-3 {
+    max-width: 667px;
+    max-height: 483px;
+    display: flex;
+  }
+
+  .main-figure-muestra-3 img {
+    width: 100%;
+  }
+
+  #categoria-1 {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: #6d9773;
+  }
+
+  #product-name {
+    width: 100%;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: #0c3a2d;
+  }
+
+  .figure-radio-2 {
+    display: none;
+  }
+
+  .figure-radio {
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-section-description {
+    width: 501px;
+    position: relative;
+  }
+
+  .main-article-peso-molienda {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 46%;
+  }
+
+  #main-corazon {
+    display: none;
+  }
+
+  #main-corazon-2 {
+    display: flex;
+  }
+
+  .main-p-text {
+    position: absolute;
+    top: 30%;
+  }
+
+  .main-section-btn-and-price {
+    width: 100%;
+    position: absolute;
+    top: 65%;
+    justify-content: space-between;
   }
 
   .footer-nav {
