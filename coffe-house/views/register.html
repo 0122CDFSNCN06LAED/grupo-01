@@ -21,59 +21,63 @@
   </head>
 
   <body>
-      <header>
-          
-        <div class="logo-centrado">
-            <img src="/img/iconos/logo-vertical.svg" alt="logo" />
-          
-        </div>
-        <div class="corte-verde-login">
-            <p class="saludo"> Bienvenido!</p>
+    <header>
+      <div class="logo-centrado">
+        <img src="/img/iconos/logo-vertical.svg" alt="logo" />
+      </div>
+      <div class="corte-verde-login">
+        <p class="saludo">Bienvenido!</p>
 
-            <p class="ingresa-datos">Por favor, ingresa tus datos para registrarte </p>   
+        <p class="ingresa-datos">
+          Por favor, ingresa tus datos para registrarte
+        </p>
 
-            <form class="formulario-login">
+        <form class="formulario-login">
+          <label class="hidden">Nombre:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Nombre"
+            class="input-box"
+          />
 
-                <label class="hidden">Nombre:</label>
-                <input type="text" name="name" id="name" placeholder="Nombre" class="input-box">
-                
-                <label class="hidden">Apellido:</label>
-                <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="input-box">
-            
-                <label class="hidden">E-mail:</label>
-                <input type="email" name="email" placeholder="E-mail" class="input-box">
-        
-                <label class="hidden">Nombre de usuario:</label>       <!--no debe tener espacios?? --> 
-                <input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario" class="input-box">
-                
-                <label class="hidden">Numero de tarjeta:</label>  
-                <input type="number" name="credit-card" id="credit-card" placeholder="Nro de tarjeta de credito" class="input-box">
-                
-                <label>Contraseña:</label>
-                <input  class="input-box" type="password" name="password" required>
+          <label class="hidden">Apellido:</label>
+          <input
+            type="text"
+            name="apellido"
+            id="apellido"
+            placeholder="Apellido"
+            class="input-box"
+          />
 
-                <label>Confirmar ontraseña:</label>
-                <input class="input-box" type="password" name="password-2" required>
+          <label class="hidden">E-mail:</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            class="input-box"
+          />
 
-          
-            </form>
-            
-            
-            <button class="inicio-sesion" type="submit">Registrarse!! </button>
+          <label class="hidden">Nombre de usuario:</label>
+          <!--no debe tener espacios?? -->
+          <input
+            type="text"
+            name="usuario"
+            id="usuario"
+            placeholder="Nombre de Usuario"
+            class="input-box"
+          />
 
+          <label>Contraseña:</label>
+          <input class="input-box" type="password" name="password" required />
 
-             
-            
-          
-            
+          <label>Confirmar ontraseña:</label>
+          <input class="input-box" type="password" name="password-2" required />
+        </form>
 
-        </div>
-        
-      </header>
-
-
+        <button class="inicio-sesion" type="submit">Registrarse!!</button>
+      </div>
+    </header>
   </body>
-
-
-
 </html>
