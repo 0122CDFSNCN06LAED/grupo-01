@@ -1,3 +1,247 @@
+
+/* LOGO - VERTICAL - unicamente en HOME */
+.logo {
+    position: absolute;
+    z-index: 1000;
+    top:29px;
+    left:135px;
+    
+}
+.nav-iconos .login-button {
+    display: none;
+}
+
+/*FONDO */
+.fondo{
+    width: 100%;
+    height: 700px;
+    margin-bottom: 50px;
+    border-radius: 0 0 30px 30px;
+}
+
+
+/* imagenes promo */
+.imagenes-promo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.fondo-cafe{
+    margin-top: 20px;
+    width: 100%;
+}
+.fondo-cafe-tablet {
+    display: none;
+}
+
+.contenedor-principal{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.product-promo{
+    width: 210px;
+    height: 250px;
+position: absolute;
+top: 190px;
+
+}
+
+.texto{
+margin-top: 75px;
+    padding: 0 45px;
+}
+.texto p{
+    margin-bottom:35px;
+}
+
+/*  SECCION CARACTERISTICAS DE NUESTROS PRODUCTOS */
+
+
+.caracteristicas-productos{
+    width: 100%;
+    height: 630px;
+}
+.estrellas{
+    width: 100px;
+}
+.icono{
+    width: 80px;
+}
+.caracteristicas-productos p{
+    width: 150px;
+    margin-top:8px;
+    text-align: center;
+}
+/*section "destacados" */
+.destacados{
+   height: 530px;
+    width: 100%;
+}
+
+.container-destacados{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.flechas{
+    width: 24px;
+    margin:10px;
+}
+.card-container.card-tablet{
+    display: none;
+}
+.card-container.card-desktop {
+    display: none;
+}
+
+.enlaces-footer-desktop{
+    display: none;
+}
+
+
+/* comments y newsletter solo para desktop */
+.only-desktop {
+    display: none;
+}
+
+/* footer   */
+footer {
+    padding: 35px;
+    height: 450px;
+   width: 100%;
+
+    }
+.logo-footer{
+    width: 60%;
+    margin-left: -5px;
+    margin-bottom: 30px;
+}
+footer li, footer a{
+  list-style: none;  
+  margin-left: -20px;
+ align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+.enlaces-footer{
+    text-align: center;
+}
+
+.redes {
+    width: 60%;
+}
+
+
+/*--------------TABLET-----------------*/
+
+@media (min-width:768px) {
+    .nav-iconos .login-button {
+        display: none;
+    }
+    .fondo-cafe{
+        display:none;
+    }
+    
+    .fondo-cafe-tablet{
+        display: block;
+        position: absolute;
+        right: -15px;
+        width: 60%;
+        top: 10%;
+    }
+    .fondo{
+        height: 450px;
+    }
+    .product-promo{
+        position: absolute;
+        left: 55%;
+        top:10%;
+        width: 285px;
+        height: 350px;
+    }
+    .texto{
+       width: 45%; 
+       position: absolute;
+       top: 11%
+    }
+/*caracteristicas productos */
+    .caracteristicas-productos{
+        width: 90%;
+        height: auto;
+        
+    }
+    .caracteristicas-productos.alineacion-centro-flex{
+        flex-direction: row;
+        justify-content: space-around;
+        width: 90%;
+    }
+    .caracteristicas-productos.alineacion-centro-flex h2{
+        width: 85%;
+    }
+     .iconos{
+         display: flex;
+        flex-direction: row;
+        width: 100%;
+        
+    }
+/* productos-destacados */
+.card-container.card-tablet{
+    display: block;
+}
+.card-container.card-desktop{
+    display: none;
+}
+
+
+
+/* seccion comments y newsletter solo desktop */
+.only-desktop {
+    display: none;
+}
+
+    /*footer*/ 
+    footer.alineacion-centro-flex{
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .logo-footer{
+        width: 20%;
+    }
+    .enlaces-footer{
+        width:60%;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 8px;
+    }
+    .redes{
+        width: 25%;
+        padding: 10px;
+    }
+    .redes .espacio-horizontal{
+        width: 35px;
+        margin: 5px;
+        
+    }
+    .a-left{
+        text-align:  left;
+    }
+    
+    .enlaces-footer-desktop{
+        display: none;
+    }
+}
+
+/*------------DESKTOP-------------*/
 @media (min-width: 1280px) {
     #logo{
 width: 130px;
@@ -244,30 +488,6 @@ width: 130px;
        background-color: #FFB902;
    }
 
-   /*footer */
-   footer {
-       height: 155px;
-       padding: 0 150px;
-   }
-   .enlaces-footer{
-       display: none;
-   }
-   .logo-footer{
-       width:15% ;
-   }
-   .enlaces-footer-desktop{
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    font-size: 14px;
-    padding-left: 60px;
-    }
-    .redes {
-        width: 30%;
-        justify-content: space-around;
-    }
-    .redes .espacio-horizontal{
-        width: 35px;
-    }
+   
 
 }
