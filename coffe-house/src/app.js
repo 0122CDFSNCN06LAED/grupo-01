@@ -5,6 +5,8 @@ const rutaHome = require ('./routes/home');
 const login = require ('./routes/login');   
 const register = require('./routes/register');
 const product = require('./routes/product');
+const cart = require('./routes/cart');
+
  
 app.set('view engine', 'ejs'); 
 app.set("views", path.resolve(__dirname, "./views"));
@@ -21,13 +23,7 @@ app.use(rutaHome);
 app.use(login);
 app.use(register);
 app.use(product);
+app.use(cart);
 
 
 
-/*------- RUTAS VIEJAS!!!--------*/
-
-
-
-app.get("/cart", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/cart.html"));
-});
