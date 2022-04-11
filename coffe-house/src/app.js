@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const rutaHome = require ('./routes/home');
 const login = require ('./routes/login');   
+const register = require('./routes/register');
  
 app.set('view engine', 'ejs'); 
 app.set("views", path.resolve(__dirname, "./views"));
@@ -17,6 +18,7 @@ app.listen(3000, () => {
 //RUTAS NUEVAS
 app.use(rutaHome);
 app.use(login);
+app.use(register);
 
 
 
@@ -25,9 +27,7 @@ app.get("/product", (req, res) => {
   res.sendFile(path.join(__dirname, "views/product-detail.html"));
 });
 
-app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/register.html"));
-});
+
 app.get("/cart", (req, res) => {
   res.sendFile(path.join(__dirname, "views/cart.html"));
 });
