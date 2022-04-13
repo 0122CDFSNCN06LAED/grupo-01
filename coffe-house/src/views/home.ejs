@@ -4,31 +4,8 @@
 <%- include ('./partials/head') %>
 
   <body>
-    <header>
-      <nav>
-        <div class="menu-izquierda">
-          <img  src="/img/iconos/burger.svg" alt="menu" />
-        </div>
-        <div class="menu-derecha">
-          
-            <ul class="nav-tablet">
-                <li><a href="#">Quiénes somos</a></li> 
-               <li><a href="#">Nuestros cafés</a></li> 
-               <li><a href="#">Productos</a></li>
-               <li><a href="#">Contacto</a></li>
-          </ul>
-          <div class="nav-iconos">
-                 <img src="/img/iconos/lupa.svg" alt="buscar" />
-                 <a href="/views/cart.html"><img src="/img/iconos/bolso.svg" alt="compras" /></a> 
-                 <button class="login-button">Log In</button>
-                </div>
-        </div>
-      </nav>
+    <%- include ('./partials/header') %>
 
-      <div class="logo">
-        <img id="logo" src="/img/iconos/logo-vertical.svg" alt="logo" />
-      </div>
-    </header>
 <main class="contenedor-principal">
     <section class="fondo bg-verde-oscuro separacion-10px">
       
@@ -44,7 +21,7 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in
           sapien felis. Nulla sollicitudin maximus accumsan.
         </p>
-        <button class="button-amarillo">Comprar </button>
+       <a href="/product/detail"><button class="button-amarillo">Comprar </button></a> 
       </div>
   
     </section>
@@ -82,7 +59,7 @@
                  <p>Lorem ipsum dolor sit. </p>
                   <div class="precio">
                    <h5 class="black">$555</h5>
-                   <a class="color-amarillo sin-estilos"href="#">Ver más...</a>
+                   <a class="color-amarillo sin-estilos"href="/product/detail">Ver más...</a>
                 </div>
          
               </div>
@@ -95,7 +72,7 @@
                  <p>Lorem ipsum dolor sit. </p>
                   <div class="precio">
                    <h5 class="black">$555</h5>
-                    <a class="color-amarillo sin-estilos"href="#">Ver más...</a>
+                    <a class="color-amarillo sin-estilos"href="/product/detail">Ver más...</a>
                  </div>
           
                </div>
@@ -108,7 +85,7 @@
                  <p>Lorem ipsum dolor sit. </p>
                   <div class="precio">
                    <h5 class="black">$555</h5>
-                    <a class="color-amarillo sin-estilos"href="#">Ver más...</a>
+                    <a class="color-amarillo sin-estilos"href="/product/detail">Ver más...</a>
                  </div>
           
                </div>
@@ -121,7 +98,7 @@
                 <p>Lorem ipsum dolor sit. </p>
                  <div class="precio">
                   <h5 class="black">$555</h5>
-                     <a class="color-amarillo sin-estilos"href="#">Ver más...</a>
+                     <a class="color-amarillo sin-estilos"href="/product/detail">Ver más...</a>
                   </div>
            
                 </div>

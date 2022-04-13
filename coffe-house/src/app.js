@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const rutaHome = require ('./routes/home');
-const rutaLogin = require ('./routes/login');   
-const rutaRegister = require('./routes/register');
+const rutaUser = require ('./routes/user');   
+/* const rutaRegister = require('./routes/register'); */
 const rutaProduct = require('./routes/product');
-const rutaCart = require('./routes/cart');
+/* const rutaCart = require('./routes/cart'); */
 
  
 app.set('view engine', 'ejs'); 
@@ -20,10 +20,8 @@ app.listen(3000, () => {
 
 //RUTAS NUEVAS
 app.use(rutaHome);
-app.use(rutaLogin);
-app.use(rutaRegister);
-app.use(rutaProduct);
-app.use(rutaCart);
+app.use(rutaUser);
 
+app.use(rutaProduct);
 
 

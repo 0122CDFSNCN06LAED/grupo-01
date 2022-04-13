@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('../partials/head') %>
+  <body class="bg-white">
+   
+    <%- include ('../partials/header') %>
+
+
+    <main>
+        <div class="img-mobile">
+            <div class="fondo bg-verde-oscuro"></div>
+            <img src="/img/products/promo-medium-roast.png" alt="promo-medium-roast">
+            
+        </div>
+        <div class="img-web">
+            <img src="/img/products/muestra_3.jpg" alt="promo-medium-roast">
+        </div>
+        <div class="text-container">
+            <div class="text">
+                <h3>CATEGORÍA</h3>
+                <h1>Combo medium roast</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in sapien felis.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in sapien felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in sapien felis. </p>
+            </div>
+            <form action="">
+            <div class="inputs-container">
+                <div class="peso">
+                <label for="weight">Peso</label>
+                <select name="weight" id="weight" >
+                    <option value="250g">250g</option>
+                    <option value="500g">500g</option>
+                    <option value="1kg">1kg</option>
+                </select>
+                </div>
+                <div class="molienda">
+                    <label for="grind">Molienda</label>
+                    <select name="grind" id="grind" >
+                        <option value="grano entero">Grano entero</option>
+                        <option value="espresso">Espresso</option>
+                        <option value="filtro">Filtro</option>
+                    </select>
+                    </div>
+                    <img class="heart" src="/img/iconos/corazon.svg" alt="agregar-a-favoritos">
+            </div>
+            <div class="price">
+                <h2>$555</h2>
+                <button class="agregar button-amarillo" type="submit">Agregar <i src="/img/iconos/bolso-white.svg"></i></button>
+            </div>
+
+              </form>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

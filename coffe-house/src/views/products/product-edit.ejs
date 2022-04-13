@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('../partials/head') %>
+<body>
+   
+   
+  <%- include ('../partials/header') %>
+
+      <main>
+          
+           <div class="header">
+            <img class="isotipo" src="/img/iconos/isotipo.svg" alt="">  
+            <h2 class="carga-prod">Edita este producto:</h2>
+           </div> 
+           <form action="">
+            <div class="form-container">
+              <div class="izquierda">
+                
+                <label for="product-name">Nombre del producto:</label>
+                <input class="input" type="text"> 
+                <div class="cat-region .alineacion-horizontal">
+                  <label for="category">Categoría:</label>
+                  <select class="input" name="category" id="category">
+                    <option value="blonde">Blonde roast</option>
+                    <option value="medium">Medium roast</option>
+                    <option value="dark">Dark roast</option>
+                  </select>
+                  <div class="region alineacion-centro-flex">
+                    <label for="region">Región:</label>
+                  <input class="input" type="text">
+                  </div>
+                  
+                </div>
+                <div class="description alineacion-centro-flex">
+                  <label for="description">Descripción:</label>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                </div>
+                
+              </div>
+
+              <div class="derecha alineacion-centro-flex">
+                <div class="checks">
+                  <div class="grind">
+                    <label for="grind"> Molienda:</label>
+                    <p><input type="checkbox" name="grind" value="Grano entero"> Grano entero</p>
+                    <p><input type="checkbox" name="grind" value="Espresso"> Espresso</p>
+                    <p><input type="checkbox" name="grind" value="Filtro"> Filtro</p>
+                
+                  </div>
+                  <div class="weight">
+                    <label for="weight">Peso:</label>
+                    <p><input type="checkbox" name="weight" value="250g"> 250g</p>
+                    <p><input type="checkbox" name="weight" value="500g"> 500g</p>
+                    <p><input type="checkbox" name="weight" value="1kg"> 1kg</p>
+                  </div>
+                 
+                </div>
+                <div class="file">
+                  <label for="file">Sube una imagen:</label>
+                  <input type="file" id="file">
+                </div>
+                  
+                 <div class="price-button width-100">
+                   <div>
+                    <label for="price">Precio:</label>
+                    <input class="input" type="number">
+                   </div>
+                   
+                   <button class="secundary-button"type="reset">Borrar</button>
+                   <button class="send button-amarillo" type="submit">Cargar producto</button>
+                 </div> 
+
+
+              </div>
+            </div>
+           
+          </form>
+      </main>
+      <%- include('../partials/footer') %>
+</body>
+</html>
