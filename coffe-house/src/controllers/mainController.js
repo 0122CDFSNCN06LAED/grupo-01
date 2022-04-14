@@ -2,7 +2,7 @@ const path = require ("path")
 
 const mainController = {
     home: (req, res) => {
-        res.render("../views/home.ejs", {style: 'home.css', title: 'Home'});
+        res.render("home", {style: 'home.css', title: 'Home'});
     },
 }
 

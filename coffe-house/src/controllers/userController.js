@@ -3,11 +3,11 @@ const path = require ("path")
 const userController = {
     login: (req, res) => {
         /* res.sendFile(path.join(__dirname, '../views/login.html')) */
-        res.render('../views/user/login.ejs', {style: 'login.css', title: 'Login'});
+        res.render('user/login', {style: 'login.css', title: 'Login'});
     },
     register: (req, res) => {
-        /*  res.sendFile(path.join(__dirname, '../views/register.html')) */
-         res.render('../views/user/register.ejs', {style: 'register.css', title: 'Register'});
+        /*  res.sendFile(path.join(__dirname, 'register.html')) */
+         res.render('user/register', {style: 'register.css', title: 'Register'});
      }
 }
 
