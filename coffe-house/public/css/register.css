@@ -1,82 +1,80 @@
-@media (min-width:375px) {
-    .footer{
-        display: none;
-    }
-    .crear-cuenta{
-        display: block;
-        margin: auto;
-        font-weight: 300;
-font-size:30px;
-line-height: 150%;
-text-align: center;
-margin-top: 10px;
-    }
-    .form-container{
-        text-align: center;
-    }
-    .inputs{
-        margin:20px 0;
-    }
-    label {
-        margin-top:10px;
-    }
-    input {
-        display: block;
-        width: 100%;
-        padding: 10px;
-       
-    }
-    .buttons-register{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 120px;
-        margin-top: 30px;
-    }
-    .buttons-register button{
-       margin-bottom: 10px;
-        width: 80%;
-        height: 40px;
-       
-    }
-
-
-} 
-@media (min-width:780px) {
-    .form-container{
-        text-align: start;
-    }
+@media (min-width: 375px) {
+  .footer {
+    display: none;
+  }
+  .crear-cuenta {
+    display: block;
+    margin: auto;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 150%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .form-container {
+    text-align: center;
+  }
+  .inputs {
+    margin: 20px 0;
+  }
+  label {
+    margin-top: 10px;
+  }
+  input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+  .buttons-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120px;
+    margin-top: 30px;
+  }
+  .buttons-register button {
+    margin-bottom: 10px;
+    width: 80%;
+    height: 40px;
+  }
 }
-@media (min-width:1280px) {
-   
-   main{
-       width:60%;
-       margin: auto;
-       margin-bottom: 80px;
-   }
-    .form-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        
-    }
-  .izquierda, .derecha{
-      width: 50%;
-      padding: 0 10px;
+@media (min-width: 780px) {
+  .form-container {
+    text-align: start;
   }
   .footer {
-      display: block;
+    display: block;
+  }
+}
+@media (min-width: 1280px) {
+  main {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 80px;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .izquierda,
+  .derecha {
+    width: 50%;
+    padding: 0 10px;
+  }
+  .footer {
+    display: block;
   }
 
-  .buttons-register{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width:620px;
-     margin-left: auto;
-     margin-right: auto;
+  .buttons-register {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 620px;
+    margin-left: auto;
+    margin-right: auto;
   }
-.buttons-register button{
+  .buttons-register button {
     width: 48%;
-}
+  }
 }
