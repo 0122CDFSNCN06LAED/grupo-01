@@ -3,10 +3,12 @@ const app = express();
 const path = require("path");
 const rutaHome = require ('./routes/home');
 const rutaUser = require ('./routes/user');   
-/* const rutaRegister = require('./routes/register'); */
 const rutaProduct = require('./routes/product');
-/* const rutaCart = require('./routes/cart'); */
+const methodOverride = require ('method-override');
 
+app.use(methodOverride('_method'))
+app.use(express.urlencoded({extended:false}));
+app.use(express.json())
  
 app.set('view engine', 'ejs'); 
 app.set("views", path.resolve(__dirname, "./views"));

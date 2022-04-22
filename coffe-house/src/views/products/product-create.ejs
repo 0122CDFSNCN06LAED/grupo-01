@@ -14,22 +14,23 @@
             <img class="isotipo" src="/img/iconos/isotipo.svg" alt="">  
             <h1 class="carga-prod">Carga tu producto:</h1>
            </div> 
-           <form action="">
+           <form action="/product/create" method="POST" enctype='multipart/form-data'>
+            
             <div class="form-container">
               <div class="izquierda">
                 
                 <label for="product-name">Nombre del producto:</label>
-                <input class="input" type="text"> 
+                <input class="input" type="text" name="name"> 
                 <div class="cat-region .alineacion-horizontal">
                   <label for="category">Categoría:</label>
                   <select class="input" name="category" id="category">
-                    <option value="blonde">Blonde roast</option>
-                    <option value="medium">Medium roast</option>
-                    <option value="dark">Dark roast</option>
+                    <option name="category" value="blonde">Blonde roast</option>
+                    <option name="category" value="medium">Medium roast</option>
+                    <option name="category" value="dark">Dark roast</option>
                   </select>
                   <div class="region alineacion-centro-flex">
                     <label for="region">Región:</label>
-                  <input class="input" type="text">
+                  <input name="region" class="input" type="text">
                   </div>
                   
                 </div>
@@ -59,13 +60,13 @@
                 </div>
                 <div class="file">
                   <label for="file">Sube una imagen:</label>
-                  <input type="file" id="file">
+                  <input type="file" id="file" name="image">
                 </div>
                   
                  <div class="price-button width-100">
                    <div>
                     <label for="price">Precio:</label>
-                    <input class="input" type="number">
+                    <input name="price" class="input" type="number">
                    </div>
                    
                    <button class="secundary-button"type="reset">Borrar</button>

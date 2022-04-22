@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('../partials/head') %>
+  <%- include ('../partials/head',  {style: 'product-detail.css', title: 'Product'}) %>
   <body class="bg-white">
    
     <%- include ('../partials/header') %>
@@ -9,17 +9,17 @@
     <main>
         <div class="img-mobile">
             <div class="fondo bg-verde-oscuro"></div>
-            <img src="/img/products/promo-medium-roast.png" alt="promo-medium-roast">
+            <img src="/img/products/promo-medium-roast.png"  alt="promo-medium-roast">
             
         </div>
         <div class="img-web">
-            <img src="/img/products/muestra_3.jpg" alt="promo-medium-roast">
+            <img src="/img/products/<%= product.image %>"   alt="promo-medium-roast">
         </div>
         <div class="text-container">
             <div class="text">
-                <h3>CATEGORÍA</h3>
-                <h1>Combo medium roast</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in sapien felis.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in sapien felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in sapien felis. </p>
+                <h3><%= product.region %> | <%= product.category %></h3>
+                <h1><%= product.name %></h1>
+                <p><%= product.description %></p>
             </div>
             <form action="">
             <div class="inputs-container">
@@ -42,7 +42,7 @@
                     <img class="heart" src="/img/iconos/corazon.svg" alt="agregar-a-favoritos">
             </div>
             <div class="price">
-                <h2>$555</h2>
+                <h2>$<%= product.price %></h2>
                 <button class="agregar button-amarillo" type="submit">Agregar <i src="/img/iconos/bolso-white.svg"></i></button>
             </div>
 
