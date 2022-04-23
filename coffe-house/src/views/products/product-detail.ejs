@@ -9,7 +9,7 @@
     <main>
         <div class="img-mobile">
             <div class="fondo bg-verde-oscuro"></div>
-            <img src="/img/products/promo-medium-roast.png"  alt="promo-medium-roast">
+            <img src="/img/products/<%= product.image %>"  alt="promo-medium-roast">
             
         </div>
         <div class="img-web">
@@ -47,6 +47,12 @@
             </div>
 
               </form>
+              <div class="edit-delete-buttons">
+              <a href="/products/edit/<%=product.id%>"><button class="secundary-button"> Editar </button></a>
+              <form action="/products/delete/<%=product.id%>?_method=DELETE" method="POST">
+                <button type="submit" class="secundary-button">Eliminar</button>
+            </form>
+        </div>
         </div>
     </main>
 

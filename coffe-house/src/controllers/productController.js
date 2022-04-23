@@ -4,6 +4,16 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json')
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productController = {
+    listar: (req, res) => {
+      const blonde= products.filter((p) => p.category == "blonde");
+		const medium = products.filter((p) => p.category == "medium");
+    const dark = products.filter((p) => p.category == "dark");
+      res.render("products/products-index", {style: 'products-index.css', title: 'Create product', 
+      blonde: blonde,
+    medium:medium,
+  dark:dark})
+    },
+
     product: (req, res) => {
         const id = req.params.id;
 		const product = products.find((p) => id == p.id);

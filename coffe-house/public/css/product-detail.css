@@ -24,6 +24,8 @@
       width: 280px;
       height: 320px;
       margin: 30px 0;
+      object-fit: cover;
+      border-radius: 10px;
   }
   main {
       width: 80vw;
@@ -94,6 +96,16 @@ font-size: 35px;
 line-height: 35px;
 color: #232525;
 }
+
+.edit-delete-buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:20px 0;
+}
+.edit-delete-buttons button{
+    width: 130px;
+}
 }
 
 @media (min-width:780px) {
@@ -125,11 +137,11 @@ color: #232525;
   }
   .img-web img{
       width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
   }
 
-  /*VER CUANDO PODAMOS CARGAR IMAGENES 
-  background-image:url("");
-  background-size: cover;*/
+  
   
   main {
       margin:80px auto;

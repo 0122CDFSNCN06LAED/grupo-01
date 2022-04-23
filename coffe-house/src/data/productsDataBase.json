@@ -14,7 +14,7 @@
     "id": 4,
     "name": "Kenya",
     "category": "medium",
-    "region": "África",
+    "region": "Muranga",
     "description": "Kenya es un café de cuerpo medio y, como muchos de los cafés africanos, se transforma en una experiencia única cuando se combina con hielo. Este café se diferencia por su sabor a cítricos que deja entrever toques de pomelo, limón y naranja. Sus complejas características, como una jugosa acidez y notas inconfundibles a vino y las flores, hacen de éste un café con un sabor distintivo, sin otro que se le asemeje.",
     "grind": [
       "Grano entero",
@@ -81,5 +81,22 @@
     ],
     "image": "product-1650662381977.jpg",
     "price": "2400"
+  },
+  {
+    "id": 8,
+    "name": "Sumatra Mandheling",
+    "category": "dark",
+    "region": "Padang",
+    "description": "El Café Sumatra Mandheling, cultivado en la región centro-oeste cerca de Padang, es conocido por su cuerpo liso y pesado que a veces se describe como almibarado. Los mejores cafés de Sumatra tienen una acidez relativamente baja, pero lo suficiente como para añadir interés a los complejos sabores.",
+    "grind": [
+      "Grano entero",
+      "Espresso"
+    ],
+    "weight": [
+      "500g",
+      "1kg"
+    ],
+    "image": "product-1650727852178.jpg",
+    "price": "2600"
   }
 ]

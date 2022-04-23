@@ -1,0 +1,41 @@
+@media (min-width: 375px) {
+    main {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+}
+.categories-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:40px;
+}
+
+.card-container {
+    margin:40px 0;
+}
+}
+@media (min-width: 810px) {
+.container-products-cards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-container {
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+
+}
