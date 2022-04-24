@@ -16,6 +16,8 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 const router = express.Router();
+
+//VISTA LISTAR PRODUCTO
 router.get('/product', productController.listar)
 //VISTA DETALLE
 router.get("/product/detail/:id", productController.product);
