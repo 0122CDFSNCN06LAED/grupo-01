@@ -1,14 +1,14 @@
 [
   {
     "id": 3,
-    "name": "Burundi",
+    "name": "Burundi ",
     "category": "blonde",
     "region": "Mutumba",
-    "description": "Un café único para paladares exquisitos, un café delicioso.\r\n\r\nMuy exótico, dulce, con un dulzor particular, acidez cítrica y notas florales que perduran en boca. Presenta un cuerpo sedoso y notas a toffee, pomelo rosado, earl gray y bergamota.\r\nCon un tueste claro, es un café muy versatil. Lo recomendamos para todo tipo de métodos, desde filtrados hasta espresso. ",
+    "description": "Un café único para paladares exquisitos, un café delicioso.\r\n\r\nMuy exótico, dulce, con un dulzor particular, acidez cítrica y notas florales que perduran en boca. Presenta un cuerpo sedoso y notas a toffee, pomelo rosado, earl gray y bergamota.\r\nCon un tueste claro, es un café muy versatil. Lo recomendamos para todo tipo de métodos, desde filtrados hasta espresso. \r\n              ",
     "grind": "Espresso",
     "weight": "500g",
     "image": "product-1650654494013.jpg",
-    "price": "2600"
+    "price": "2500"
   },
   {
     "id": 4,
@@ -30,10 +30,10 @@
   },
   {
     "id": 5,
-    "name": "Guatemala",
+    "name": "Guatemala ",
     "category": "blonde",
     "region": "Huehuetenango",
-    "description": "Un café dulce y cremoso, con notas a chocolate amargo y avellanas, con una acidez dulce con notas a ciruela. Ideal para espresso y moka italiana. Debido al cuerpo alto y notas dulces es un café que combina muy bien con todo tipo de leche.",
+    "description": "Un café dulce y cremoso, con notas a chocolate amargo y avellanas, con una acidez dulce con notas a ciruela. Ideal para espresso y moka italiana. Debido al cuerpo alto y notas dulces es un café que combina muy bien con todo tipo de leche.\r\n              ",
     "grind": [
       "Grano entero",
       "Espresso",
@@ -44,7 +44,7 @@
       "1kg"
     ],
     "image": "product-1650658479882.jpg",
-    "price": "2100"
+    "price": "2000"
   },
   {
     "id": 6,
