@@ -135,7 +135,7 @@ const productController = {
     const jsonTxt = JSON.stringify(products, null, 2);
     const productEdit = fs.writeFileSync(productsFilePath, jsonTxt, "utf-8");
 
-    res.redirect("/");
+    res.redirect("/product");
   },
   cart: (req, res) => {
     /* res.sendFile(path.join(__dirname, 'cart.html')) */
