@@ -9,31 +9,35 @@
       <h1 class="crear-cuenta">Crea una cuenta:</h1>
       <main> 
        
-<form action="">
+<form action="/user/register" method="POST" enctype="multipart/form-data">
 <div class="form-container">
 <div class="izquierda">
   <div class="name">
     <label for="name">Nombre:</label>
-    <input class="input" type="text" id="name" placeholder="Tu nombre">
+    <input class="input" name="name" type="text" id="name" placeholder="Tu nombre">
   </div>
   <div class="lastname">
     <label for="lastname">Apellido:</label>
-    <input class="input" type="text" id="lastname" placeholder="Tu apellido">
+    <input class="input" name="lastname" type="text" id="lastname" placeholder="Tu apellido">
   </div>
   <div class="email">
     <label for="email">E-mail:</label>
-    <input class="input" type="text" id="email" placeholder="user@user.com">
+    <input class="input" name="email" type="text" id="email" placeholder="user@user.com">
+  </div>
+  <div class="file">
+    <label for="file">Sube una imagen:</label>
+    <input type="file" id="file" name="avatar">
   </div>
 
 </div>
 <div class="derecha">
   <div class="user">
     <label for="user">Nombre de usuario:</label>
-    <input class="input" type="text" id="user" placeholder="usuario">
+    <input class="input" name="username" type="text" id="user" placeholder="usuario">
   </div>
   <div class="password">
     <label for="password">Contraseña:</label>
-    <input class="input" type="password" id="password" placeholder="**********">
+    <input class="input" name="password" type="password" id="password" placeholder="**********">
   </div>
   <div class="password">
     <label for="password">Confirmar contraseña:</label>

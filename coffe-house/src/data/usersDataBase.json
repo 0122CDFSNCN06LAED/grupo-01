@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Ludmila",
+    "lastname": "Wagner",
+    "email": "lu.wagner@gmail.com",
+    "imagen": "default.png",
+    "username": "lu.wagner",
+    "password": "123456789"
+  },
+  {
+    "id": 2,
+    "name": "Rory",
+    "lastname": "Gilmore",
+    "email": "r.gilmore@gmail.com",
+    "imagen": "default.png",
+    "username": "r.gilmore",
+    "password": "123456789"
+  }
+]

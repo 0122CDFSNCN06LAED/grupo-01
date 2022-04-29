@@ -9,22 +9,27 @@ const userController = {
         res.render('user/login', {style: 'login.css', title: 'Login'});
     },
     register: (req, res) => {
-        /*  res.sendFile(path.join(__dirname, 'register.html')) */
+       
 
         res.render('user/register', {style: 'register.css', title: 'Register'});
     
+    },
+    processRegister: (req,res) =>{
         const lastIndex = users.length - 1;
         const lastUser = users[lastIndex];
         const biggestId = lastUser ? lastUser.id : 0;
         const newId = biggestId + 1;
+
+        const imagen = req.file ? req.file.filename : "default.png"
         
         const user = {
               id: newId,
               name: req.body.name,
               lastname: req.body.lastname,
               email: req.body.email,
-              usuario: req.body.usuario,
-              pasword: req.body.password
+              imagen: imagen,
+              username: req.body.username,
+              password: req.body.password
               
             };
 
@@ -34,8 +39,7 @@ const userController = {
         const jsonTxt = JSON.stringify(users, null, 2);
         fs.writeFileSync(usersFilePath, jsonTxt, "utf-8");
 
-        res.redirect("/user/login" + newId);
-         
+        res.redirect("/user/login");
     }
      
      
