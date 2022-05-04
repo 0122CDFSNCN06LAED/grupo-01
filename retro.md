@@ -33,5 +33,12 @@ SEGUIR HACIENDO
 -Organizar las tareas de los sprints por orden de prioridad.
 -Consultar con el equipo antes de realizar cambios imprevistos en el repositorio.
 
+-----------------------------------------------------------------
+SPRINT 4
 
+HACER
+-Sería ideal que todos los integrantes del grupo asuman una tarea voluntariamente al comienzo del sprint para mantener la estructura horizontal de toma de decisiones y participación del equipo.
 
+SEGUIR HACIENDO
+-Informar del estado de las tareas a nuestro equipo y de cualquier inconveniente surgido con tiempo prudencial.
+-De haber concretado nuestras tareas, estar abierto a recibir una tarea que otro compañero no haya podido culminar.
