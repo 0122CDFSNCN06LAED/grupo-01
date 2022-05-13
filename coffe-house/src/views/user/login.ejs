@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('../partials/head') %>
+  <%- include ('../partials/head', {style: 'login.css', title: 'Login'}) %>
   <body>
     <%- include ('../partials/header') %>
 
     <img class="isotipo" src="/img/iconos/isotipo.svg" alt="">   
        <main>
            
-         <form class="form-container">
+         <form class="form-container"  method="POST" action="/user/login">
                 <div class="saludo">
                      <h3>Hola!</h3>
                     <p>Por favor, ingresa tus datos:</p>
                  </div>
                 <div class="inputs">
                      <div class="name">
-                      <label for="user-name">Nombre de usuario:</label>
-                      <input class="input" type="text" placeholder="user@user.com">
-                     </div>
+                      <label for="user-name">Email:</label>
+                      <input class="input" name="email" type="text" placeholder="user@user.com">
+                     <% if (locals.errors && errors.email) { %>
+                       <div class="text-danger">
+                         <%= errors.email.msg %> 
+                       </div>
+                     <% } %> 
+                    </div>
                     <div class="pass">
                       <label for="password">Contraseña:</label>
-                      <input class="input" type="password" placeholder="*********">
+                      <input class="input" name="password" type="password" placeholder="*********">
                     </div>
                 </div>
                 <div class="ingresar">
                 <button class="button-amarillo" type="submit">Ingresar</button>
             </div>
                 <div class="registrarse">
+                  <div class="recordarme">
+                    <input type="checkbox"  name="remember_user">Recordar mi usuario
+                  </div>
                      <p>¿No tienes una cuenta?</p>
                     <a href="/user/register">Regístrate</a>
                  </div>

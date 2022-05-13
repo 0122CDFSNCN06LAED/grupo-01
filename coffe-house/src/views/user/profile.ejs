@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../partials/head', {style: 'profile.css', title:'profile'}) %>
+
+<body>
+    <%- include ('../partials/header') %>
+    <main>
+   <section  <% if(locals.isAdmin) { %> class="main-profile flex-column-center" <% } else { %> class="main-profile-client flex-column-center"<% } %> >
+       <div class="banner-profile flex-column-center">
+           <div class="avatar">
+            <img src="/img/users/<%= user.avatar %>" <% if(locals.isAdmin) { %>class="admin" <% } else { %> class="client" <% } %>alt="">
+            </div>
+            <h5>Editar perfil</h5>
+       </div>
+
+<div class="saludo-profile flex-column-center">
+       <div class="text-saludo flex-column-center">
+           
+        <h1>Hola <%= user.username %>! </h1>
+        <h6><%= user.email %> </h6>
+    </div>
+    <a href="/user/logout"><button type="button" class="secundary-button logout">Logout</button></a>
+</div> 
+<div class="container-buttons flex-column-center">
+    <h3 class="color-verde-oscuro">Acciones</h3>
+    <% if(locals.isAdmin) { %> 
+        <div class="acciones-buttons">
+           <a href="/product"><button type="button" class="secundary-button acciones">Mis productos</button></a> 
+           <a href="/product/create"> <button type="button" class="secundary-button acciones">Crear producto</button></a>
+        </div>
+        <% } else { %> 
+   <div class="acciones-buttons">
+    <button type="button" class="secundary-button acciones-client">Mis compras</button>
+    <button type="button" class="secundary-button acciones-client">Mis favoritos</button>
+</div>
+<% } %> 
+</div>
+<a href="/user/logout"><button type="button" class="button-mobile secundary-button logout"> Logout</button></a>
+   </section>
+</main>
+
+   <%- include('../partials/footer') %>
+
+</body>
+</html>

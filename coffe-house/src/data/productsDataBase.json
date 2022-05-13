@@ -5,8 +5,15 @@
     "category": "blonde",
     "region": "Mutumba",
     "description": "Un café único para paladares exquisitos, un café delicioso.\r\n\r\nMuy exótico, dulce, con un dulzor particular, acidez cítrica y notas florales que perduran en boca. Presenta un cuerpo sedoso y notas a toffee, pomelo rosado, earl gray y bergamota.\r\nCon un tueste claro, es un café muy versatil. Lo recomendamos para todo tipo de métodos, desde filtrados hasta espresso. \r\n              ",
-    "grind": "Espresso",
-    "weight": "500g",
+    "grind": [
+      "Grano entero",
+      "Espresso",
+      "Filtro"
+    ],
+    "weight": [
+      "500g",
+      "1kg"
+    ],
     "image": "product-1650654494013.jpg",
     "price": "2500"
   },

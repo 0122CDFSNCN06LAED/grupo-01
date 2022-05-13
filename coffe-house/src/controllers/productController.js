@@ -9,8 +9,6 @@ const productController = {
     const medium = products.filter((p) => p.category == "medium");
     const dark = products.filter((p) => p.category == "dark");
     res.render("products/products-index", {
-      style: "products-index.css",
-      title: "Create product",
       blonde: blonde,
       medium: medium,
       dark: dark,
@@ -27,10 +25,7 @@ const productController = {
   },
 
   create: (req, res) => {
-    res.render("products/product-create", {
-      style: "product-create.css",
-      title: "Create product",
-    });
+    res.render("products/product-create");
   },
   store: (req, res) => {
     const lastIndex = products.length - 1;
@@ -87,8 +82,7 @@ const productController = {
     };
 
     res.render("products/product-edit", {
-      style: "product-create.css",
-      title: "Edit product",
+      
       product,
       cb,
       cbObj,
