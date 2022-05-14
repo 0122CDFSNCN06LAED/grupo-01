@@ -1,20 +1,65 @@
 [
-  {
-    "id": 1,
-    "name": "Ludmila",
-    "lastname": "Wagner",
-    "email": "lu.wagner@gmail.com",
-    "imagen": "default.png",
-    "username": "lu.wagner",
-    "password": "123456789"
-  },
-  {
-    "id": 2,
-    "name": "Rory",
-    "lastname": "Gilmore",
-    "email": "r.gilmore@gmail.com",
-    "imagen": "default.png",
-    "username": "r.gilmore",
-    "password": "123456789"
-  }
+ {
+  "id": 1,
+  "name": "Ludmila",
+  "lastname": "Wagner",
+  "email": "lu.wagner@gmail.com",
+  "username": "lu.wagner",
+  "password": "$2a$10$PoqBw61Okr1JCjTy.ACFjOgiKp29fJTa0TJyXlvmXqc0fhPIMxMP2",
+  "avatar": "default.png"
+ },
+ {
+  "id": 3,
+  "name": "Rick",
+  "lastname": "Grimes",
+  "email": "rick77@gmail.com",
+  "username": "rick77",
+  "password": "$2a$10$tZllcdLhzfW3ZJhoM13pGOMR1X2NJmMN1JP5BnNe1SntK5YFhcT2O",
+  "avatar": "user-1652048682384.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Dario",
+  "lastname": "Susnizky",
+  "email": "d-susnizky@gmail.com",
+  "username": "d.susnizky",
+  "password": "$2a$10$FIgLO51xHZe2hT.p.Pmy6.SBL36JeH7JoE4947bkOmSVySPlGSNgS",
+  "avatar": "default.png"
+ },
+ {
+  "id": 6,
+  "name": "Bruce",
+  "lastname": "Wayne",
+  "email": "bruce@gmail.com",
+  "username": "batman",
+  "password": "$2a$10$2Jy.vHK2tulwEhqqZJIxiuSwiDz1udPzB9ekiAbAOQdpP.VUPW.w.",
+  "avatar": "default.png"
+ },
+ {
+  "id": 7,
+  "name": "Walter",
+  "lastname": "White",
+  "email": "walter.w@gmail.com",
+  "username": "heisenberg",
+  "password": "$2a$10$LIcih5Sl5IMF/KwT6xYzguvt.BQWhzfvPc.kQzaSgQ.mq3U2Gjlye",
+  "avatar": "default.png"
+ },
+ {
+  "id": 8,
+  "name": "Ludmila",
+  "lastname": "Wagner",
+  "email": "lu.wagner@coffeehouse.com",
+  "username": "luawagner",
+  "password": "$2a$10$LHuYvXX6HD0zbuopevPLWuDlSF.j.YDpGDDA0XZdwwUSRv6fVI8XW",
+  "avatar": "default.png"
+ },
+ {
+  "id": 9,
+  "name": "Javi",
+  "lastname": "Herrera",
+  "email": "javiherrera@gmail.com",
+  "username": "javiherrera",
+  "password": "$2a$10$RMbusj4Q8//9KyIk/VXrh.pQJfODgCb4AHtEi2NwrMwzVQ8gfeWFe",
+  "avatar": "default.png"
+ }
 ]

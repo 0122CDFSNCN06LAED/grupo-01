@@ -35,6 +35,16 @@ color: #232525;
      margin: 20px 0;
         
     }
+    .recordarme {
+        height: 45px;
+        display: flex;
+       justify-content: center;
+     
+    }
+    .recordarme input {
+        width: 10%;
+        height: 20px;
+    }
 }
 
 @media (min-width:780px) {

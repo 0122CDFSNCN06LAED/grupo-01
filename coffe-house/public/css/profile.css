@@ -1,0 +1,98 @@
+
+@media (min-width:375px) {
+
+.flex-column-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.avatar img{
+    width: 265px;
+    height: 265px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px 0;
+}
+.admin {
+    border:6px solid #6D9773
+}
+.client {
+    border:6px solid #F3EFEF
+}
+.saludo-profile{
+    margin:20px 0;
+}
+.saludo-profile button{
+    display:none
+}
+
+.acciones {
+    width: 230px;
+    margin:10px 0;
+    border: 2px solid #6D9773;
+}
+
+.acciones-client {
+    width: 230px;
+    margin:10px 0;
+    border: 2px solid #6A6B6B;
+}
+.button-amarillo {
+    margin: 25px 0;
+}
+.acciones-buttons{
+    display: flex;
+    flex-direction: column;
+}
+.logout {
+    width: 100px; 
+    margin: 25px 0;  
+}
+
+}
+@media (min-width:1280px) {
+  main {
+      height: 100vh;
+  }  
+    .main-profile {
+width: 100%;
+height: 250px;
+background-color: #6D9773;
+    }
+    .main-profile-client {
+        width: 100%;
+        height: 250px;
+        background-color: #F3EFEF;
+            }
+.banner-profile {
+    position: relative;
+    left: -250px;
+    top: 100px;
+}
+
+.saludo-profile{
+    margin-left: 150px;
+    position: relative;
+    top: -60px;
+    left: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 480px;
+    align-items: flex-start;
+    
+}
+.saludo-profile button{
+    display:block;
+    margin-top: 5px;
+}
+.text-saludo {
+    align-items: flex-start;
+}
+
+.button-mobile {
+    display: none;
+}
+
+
+}

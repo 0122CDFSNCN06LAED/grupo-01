@@ -19,10 +19,16 @@
       </ul>
       <div class="nav-iconos">
         <img src="/img/iconos/lupa.svg" alt="buscar" />
+        <% if (locals.isLogged) { %> 
         <a href="/cart"><img src="/img/iconos/bolso.svg" alt="compras" /></a>
         <a class="text-decoration-none" href="/user/login"
-          ><button class="login-button">Log In</button></a
+          ><button class="login-button"> <%= userLogged.name %> </button></a
         >
+        <% } else { %> 
+        <a class="text-decoration-none" href="/user/login"
+        ><button class="login-button">Log In</button></a
+      >
+      <% } %> 
       </div>
     </div>
   </nav>

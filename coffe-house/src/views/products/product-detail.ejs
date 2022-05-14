@@ -30,17 +30,20 @@
             <div class="peso">
               <label for="weight">Peso</label>
               <select name="weight" id="weight">
-                <option value="250g">250g</option>
-                <option value="500g">500g</option>
-                <option value="1kg">1kg</option>
+                <% let weight = product.weight %>
+                <% for (let i = 0; i <weight.length; i++) { %>
+                  <option value="<%= weight[i] %>"><%= weight[i] %></option>
+               <% } %>
+                
               </select>
             </div>
             <div class="molienda">
               <label for="grind">Molienda</label>
               <select name="grind" id="grind">
-                <option value="grano entero">Grano entero</option>
-                <option value="espresso">Espresso</option>
-                <option value="filtro">Filtro</option>
+                <% let grind = product.grind %>
+                <% for (let i = 0; i <grind.length; i++) { %>
+                  <option value="<%= grind[i] %>"><%= grind[i] %></option>
+               <% } %>
               </select>
             </div>
             <img
@@ -56,6 +59,7 @@
             </button>
           </div>
         </form>
+        <% if(locals.isAdmin) { %> 
         <div class="edit-delete-buttons">
           <a href="/product/edit/<%=product.id%>"
             ><button class="secundary-button">Editar</button></a
@@ -66,6 +70,7 @@
           >
             <button type="submit" class="secundary-button">Eliminar</button>
           </form>
+          <% } %> 
         </div>
       </div>
     </main>
