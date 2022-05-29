@@ -42,3 +42,13 @@ HACER
 SEGUIR HACIENDO
 -Informar del estado de las tareas a nuestro equipo y de cualquier inconveniente surgido con tiempo prudencial.
 -De haber concretado nuestras tareas, estar abierto a recibir una tarea que otro compañero no haya podido culminar.
+
+------------------------------------------------------------------
+SPRINT 5
+
+HACER
+- A pesar de que nos hemos organizado muy bien, sería conveniente estar más pendientes del tablero de SCRUM y mantenerlo siempre actualizado.
+Propuesta: Actualizarlo durante la reunión de apertura de cada sprint.
+
+SEGUIR HACIENDO
+- Estar abiertos a implementar otras alternativas de resolución de las actividades, según la necesidad, puede ser beneficioso para el proyecto. En esta ocasión, hemos resuelto las tareas de forma conjunta y sincrónica para preservar la integridad del proyecto y evitar las dificultades que pudieran haber surgido debido a la complejidad del sprint. 
