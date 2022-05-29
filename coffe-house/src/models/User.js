@@ -1,7 +1,7 @@
 //1. Guardar al usuario en la DB.
 //2. Buscar al usuario que se quiere loguear por su email.
 //3. Buscar a un usuario por su id. findByPk(req.body)
-//4. Editar la información  de un usuario.
+//4. Editar la información  de un usuario.por metodo POST?
 //5. Eliminar a un usuario de la DB.
 const fs = require('fs');
 const path = require('path');
