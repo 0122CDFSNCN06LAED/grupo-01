@@ -1,0 +1,45 @@
+La idea de las tablas de la base de datos seria algo asi?
+
+
+
+usuario = {
+  "id": ,
+  "name": STRING,
+  "lastname": STRING,
+  "email": email,
+  "username": STRING,
+  "password": "$2a$10$PoqBw61Okr1JCjTy.ACFjOgiKp29fJTa0TJyXlvmXqc0fhPIMxMP2",
+  "avatar": NUMBER  -> id-avatar
+
+
+}
+
+
+producto ={
+    "id": NUMBER,
+    "name": STRING
+    "category": category-id -> STRING
+    "region": STRING
+    "description": TEXT
+    "grind": grind-id	-> ["Grano entero", "Espresso", "Filtro" ],
+    "weight": NUMBER
+    "image": id-image
+    "price": NUMBER
+  },
+
+
+category ={
+	id
+	nombre
+	}
+
+grind ={
+	id
+	nombre
+	}
+
+imagenes={
+	id
+	id-image
+	id-avatar
+	}

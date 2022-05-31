@@ -61,5 +61,14 @@
   "username": "javiherrera",
   "password": "$2a$10$RMbusj4Q8//9KyIk/VXrh.pQJfODgCb4AHtEi2NwrMwzVQ8gfeWFe",
   "avatar": "default.png"
+ },
+ {
+  "id": 10,
+  "name": "Raul",
+  "lastname": "Aggio",
+  "email": "raul@raul.com",
+  "username": "raulo2032",
+  "password": "$2a$10$rJztFuS/BUR9T6slTGVug.bSsKbZfxdRHjac2OG6PFLz3oVJ73e5q",
+  "avatar": "default.png"
  }
 ]
