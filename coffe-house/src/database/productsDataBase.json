@@ -1,0 +1,109 @@
+[
+  {
+    "id": 3,
+    "name": "Burundi ",
+    "category": "blonde",
+    "region": "Mutumba",
+    "description": "Un café único para paladares exquisitos, un café delicioso.\r\n\r\nMuy exótico, dulce, con un dulzor particular, acidez cítrica y notas florales que perduran en boca. Presenta un cuerpo sedoso y notas a toffee, pomelo rosado, earl gray y bergamota.\r\nCon un tueste claro, es un café muy versatil. Lo recomendamos para todo tipo de métodos, desde filtrados hasta espresso. \r\n              ",
+    "grind": [
+      "Grano entero",
+      "Espresso",
+      "Filtro"
+    ],
+    "weight": [
+      "500g",
+      "1kg"
+    ],
+    "image": "product-1650654494013.jpg",
+    "price": "2500"
+  },
+  {
+    "id": 4,
+    "name": "Kenya",
+    "category": "medium",
+    "region": "Muranga",
+    "description": "Kenya es un café de cuerpo medio y, como muchos de los cafés africanos, se transforma en una experiencia única cuando se combina con hielo. Este café se diferencia por su sabor a cítricos que deja entrever toques de pomelo, limón y naranja. Sus complejas características, como una jugosa acidez y notas inconfundibles a vino y las flores, hacen de éste un café con un sabor distintivo, sin otro que se le asemeje.",
+    "grind": [
+      "Grano entero",
+      "Espresso",
+      "Filtro"
+    ],
+    "weight": [
+      "500g",
+      "1kg"
+    ],
+    "image": "product-1650655824942.jpg",
+    "price": "2500"
+  },
+  {
+    "id": 5,
+    "name": "Guatemala ",
+    "category": "blonde",
+    "region": "Huehuetenango",
+    "description": "Un café dulce y cremoso, con notas a chocolate amargo y avellanas, con una acidez dulce con notas a ciruela. Ideal para espresso y moka italiana. Debido al cuerpo alto y notas dulces es un café que combina muy bien con todo tipo de leche.\r\n              ",
+    "grind": [
+      "Grano entero",
+      "Espresso",
+      "Filtro"
+    ],
+    "weight": [
+      "500g",
+      "1kg"
+    ],
+    "image": "product-1650658479882.jpg",
+    "price": "2000"
+  },
+  {
+    "id": 6,
+    "name": "Colombia",
+    "category": "medium",
+    "region": "Tolina",
+    "description": "Un café dulce y muy fácil de tomar, con notas a chocolate y naranja, perfectamente balanceado. Ideal para espresso y moka italiana: nuestro café recomendado para preparar bebidas con leche.",
+    "grind": [
+      "Grano entero",
+      "Espresso",
+      "Filtro"
+    ],
+    "weight": [
+      "500g",
+      "1kg"
+    ],
+    "image": "product-1650659055982.jpg",
+    "price": "2200"
+  },
+  {
+    "id": 7,
+    "name": "Colombia",
+    "category": "medium",
+    "region": "Huila",
+    "description": "Un café suave, exótico y delicado, con notas a frutilla y cereza, canela, y jazmín. \r\nRecomendado para métodos filtrados. Chemex, V60, Katita, Melitta, Clever, etc. ",
+    "grind": [
+      "Grano entero",
+      "Espresso",
+      "Filtro"
+    ],
+    "weight": [
+      "500g",
+      "1kg"
+    ],
+    "image": "product-1650662381977.jpg",
+    "price": "2400"
+  },
+  {
+    "id": 8,
+    "name": "Sumatra Mandheling",
+    "category": "dark",
+    "region": "Padang",
+    "description": "El Café Sumatra Mandheling, cultivado en la región centro-oeste cerca de Padang, es conocido por su cuerpo liso y pesado que a veces se describe como almibarado. Los mejores cafés de Sumatra tienen una acidez relativamente baja, pero lo suficiente como para añadir interés a los complejos sabores.",
+    "grind": [
+      "Grano entero",
+      "Espresso"
+    ],
+    "weight": [
+      "500g",
+      "1kg"
+    ],
+    "image": "product-1650727852178.jpg",
+    "price": "2600"
+  }
+]
