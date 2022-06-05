@@ -1,11 +1,12 @@
+// ver bien como hariamos este modelo
+
 module.exports = (sequelize, dataTypes) => {
 
     const alias = "Sales";
     const columns = {
         
-        id: datatypes.INTEGER,
-        
-	      id_users: datatypes.INTEGER,
+       id: datatypes.INTEGER,
+       id_users: datatypes.INTEGER,
 	     
 
         
@@ -34,4 +35,5 @@ module.exports = (sequelize, dataTypes) => {
 
     return Sales;
   
-};
+}
+}
