@@ -2,8 +2,8 @@ module.exports = (sequelize, dataTypes) => {
 
     const alias = "Grinds";
     const columns = {
-	id: datatypes.INTEGER,
-	name: datatypes.STRING
+        id: dataTypes.INTEGER,
+        grind: dataTypes.STRING
 	}
 
     const config = {
@@ -11,13 +11,17 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     };
 
-    const Grinds = sequelize.define(alias, columns, config);
+    const Grind = sequelize.define(alias, columns, config);
 
     // relaciones
-
-    // un producto tiene muchos granos
-    // un grano puede estar en muchos prpductos
-    
-    return Grinds;
+    //UNA MOLIENDA PERTENECE A MUCHOS PRODUCTOS Y UN PROD PUEDE TENER MUCHAS MOLIENDAS
+    Grind.belongsToMany(models.Products, {           //tabla intermedia 
+        as: "products",
+        through: "grinds_products",
+        foreignKey: "id_grind",
+        otherKey: "id_product",
+        timestamps: false,
+      });
+    return Grind;
   
 }

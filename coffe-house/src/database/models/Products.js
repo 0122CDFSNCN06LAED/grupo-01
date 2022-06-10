@@ -1,43 +1,56 @@
 module.exports = (sequelize, dataTypes) => {
+  const alias = "Products";
+  const columns = {
+    id: dataTypes.INTEGER,
+    name: dataTypes.STRING,
+    description: dataTypes.STRING,
+    price: dataTypes.DECIMAL,
+    region: dataTypes.STRING, 
+    image: dataTypes.STRING,
+    //SAQUÉ WEIGHT Y GRIND PORQUE SON TABLAS PIVOT.
+    category_id: dataTypes.INTEGER,
+  };
 
-    const alias = "Products";
-    const columns = {
-        
-        id: datatypes.INTEGER,
-        name: datatypes.STRING,
-        Description: datatypes.STRING,
-        price: Decimal,
-        region: datatypes.STRING,   // varchar()???
-        image: Blob,
-	      id_categorys: datatypes.INTEGER,
-	      id_grinds: datatypes.INTEGER,
-        id_weight:datatypes.INTEGER,
+  const config = {
+    tableName: "products",
+    timestamps: false,
+  };
 
-        
-    };
-  
-    const config = {
-      tableName: "products",
-      timestamps: false,
-    };
-  
-    const Products = sequelize.define(alias, columns, config);
-  
-    // relaciones
+  const Product = sequelize.define(alias, columns, config);
 
-
-    Products.associate = (models) => {
-        Products.hasMany(models.Users, {
-        as: "Users",
-        through: "user_product",
-        foreignKey: "id_product",
-        otherKey: "id_user",
-        timestamps:false,
+  // relaciones
+  //UN PROD PERTENECE A UNA CATEGORIA
+  Product.associate = (models) => {
+    Product.belongsTo(models.ProductCategories, {           //pertenece a una sola categoría.
+      as: "productCategory",
+      foreignKey: "category_id",
     });
-
-   
-
-    return Products;
-  
-    }
-}
+    
+    //UN PRODUCTO PUEDE SER COMPRADO POR MUCHOS USERS.
+    Product.belongsToMany(models.Users, {           //tabla intermedia 
+      as: "users",
+      through: "products_users",
+      foreignKey: "id_product",
+      otherKey: "id_user",
+      timestamps: false,
+    });
+    //UN PROD PUEDE TENER MUCHAS MOLIENDAS
+    Product.belongsToMany(models.Grinds, {           //tabla intermedia 
+      as: "grinds",
+      through: "grinds_products",
+      foreignKey: "id_product",
+      otherKey: "id_grind",
+      timestamps: false,
+    });
+  //UN PROD PUEDE TENER DISTINTOS PESOS
+  Product.belongsToMany(models.Weight, {           //tabla intermedia 
+    as: "weight",
+    through: "weight_products",
+    foreignKey: "id_product",
+    otherKey: "id_weight",
+    timestamps: false,
+  });
+    
+  };
+  return Product;
+};
