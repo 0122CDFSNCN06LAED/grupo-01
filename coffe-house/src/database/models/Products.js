@@ -9,6 +9,7 @@ module.exports = (sequelize, dataTypes) => {
     image: dataTypes.STRING,
     //SAQUÉ WEIGHT Y GRIND PORQUE SON TABLAS PIVOT.
     category_id: dataTypes.INTEGER,
+    stock: dataTypes.INTEGER
   };
 
   const config = {

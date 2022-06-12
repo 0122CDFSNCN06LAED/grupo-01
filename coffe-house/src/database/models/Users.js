@@ -9,9 +9,8 @@ module.exports = (sequelize, dataTypes) => {
         email: dataTypes.STRING,
         username: dataTypes.STRING,
         password: dataTypes.STRING,
-        rePassword: dataTypes.STRING,
-        image: dataTypes.STRING
-         
+        avatar: dataTypes.STRING,
+        user_category_id: dataTypes.STRING,
     };
   
     const config = {
@@ -24,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
     User.associate = (models) => {
       User.belongsTo(models.Category, {           //pertenece a una sola categoría.
         as: "category",
-        foreignKey: "category_id",
+        foreignKey: "user_category_id",
       });
   
       //UN USER PUEDE COMPRAR MUCHOS PRODUCTOS
