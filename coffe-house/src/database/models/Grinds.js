@@ -2,7 +2,9 @@ module.exports = (sequelize, dataTypes) => {
 
     const alias = "Grinds";
     const columns = {
-        id: dataTypes.INTEGER,
+        id: {primaryKey: true,
+            type: dataTypes.INTEGER,
+          autoIncrement: true},
         grind: dataTypes.STRING
 	}
 
@@ -15,6 +17,7 @@ module.exports = (sequelize, dataTypes) => {
 
     // relaciones
     //UNA MOLIENDA PERTENECE A MUCHOS PRODUCTOS Y UN PROD PUEDE TENER MUCHAS MOLIENDAS
+    Grind.associate = (models) => {
     Grind.belongsToMany(models.Products, {           //tabla intermedia 
         as: "products",
         through: "grinds_products",
@@ -22,6 +25,8 @@ module.exports = (sequelize, dataTypes) => {
         otherKey: "id_product",
         timestamps: false,
       });
+
+    }
     return Grind;
   
 }

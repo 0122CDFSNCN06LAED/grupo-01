@@ -1,5 +1,7 @@
 const express = require("express");
 const productController = require("../controllers/productController");
+const productSequelizeController = require("../controllers/productSequelizeController");
+
 const multer = require("multer");
 const path = require("path");
 const clientMiddleware = require("../middlewares/clientMiddleware");
@@ -19,12 +21,12 @@ const uploadFile = multer({ storage });
 const router = express.Router();
 
 //VISTA LISTAR PRODUCTO
-router.get('/product', productController.listar)
+router.get('/product', productSequelizeController.list)
 //VISTA DETALLE
-router.get("/product/detail/:id", productController.product);
+router.get("/product/detail/:id", productSequelizeController.product);
 //CREACION PRODUCTO
-router.get("/product/create",clientMiddleware, productController.create);
-router.post("/product/create", uploadFile.single("image"), productController.store);
+router.get("/product/create",clientMiddleware, productSequelizeController.create);
+router.post("/product/create", uploadFile.single("image"), productSequelizeController.store);
 //EDICION PRODUCTO
 router.get("/product/edit/:id", clientMiddleware, productController.edit);
 router.put(

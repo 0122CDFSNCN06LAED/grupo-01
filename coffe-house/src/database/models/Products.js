@@ -1,14 +1,15 @@
 module.exports = (sequelize, dataTypes) => {
   const alias = "Products";
   const columns = {
-    id: dataTypes.INTEGER,
+    id: {primaryKey: true,
+    type: dataTypes.INTEGER,
+  autoIncrement: true},
+
     name: dataTypes.STRING,
     description: dataTypes.STRING,
     price: dataTypes.DECIMAL,
     region: dataTypes.STRING, 
     image: dataTypes.STRING,
-    //SAQUÉ WEIGHT Y GRIND PORQUE SON TABLAS PIVOT.
-    category_id: dataTypes.INTEGER,
     stock: dataTypes.INTEGER
   };
 

@@ -3,7 +3,9 @@ module.exports = (sequelize, dataTypes) => {
     const alias = "Users";
     const columns = {
         
-        id: dataTypes.INTEGER, //Int unsigned autoincrement Not Null,
+      id: {primaryKey: true,
+        type: dataTypes.INTEGER,
+      autoIncrement: true},
         name: dataTypes.STRING, //Varchar(255) Not null,
         lastname: dataTypes.STRING,
         email: dataTypes.STRING,
@@ -21,10 +23,10 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, columns, config);
     //UN USER PERTENECE A UNA CATEGORIA
     User.associate = (models) => {
-      User.belongsTo(models.Category, {           //pertenece a una sola categoría.
+       User.belongsTo(models.UserCategories, {           
         as: "category",
         foreignKey: "user_category_id",
-      });
+      }); 
   
       //UN USER PUEDE COMPRAR MUCHOS PRODUCTOS
       User.belongsToMany(models.Products, {           //tabla intermedia 

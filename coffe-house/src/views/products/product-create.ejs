@@ -27,9 +27,10 @@
                 <div class="cat-region .alineacion-horizontal">
                   <label for="category">Categoría:</label>
                   <select class="input" name="category" id="category">
-                    <option name="category" value="blonde">Blonde roast</option>
-                    <option name="category" value="medium">Medium roast</option>
-                    <option name="category" value="dark">Dark roast</option>
+                    <% productCategory.forEach(category => { %>
+                      <option name="category" value="<%= category.id %>"><%= category.type %> Roast</option>
+                    <% }) %>
+                    
                   </select>
                   <div class="region alineacion-centro-flex">
                     <label for="region">Región:</label>
@@ -48,16 +49,19 @@
                 <div class="checks">
                   <div class="grind">
                     <label for="grind"> Molienda:</label>
-                    <p><input type="checkbox" name="grind" value="Grano entero"> Grano entero</p>
-                    <p><input type="checkbox" name="grind" value="Espresso"> Espresso</p>
-                    <p><input type="checkbox" name="grind" value="Filtro"> Filtro</p>
+
+                    <% grinds.forEach(grind => { %>
+                      <p><input type="checkbox" name="grind" value="<%= grind.id %>"> <%= grind.grind %> </p>
+                    <% }) %>
                 
                   </div>
                   <div class="weight">
                     <label for="weight">Peso:</label>
-                    <p><input type="checkbox" name="weight" value="250g"> 250g</p>
-                    <p><input type="checkbox" name="weight" value="500g"> 500g</p>
-                    <p><input type="checkbox" name="weight" value="1kg"> 1kg</p>
+
+                    <% weight.forEach(weight => { %>
+                      <p><input type="checkbox" name="weight" value="<%= weight.id %>"> <%= weight.weight %>g </p>
+                    <% }) %>
+                   
                   </div>
                  
                 </div>
@@ -66,12 +70,21 @@
                   <input type="file" id="file" name="image">
                 </div>
                   
-                 <div class="price-button width-100">
-                   <div>
-                    <label for="price">Precio:</label>
-                    <input name="price" class="input" type="number">
-                   </div>
-                   
+                  <div class="container-price-stock"> 
+                      <div class="price-button">
+                              <div>
+                              <label for="price">Precio:</label>
+                               <input name="price" class="input" type="number">
+                             </div>
+                       </div>
+                     <div class="stock">
+                              <div>
+                              <label for="stock">Stock disponible:</label>
+                              <input name="stock" class="input" type="number">
+                              </div>
+                       </div> 
+                  </div>
+                  <div>
                    <button class="secundary-button"type="reset">Borrar</button>
                    <button class="send button-amarillo" type="submit">Cargar producto</button>
                  </div> 

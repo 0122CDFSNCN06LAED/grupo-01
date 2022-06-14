@@ -35,48 +35,47 @@
        <%	}); %>
     </div>
     </section>
-
-    <section class="blonde">
-        <h2 class="color-verde-oscuro"><strong>Medium</strong> Roast</h2>
-        <div class="container-products-cards">
-    <% medium.forEach(product => { %>
-    <article class="card-container">
-        <img src="/img/products/<%=product.image%>" alt="">
-        <div class="text-card">
-           <h5 class="black"><%= product.name %></h5>
-            <p>Proveniente de <%= product.region %>.</p>
-             <div class="precio">
-              <h5 class="black">$<%= product.price %></h5>
-              <a class="color-amarillo sin-estilos"href="/product/detail/<%=product.id%>">Ver más...</a>
-           </div>
-    
+    <section class="medium">
+      <h2 class="color-verde-oscuro"><strong>Medium</strong> Roast</h2>
+      <div class="container-products-cards">
+  <% medium.forEach(product => { %>
+  <article class="card-container">
+      <img src="/img/products/<%=product.image%>" alt="">
+      <div class="text-card">
+         <h5 class="black"><%= product.name %></h5>
+          <p>Proveniente de <%= product.region %>.</p>
+           <div class="precio">
+            <h5 class="black">$<%= product.price %></h5>
+            <a class="color-amarillo sin-estilos"href="/product/detail/<%=product.id%>">Ver más...</a>
          </div>
+  
+       </div>
 
-       </article>
-       <%	}); %>
-        </div>
-    </section>
+     </article>
+     <%	}); %>
+  </div>
+  </section>
+  <section class="dark">
+    <h2 class="color-verde-oscuro"><strong>Dark</strong> Roast</h2>
+    <div class="container-products-cards">
+<% dark.forEach(product => { %>
+<article class="card-container">
+    <img src="/img/products/<%=product.image%>" alt="">
+    <div class="text-card">
+       <h5 class="black"><%= product.name %></h5>
+        <p>Proveniente de <%= product.region %>.</p>
+         <div class="precio">
+          <h5 class="black">$<%= product.price %></h5>
+          <a class="color-amarillo sin-estilos"href="/product/detail/<%=product.id%>">Ver más...</a>
+       </div>
 
-    <section class="blonde">
-        <h2 class="color-verde-oscuro"><strong>Dark</strong> Roast</h2>
-        <div class="container-products-cards">
-    <% dark.forEach(product => { %>
-    <article class="card-container">
-        <img src="/img/products/<%=product.image%>" alt="">
-        <div class="text-card">
-           <h5 class="black"><%= product.name %></h5>
-            <p>Proveniente de <%= product.region %>.</p>
-             <div class="precio">
-              <h5 class="black">$<%= product.price %></h5>
-              <a class="color-amarillo sin-estilos"href="/product/detail/<%=product.id%>">Ver más...</a>
-           </div>
-    
-         </div>
+     </div>
 
-       </article>
-       <%	}); %>
-        </div>
-    </section>
+   </article>
+   <%	}); %>
+</div>
+</section>
+
 </div>
 </main>
 

@@ -2,7 +2,9 @@ module.exports = (sequelize, dataTypes) => {
 
     const alias = "GrindsProducts";
     const columns = {
-        id: dataTypes.INTEGER,
+        id: {primaryKey: true,
+            type: dataTypes.INTEGER,
+          autoIncrement: true},
         id_product: {
             type: dataTypes.INTEGER,
             references: {

@@ -30,20 +30,20 @@
             <div class="peso">
               <label for="weight">Peso</label>
               <select name="weight" id="weight">
-                <% let weight = product.weight %>
-                <% for (let i = 0; i <weight.length; i++) { %>
-                  <option value="<%= weight[i] %>"><%= weight[i] %></option>
-               <% } %>
+                <% let weights = product.weight %>
+                <% weights.forEach(weight => { %>
+                  <option value="<%= weight.weight %>"><%= weight.weight %>g</option>
+                <% }) %>
                 
               </select>
             </div>
             <div class="molienda">
               <label for="grind">Molienda</label>
               <select name="grind" id="grind">
-                <% let grind = product.grind %>
-                <% for (let i = 0; i <grind.length; i++) { %>
-                  <option value="<%= grind[i] %>"><%= grind[i] %></option>
-               <% } %>
+                <% let grinds = product.grinds %>
+                <% grinds.forEach(grind => { %>
+                  <option value="<%= grind.grind %>"><%= grind.grind %></option>
+                <% }) %>
               </select>
             </div>
             <img
