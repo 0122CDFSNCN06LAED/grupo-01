@@ -110,7 +110,7 @@ const productSequelizeController = {
         });
       } catch (err) {
         console.error(err);
-        res.render("/views/error");
+        res.render("products/product-error");
       }
     
   },
