@@ -152,7 +152,6 @@ CREATE TABLE `users` (
   `email` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `repassword` varchar(255) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `user_category_id` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -167,6 +166,14 @@ CREATE TABLE `user_category` (
   `id` int(10) UNSIGNED NOT NULL,
   `type` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `user_category`
+--
+
+INSERT INTO `user_category` (`id`, `type`) VALUES
+(1, 'Admin'),
+(2, 'Client');
 
 -- --------------------------------------------------------
 
