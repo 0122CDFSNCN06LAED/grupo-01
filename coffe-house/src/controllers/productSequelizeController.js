@@ -110,7 +110,7 @@ const productSequelizeController = {
         });
       } catch (err) {
         console.error(err);
-        res.redirect("/movies/not-found");
+        res.render("/views/error");
       }
     
   },
