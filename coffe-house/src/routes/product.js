@@ -28,11 +28,11 @@ router.get("/product/detail/:id", productSequelizeController.product);
 router.get("/product/create",clientMiddleware, productSequelizeController.create);
 router.post("/product/create", uploadFile.single("image"), productSequelizeController.store);
 //EDICION PRODUCTO
-router.get("/product/edit/:id", clientMiddleware, productController.edit);
+router.get("/product/edit/:id", clientMiddleware, productSequelizeController.edit);
 router.put(
   "/edit/:id",
   uploadFile.single("editImage"),
-  productController.update
+  productSequelizeController.update
 );
 
 //BORRAR PRODUCTO
