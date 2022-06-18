@@ -114,6 +114,61 @@ const productSequelizeController = {
       }
     
   },
+  edit: (req, res) => {
+    const product_id = req.params.id;
+
+    const product = Products.findByPk(product_id, {
+      include: [{ all: true }],
+    }).then((product) => {
+      //INPUT CHECK GRANOS PARA PRODUCT-EDIT-SEQ.EJS
+      const callBackGrind = (valor) => {
+        for (const element of product.grind) {
+          if (element === valor) return "checked";
+        }
+      };
+
+      //INPUT CHECK GRANOS  Object Mode PARA PRODUCT-EDIT-SEQ.EJS
+      const callBackObjetoGranos = (valor) => {
+        if (product.grind === valor) return "checked";
+      };
+
+      //INPUT CHECK PARA PESO PRODUCT-EDIT-SEQ.EJS
+      const callBackWeight = (valor) => {
+        for (const element of product.weight) {
+          if (element === valor) return "checked";
+        }
+      };
+      //INPUT CHECK PARA PESO Object Mode PRODUCT-EDIT-SEQ.EJS
+      const callBackObjetoWeight = (valor) => {
+        if (product.weight === valor) return "checked";
+      };
+
+      res.render("products/product-edit-seq", {
+        product,
+        callBackGrind,
+        callBackObjetoGranos,
+        callBackWeight,
+        callBackObjetoWeight,
+      });
+    });
+  },
+  update: (req, res)=>{
+    const product_id = req.params.id;
+    const file = req.file;
+
+    Products.update({
+      ...req.body,
+      
+  },
+  {
+    where:{
+        id: product_id,
+    }})
+    .then(()=>{
+      res.redirect('/product/detail/' + product_id)
+    })
+  
+  }
 };
 
 module.exports = productSequelizeController
