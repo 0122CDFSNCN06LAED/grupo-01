@@ -105,4 +105,83 @@ module.exports = {
       return res.redirect("login");
     }
   },
+  userDetail: async (req, res) => {
+    const body = req.body;
+    const errors = validationResult(req);
+
+    if (errors.errors.length > 0) {
+      return res.render("user/userSearch", {
+        errors: errors.mapped(),
+        user: req.session.userLogged,
+      });
+    }
+
+    const userDb = await db.Users.findAll({
+      where: {
+        username: body.searchusers,
+      },
+    });
+
+    if (userDb == "") {
+      res.locals.userNot = true;
+
+      return res.render("user/userSearch", {
+        errors: errors.mapped(),
+        user: req.session.userLogged,
+      });
+    }
+
+    const userOne = userDb.find((user) => {
+      return user;
+    });
+    req.session.err = errors.mapped();
+    req.session.oldData = userOne;
+    res.redirect("/user/detail/");
+  },
+  update: async (req, res) => {
+    const dataUser = req.session.oldData;
+    const body = req.body;
+    const userAdmin = "@coffehouse.com";
+    const errors = validationResult(req);
+
+    if (errors.errors.length > 0) {
+      return res.render("user/userDetail", {
+        errors: errors.mapped(),
+        oldData: dataUser,
+      });
+    }
+
+    let userUpdate = {};
+
+    if (body.email.endsWith(userAdmin)) {
+      userUpdate = {
+        ...body,
+        password: bcryptjs.hashSync(body.password, 10),
+        avatar: req.file ? req.file.filename : "default.png",
+        user_category_id: 1, //user Admin
+      };
+    } else {
+      userUpdate = {
+        ...body,
+        password: bcryptjs.hashSync(body.password, 10),
+        avatar: req.file ? req.file.filename : "default.png",
+        user_category_id: 2, //User client
+      };
+    }
+
+    const userUpdated = await db.Users.update(
+      { ...userUpdate },
+      { where: { id: req.params.id } }
+    );
+    res.redirect("/user/search");
+  },
+  destroy: async (req, res) => {
+    const idUserRegister = req.params.id;
+    const deleteUser = await db.Users.destroy({
+      where: {
+        id: idUserRegister,
+      },
+    });
+    res.redirect("/user/search");
+  },
 };
