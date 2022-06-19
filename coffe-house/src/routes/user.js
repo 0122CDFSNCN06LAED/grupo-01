@@ -6,6 +6,10 @@ const validateRegister = require("../middlewares/validateRegisterMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const userSequelizeController = require("../controllers/userSequelizeController");
+const {
+  validateSearch,
+  validateSearchUserRegister,
+} = require("../middlewares/validationUserSearchMiddleware");
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -30,6 +34,22 @@ router.post(
   validateRegister,
   userSequelizeController.userCreate
 );
+router.get("/user/search", userController.userSearch);
+router.post("/user/search", validateSearch, userSequelizeController.userDetail);
 router.get("/user/profile", authMiddleware, userController.profile);
 router.get("/user/logout", userController.logout);
+router.get("/user/detail/", userController.userDetail);
+router.put(
+  "/user/update/:id",
+  uploadFile.single("avatar"),
+  validateSearchUserRegister,
+  userSequelizeController.update
+);
+router.get("/user/delete/confirm/", userController.userDeleteConfim);
+router.delete(
+  "/user/delete/:id",
+  uploadFile.single("avatar"),
+  userSequelizeController.destroy
+);
+
 module.exports = router;
