@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('../partials/head', {style: 'register.css' , title: 'User delete Confirm'
+  }) %>
+
+<body>
+    <%- include ('../partials/header') %>
+
+    <img class="isotipo" src="/img/iconos/isotipo.svg" alt="" />
+    <h1 class="crear-cuenta">¿Desea borrar el registro de usuario?:</h1>
+    <main>
+        <form action="/user/delete/<%= locals.oldData.id %>?_method=delete" method="post">
+            <div class="buttons-register buttons-register-delete">
+                <button type="submit" class="button-amarillo">Borrar usuario</button>
+            </div>
+        </form>
+
+    </main>
+    <div class="footer"><%- include('../partials/footer') %></div>
+</body>
+
+</html>
