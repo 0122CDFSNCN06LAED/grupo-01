@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2022 a las 23:30:28
+-- Tiempo de generación: 20-06-2022 a las 14:32:00
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -156,6 +156,14 @@ CREATE TABLE `users` (
   `user_category_id` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `username`, `password`, `avatar`, `user_category_id`) VALUES
+(1, 'Lu', 'Wagner', 'lu.wagner@coffeehouse.com', 'lu.wagner', '$2a$10$JU3uoU2UtCupB6dikP5ahOOL6Wqy7CuxjyYD/cp8RarFzomBW8m0K', 'default.png', 2),
+(2, 'rick', 'Grimes', 'rickgrimes@gmail.com', 'rick.grimes', '$2a$10$HYRvYkUZ8DDVm8lVfkJiKei087/ZTWTXD4wwQdE2CYJhJGU4/EG2a', 'user-1655557487268.jpg', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -305,13 +313,13 @@ ALTER TABLE `grinds`
 -- AUTO_INCREMENT de la tabla `grinds_products`
 --
 ALTER TABLE `grinds_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de la tabla `products_users`
@@ -329,13 +337,13 @@ ALTER TABLE `product_category`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `user_category`
 --
 ALTER TABLE `user_category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `weight`
@@ -347,7 +355,7 @@ ALTER TABLE `weight`
 -- AUTO_INCREMENT de la tabla `weight_products`
 --
 ALTER TABLE `weight_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Restricciones para tablas volcadas
@@ -358,7 +366,7 @@ ALTER TABLE `weight_products`
 --
 ALTER TABLE `grinds_products`
   ADD CONSTRAINT `fk_grinds` FOREIGN KEY (`id_grind`) REFERENCES `grinds` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_grinds_product` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_grinds_product` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `products`
@@ -384,7 +392,7 @@ ALTER TABLE `users`
 --
 ALTER TABLE `weight_products`
   ADD CONSTRAINT `fk_weight` FOREIGN KEY (`id_weight`) REFERENCES `weight` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_weight_product` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_weight_product` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

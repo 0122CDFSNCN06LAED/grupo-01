@@ -60,17 +60,17 @@
           </div>
         </form>
         <% if(locals.isAdmin) { %> 
-        <div class="edit-delete-buttons">
-          <a href="/product/edit/<%=product.id%>"
-            ><button class="secundary-button">Editar</button></a
-          >
-          <form
-            action="/product/delete/<%=product.id%>?_method=DELETE"
-            method="POST"
-          >
-            <button type="submit" class="secundary-button">Eliminar</button>
-          </form>
-          <% } %> 
+          <div class="edit-delete-buttons">
+            <a href="/product/edit/<%=product.id%>"
+              ><button class="secundary-button">Editar</button></a
+            >
+            <form
+              action="/product/delete/<%=product.id%>?_method=GET"
+              method="GET"
+            >
+              <button type="submit" class="secundary-button">Eliminar</button>
+            </form>
+            <% } %> 
         </div>
       </div>
     </main>

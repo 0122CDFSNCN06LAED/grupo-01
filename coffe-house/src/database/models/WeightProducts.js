@@ -31,6 +31,7 @@ module.exports = (sequelize, dataTypes) => {
     WeightProduct.associate = (models) => {
         WeightProduct.belongsTo(models.Products, {          
           foreignKey: "id_product",
+          onDelete: 'cascade'
         });
         WeightProduct.belongsTo(models.Weight, {          
             foreignKey: "id_weight",

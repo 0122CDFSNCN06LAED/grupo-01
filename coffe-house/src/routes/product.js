@@ -36,7 +36,9 @@ router.put(
 );
 
 //BORRAR PRODUCTO
-router.delete("/product/delete/:id", clientMiddleware, productController.destroy);
+router.get("/product/delete/:id", clientMiddleware, productSequelizeController.delete);
+
+router.delete("/product/delete/:id", clientMiddleware, productSequelizeController.destroy);
 
 //CARRITO
 router.get("/cart", productController.cart);

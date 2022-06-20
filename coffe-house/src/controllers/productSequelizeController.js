@@ -173,6 +173,25 @@ const productSequelizeController = {
     })
   
   },
+  
+  delete: async (req, res) => {
+    let id = req.params.id;
+    const product = await Products.findByPk(id, { include: [{ all: true }] });
+
+    return res.render("products/product-delete", { product });
+  },
+  destroy: async (req, res) => {
+    try{
+    let id = req.params.id;
+    const product = await Products.destroy({ where: { id: id }, force: true }) // force: true es para asegurar que se ejecute la acción
+    
+        return res.redirect("/");
+    
+  } catch (err) {
+    console.error(err);
+    res.render("products/product-error");
+  }
+},
   error: (req,res)=>{
     
     res.render('products/product-error' );

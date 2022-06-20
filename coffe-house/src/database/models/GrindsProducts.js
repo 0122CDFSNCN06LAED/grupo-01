@@ -31,6 +31,7 @@ module.exports = (sequelize, dataTypes) => {
     GrindProduct.associate = (models) => {
         GrindProduct.belongsTo(models.Products, {          
           foreignKey: "id_product",
+          onDelete: 'cascade'
         });
         GrindProduct.belongsTo(models.Grinds, {          
             foreignKey: "id_grind",
