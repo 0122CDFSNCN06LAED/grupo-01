@@ -83,22 +83,33 @@
               <input type="file" name="editImage" id="file" />
             </div>
 
-            <div class="price-button width-100">
-              <div>
-                <label for="price">Precio:</label>
-                <input
+
+            <div class="container-price-stock"> 
+              <div class="price-button">
+                      
+                      <label for="price">Precio:</label>
+                       <input
                   class="input"
                   type="number"
                   name="price"
                   id="price"
                   value="<%= product.price %>"
                 />
-              </div>
+                     
+               </div>
+             <div class="stock">
+                      
+                      <label for="stock">Stock disponible:</label>
+                      <input name="stock" class="input" type="number" name="stock" value="<%= product.stock %>">
+                      
+               </div> 
+          </div>
+          <div class="buttons-borrar-cargar">
+            <button class="secundary-button"type="reset">Borrar</button>
+            <button class="send button-amarillo" type="submit">Cargar producto</button>
+          </div> 
 
-              <button class="secundary-button" type="reset">Borrar</button>
-              <button class="send button-amarillo" type="submit">
-                Cargar producto
-              </button>
+              
             </div>
           </div>
 

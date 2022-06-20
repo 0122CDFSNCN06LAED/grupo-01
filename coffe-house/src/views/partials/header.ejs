@@ -17,8 +17,21 @@
         <li><a href="/product">Productos</a></li>
         <li><a href="#">Contacto</a></li>
       </ul>
+      <div class="buscar">
+
+        <form action="/product/search" method="GET">
+          <input type="text" name="search" placeholder="Buscar..." />
+          <button class="btn" type="submit">
+           
+              <img src="/img/iconos/lupa.svg" alt="buscar" />
+            
+          </button>
+        </form>
+
+      </div>
       <div class="nav-iconos">
-        <img src="/img/iconos/lupa.svg" alt="buscar" />
+        
+        
         <% if (locals.isLogged) { %> 
         <a href="/cart"><img src="/img/iconos/bolso.svg" alt="compras" /></a>
         <a class="text-decoration-none" href="/user/login"

@@ -5,7 +5,7 @@
     }
    
     .main{
-        width: 90%;
+        width: 100%;
         margin: auto;
        
     }
@@ -25,12 +25,12 @@ color: #232525;
     label {
         margin-top:10px;
     }
-    input {
+    .input {
         display: block;
         width: 100%;
         padding: 10px;
        
-    }
+    } 
     .ingresar {
      margin: 20px 0;
         

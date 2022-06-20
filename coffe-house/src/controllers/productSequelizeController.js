@@ -118,8 +118,25 @@ const productSequelizeController = {
       }
     
   },
-  edit: (req, res) => {
-    const product_id = req.params.id;
+  edit:(req, res) => {
+    
+      /* const id = req.params.id;
+  
+      const [product, weight, grinds, productCategory] = await Promise.all([
+        Products.findByPk(id, { include: [{ all: true }] }),
+        Weight.findAll(),
+        Grind.findAll(),
+        ProductCategory.findAll(),
+      ]);
+  
+      res.render("products/product-edit-seq", {
+        product,
+        weight,
+        grinds,
+        productCategory,
+      }); */
+    
+     const product_id = req.params.id;
 
     const product = Products.findByPk(product_id, {
       include: [{ all: true }],
@@ -154,7 +171,7 @@ const productSequelizeController = {
         callBackWeight,
         callBackObjetoWeight,
       });
-    });
+    }); 
   },
   update: (req, res)=>{
     const product_id = req.params.id;
@@ -191,6 +208,25 @@ const productSequelizeController = {
     console.error(err);
     res.render("products/product-error");
   }
+},
+search: async (req, res) => {
+  await Products.findAll({
+    where: { 
+      [Op.or]: {
+        name: {
+          [Op.like]: '%' + req.query.search + '%' },
+      description: {
+        [Op.like]: '%' + req.query.search + '%' },
+      region: {
+          [Op.like]: '%' + req.query.search + '%' },
+       
+      }
+         
+    }
+})
+.then(function(products) {
+res.render("products/search", {products:products})
+})
 },
   error: (req,res)=>{
     

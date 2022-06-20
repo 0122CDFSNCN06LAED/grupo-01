@@ -39,6 +39,9 @@ router.put(
 router.get("/product/delete/:id", clientMiddleware, productSequelizeController.delete);
 
 router.delete("/product/delete/:id", clientMiddleware, productSequelizeController.destroy);
+//SEARCH
+router.get("/product/search", productSequelizeController.search);
+
 
 //CARRITO
 router.get("/cart", productController.cart);
