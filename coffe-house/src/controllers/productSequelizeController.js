@@ -11,6 +11,8 @@ const Grind = db.Grinds;
 const Weight = db.Weight;
 const ProductCategory = db.ProductCategories;
 
+
+
 const productSequelizeController = {
   list: async (req, res) => {
     const products = await Products.findAll({
@@ -46,6 +48,7 @@ const productSequelizeController = {
       });
     } catch (err) {
       console.log(err);
+      res.render('products/product-error' );
     }
   },
 
@@ -94,6 +97,7 @@ const productSequelizeController = {
       res.redirect("/product");
     } catch (err) {
       console.log(err);
+      res.render('products/product-error');
     }
   },
 
@@ -168,6 +172,10 @@ const productSequelizeController = {
       res.redirect('/product/detail/' + product_id)
     })
   
+  },
+  error: (req,res)=>{
+    
+    res.render('products/product-error' );
   }
 };
 

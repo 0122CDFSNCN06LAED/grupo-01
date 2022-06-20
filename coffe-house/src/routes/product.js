@@ -41,4 +41,7 @@ router.delete("/product/delete/:id", clientMiddleware, productController.destroy
 //CARRITO
 router.get("/cart", productController.cart);
 
+// ERROR DE PRODUCTO
+router.get("/product/error", productSequelizeController.error);
+
 module.exports = router;

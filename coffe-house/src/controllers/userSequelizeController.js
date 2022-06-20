@@ -89,7 +89,7 @@ module.exports = {
 
       let userToCreate;
 
-      if (req.body.email.includes("@coffehouse.com")) {
+      if (req.body.email.includes("@coffeehouse.com")) {
         userToCreate = {
           ...userCreate,
           user_category_id: 1, //user admin
@@ -141,7 +141,7 @@ module.exports = {
   update: async (req, res) => {
     const dataUser = req.session.oldData;
     const body = req.body;
-    const userAdmin = "@coffehouse.com";
+    const userAdmin = "@coffeehouse.com";
     const errors = validationResult(req);
 
     if (errors.errors.length > 0) {

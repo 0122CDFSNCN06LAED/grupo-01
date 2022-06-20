@@ -100,7 +100,7 @@ const userController = {
   profile: (req, res) => {
     return res.render("user/profile", {
       user: req.session.userLogged,
-      userAdmin: "coffehouse.com",
+      userAdmin: "coffeehouse.com",
     });
   },
   logout: (req, res) => {
