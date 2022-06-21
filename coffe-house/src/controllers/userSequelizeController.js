@@ -3,7 +3,10 @@ const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 
 module.exports = {
-  logProcess: async (req, res) => {
+  login: (req, res) => {
+    return res.render("user/login");
+  },
+  loginProcess: async (req, res) => {
     const userToLogin = await db.Users.findAll({
       where: { email: req.body.email },
     });
@@ -40,18 +43,22 @@ module.exports = {
       },
     });
   },
+  register: (req, res) => {
+    res.render("user/register");
+  },
   userCreate: async (req, res) => {
     const resultValidation = validationResult(req);
+    const body = req.body;
 
     if (resultValidation.errors.length > 0) {
       res.render("user/register", {
         errors: resultValidation.mapped(),
-        oldData: req.body,
+        oldData: body,
       });
     } else {
       //para evitar que un usuario se vuelva a registrar con el mismo mail
       let userInDB = await db.Users.findAll({
-        where: { email: req.body.email },
+        where: { email: body.email },
       });
       //si el mail ya existe le devuelvo un error
       if (!(userInDB == "")) {
@@ -61,85 +68,59 @@ module.exports = {
               msg: "Este email ya está registrado",
             },
           },
-          oldData: req.body,
+          oldData: body,
         });
       }
 
       //Si el password no coincide con la confirmación muestro el error.
-      if (req.body.password !== req.body.password2) {
+      if (body.password !== body.password2) {
         return res.render("user/register", {
           errors: {
             password2: {
               msg: "Las credenciales no son válidas",
             },
           },
-          oldData: req.body,
+          oldData: body,
         });
       }
 
-      delete req.body.password2;
+      delete body.password2;
 
-      const imagen = req.file ? req.file.filename : "default.png";
+      const passwordBcrypt = bcryptjs.hashSync(req.body.password, 10);
+      const image = req.file ? req.file.filename : "default.png";
+      const emailAdmin = body.email.includes("@coffeehouse.com");
 
-      let userCreate = {
-        ...req.body,
-        password: bcryptjs.hashSync(req.body.password, 10),
-        avatar: imagen,
+      const userToCreate = {
+        ...body,
+        password: passwordBcrypt,
+        avatar: image,
+        user_category_id: emailAdmin ? 1 : 2, //user admin  o  user client
       };
 
-      let userToCreate;
-
-      if (req.body.email.includes("@coffeehouse.com")) {
-        userToCreate = {
-          ...userCreate,
-          user_category_id: 1, //user admin
-        };
-      } else {
-        userToCreate = {
-          ...userCreate,
-          user_category_id: 2, //user client
-        };
-      }
-
       let userCreated = db.Users.create(userToCreate);
-      return res.redirect("login");
+
+      return res.redirect("/user/login");
     }
   },
+  profile: (req, res) => {
+    res.render("user/profile", {
+      user: req.session.userLogged,
+    });
+  },
+  logout: (req, res) => {
+    //elimina la cookie para no continuar logueado
+    res.clearCookie("userEmail");
+    //borra los datos que están en session
+    req.session.destroy();
+    return res.redirect("/");
+  }, //al destruir la session el middleware de la ruta profile no me permite ingresar y me redirige.
   userDetail: async (req, res) => {
-    const body = req.body;
-    const errors = validationResult(req);
-
-    if (errors.errors.length > 0) {
-      return res.render("user/userSearch", {
-        errors: errors.mapped(),
-        user: req.session.userLogged,
-      });
-    }
-
-    const userDb = await db.Users.findAll({
-      where: {
-        username: body.searchusers,
-      },
+    res.render("user/userDetail", {
+      oldData: req.session.userLogged,
     });
-
-    if (userDb == "") {
-      res.locals.userNot = true;
-
-      return res.render("user/userSearch", {
-        errors: errors.mapped(),
-        user: req.session.userLogged,
-      });
-    }
-
-    const userOne = userDb.find((user) => {
-      return user;
-    });
-    req.session.err = errors.mapped();
-    req.session.oldData = userOne;
-    res.redirect("/user/detail/");
   },
   update: async (req, res) => {
-    const dataUser = req.session.oldData;
+    const dataUser = req.session.userLogged;
     const body = req.body;
     const userAdmin = "@coffeehouse.com";
     const errors = validationResult(req);
@@ -151,37 +132,44 @@ module.exports = {
       });
     }
 
-    let userUpdate = {};
+    const passwordBcrypt = bcryptjs.hashSync(body.password, 10);
+    const image = req.file ? req.file.filename : "default.png";
+    const emailAdmin = body.email.includes(userAdmin);
 
-    if (body.email.endsWith(userAdmin)) {
-      userUpdate = {
-        ...body,
-        password: bcryptjs.hashSync(body.password, 10),
-        avatar: req.file ? req.file.filename : "default.png",
-        user_category_id: 1, //user Admin
-      };
-    } else {
-      userUpdate = {
-        ...body,
-        password: bcryptjs.hashSync(body.password, 10),
-        avatar: req.file ? req.file.filename : "default.png",
-        user_category_id: 2, //User client
-      };
-    }
+    const userUpdate = {
+      ...body,
+      password: passwordBcrypt,
+      avatar: image,
+      user_category_id: emailAdmin ? 1 : 2, //user admin  o  user client
+    };
 
     const userUpdated = await db.Users.update(
       { ...userUpdate },
       { where: { id: req.params.id } }
     );
-    res.redirect("/user/search");
+
+    req.session.destroy();
+    res.redirect("/user/login");
   },
   destroy: async (req, res) => {
-    const idUserRegister = req.params.id;
-    const deleteUser = await db.Users.destroy({
-      where: {
-        id: idUserRegister,
-      },
+    try {
+      const idUserRegister = req.params.id;
+
+      const deleteUser = await db.Users.destroy({
+        where: {
+          id: idUserRegister,
+        },
+      });
+      req.session.destroy();
+      res.redirect("/user/login");
+    } catch (err) {
+      console.log(err);
+      res.render("products/product-error");
+    }
+  },
+  userDeleteConfim: (req, res) => {
+    res.render("user/userDeleteConfirm", {
+      oldData: req.session.userLogged,
     });
-    res.redirect("/user/search");
   },
 };
