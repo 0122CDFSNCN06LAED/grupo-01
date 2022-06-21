@@ -110,24 +110,6 @@ const userController = {
     req.session.destroy();
     return res.redirect("/");
   }, //al destruir la session el middleware de la ruta profile no me permite ingresar y me redirige.
-  userSearch: (req, res) => {
-    res.render("user/userSearch", {
-      user: req.session.userLogged,
-    });
-  },
-  userDetail: (req, res) => {
-    const errors = validationResult(req);
-
-    res.render("user/userDetail", {
-      errors: req.session.err,
-      oldData: req.session.oldData,
-    });
-  },
-  userDeleteConfim: (req, res) => {
-    res.render("user/userDeleteConfirm", {
-      oldData: req.session.oldData,
-    });
-  },
 };
 
 module.exports = userController;
