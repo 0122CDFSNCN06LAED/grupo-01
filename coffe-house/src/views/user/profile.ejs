@@ -13,7 +13,7 @@
                     <img src="/img/users/<%= user.avatar %>" <% if(locals.isAdmin) { %>class="admin" <% } else { %>
                         class="client" <% } %>alt="">
                 </div>
-                <h5>Editar perfil</h5>
+                <h5><a class="sin-estilos" href="/user/detail/<%= user.id %> ">Editar perfil</a></h5>
             </div>
 
             <div class="saludo-profile flex-column-center">
@@ -25,14 +25,6 @@
                 <div>
                     <a class="sin-estilos" href="/user/logout"><button type="button"
                             class="secundary-button logout">Logout</button></a>
-                    <% if(user.email.endsWith(userAdmin)) { %>
-                    <br><br>
-                    <div>
-                        <a class="sin-estilos" href="/user/search"><button type="button"
-                                class="secundary-button logout">
-                                Editar</button></a>
-                    </div>
-                    <% } %>
                 </div>
 
             </div>
