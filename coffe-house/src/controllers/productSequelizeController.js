@@ -94,7 +94,7 @@ const productSequelizeController = {
         });
       }
 
-      res.redirect("/product");
+      res.redirect("/product/detail/" + newProduct.id);
     } catch (err) {
       console.log(err);
       res.render('products/product-error');
@@ -202,7 +202,7 @@ const productSequelizeController = {
     let id = req.params.id;
     const product = await Products.destroy({ where: { id: id }, force: true }) // force: true es para asegurar que se ejecute la acción
     
-        return res.redirect("/");
+        return res.redirect("/product");
     
   } catch (err) {
     console.error(err);
