@@ -52,3 +52,14 @@ Propuesta: Actualizarlo durante la reunión de apertura de cada sprint.
 
 SEGUIR HACIENDO
 - Estar abiertos a implementar otras alternativas de resolución de las actividades, según la necesidad, puede ser beneficioso para el proyecto. En esta ocasión, hemos resuelto las tareas de forma conjunta y sincrónica para preservar la integridad del proyecto y evitar las dificultades que pudieran haber surgido debido a la complejidad del sprint. 
+
+-------------------------------------------------------------------
+SPRINT 6	
+
+CONTINUAR HACIENDO:
+Ceñirnos a los métodos de organización pautados.
+Mantenernos comprometidos con el proyecto.
+Apoyarnos y ayudarnos mutuamente favorece a la solidez del equipo.
+
+DEJAR DE HACER:
+-No mantener una comunicación constante con resto del equipo que espera saber el estado de las tareas.
