@@ -27,9 +27,12 @@
             <div class="cat-region .alineacion-horizontal">
               <label for="category">Categoría:</label>
               <select class="input" name="category" id="category">
-                <option value="blonde"<%= product.category === "blonde" ? "selected" : "" %> >Blonde roast</option>
-                <option value="medium"<%= product.category === "medium" ? "selected" : "" %> >Medium roast</option>
-                <option value="dark"<%= product.category === "dark" ? "selected" : "" %> >Dark roast</option>
+                <% productCategory.forEach(category => { %>
+                  <option name="category" value="<%= category.id %>"
+                <%= product.productCategory.id == category.id? "selected" : "" %>> <%= category.type %> Roast </option>
+
+               <% } )%>
+                
               </select>
               <div class="region alineacion-centro-flex">
                 <label for="region">Región:</label>
@@ -48,41 +51,53 @@
               </textarea>
             </div>
           </div>
+
           <div class="derecha alineacion-centro-flex">
             <div class="checks">
               <div class="grind">
                 <label for="grind"> Molienda:</label>
+                <!--Recorro las opciones de molienda que me trae la db-->
+                <% dbgrinds.forEach(dbgrind => { %>
+                        
+                <p>
+                    <input type="checkbox" name="grind" value="<%= dbgrind.id %>" 
+                       <%  if(grindsOfThisProduct.length >= 1){ grindsOfThisProduct.forEach(grindChecked =>{  %>
+                        <%=grindChecked.id == dbgrind.id ? "checked" : ""%> <% });}%>
+                        />
+                       <%= dbgrind.grind %>
+                </p>
+
+                  <% })%>
                 
-                <p>
-                    <input type="checkbox" name="grind" value="Grano entero"<%= Array.isArray(product.grind) ? callBackGrind("Grano entero") : callBackObjetoGranos("Grano entero") %> />
-                  Grano entero
-                </p>
-                <p>
-                  <input type="checkbox" name="grind" value="Espresso"<%= Array.isArray(product.grind) ? callBackGrind("Espresso") : callBackObjetoGranos("Espresso")%> />
-                  Espresso
-                </p>
-                <p>
-                  <input type="checkbox" name="grind" value="Filtro"<%= Array.isArray(product.grind) ? callBackGrind("Filtro") : callBackObjetoGranos("Filtro") %> /> Filtro
-                </p>
               </div>
-              <div class="weight">
-                <label for="weight">Peso:</label>
-               <p>
-                  <input type="checkbox" name="weight" value="250g"<%= Array.isArray(product.weight) ? callBackWeight("250g") : callBackObjetoWeight("250g") %> /> 250g
-                </p>
-                <p>
-                  <input type="checkbox" name="weight" value="500g"<%= Array.isArray(product.weight) ? callBackWeight("500g") : callBackObjetoWeight("500g") %> /> 500g
-                </p>
-                <p>
-                  <input type="checkbox" name="weight" value="1kg"<%= Array.isArray(product.weight) ? callBackWeight("1kg") : callBackObjetoWeight("1kg") %> /> 1kg
-                </p>
+               <div class="weight">
+                <label for="weight"> Peso:</label>
+                <!--Recorro las opciones de molienda que me trae la db-->
+                <% dbweights.forEach(dbweight => { %>
+                        
+                  <p>
+                      <input type="checkbox" name="weight" value="<%= dbweight.id %>" 
+                         <%  if(weightOfThisProduct.length >= 1){ weightOfThisProduct.forEach(weightChecked =>{  %>
+                          <%=weightChecked.id == dbweight.id ? "checked" : ""%> <% }); }%>
+                             />
+                         <%= dbweight.weight %>
+                  </p>
+  
+                    <% })%>
+               
+                  
+                
               </div>
+             
+              
             </div>
+            
+
+
             <div class="file">
               <label for="file">Sube una imagen:</label>
               <input type="file" name="editImage" id="file" />
             </div>
-
 
             <div class="container-price-stock"> 
               <div class="price-button">
@@ -108,12 +123,8 @@
             <button class="secundary-button"type="reset">Borrar</button>
             <button class="send button-amarillo" type="submit">Cargar producto</button>
           </div> 
-
-              
-            </div>
-          </div>
-
           
+          </div>
         </div>
       </form>
     </main>

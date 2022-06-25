@@ -91,7 +91,7 @@ const productController = {
     });
     /*  res.render('products/product-edit', {style: 'product-create.css', title: 'Edit product'}); */
   },
-  update: (req, res) => {
+  update2: (req, res) => {
     const id = req.params.id;
     const file = req.file;
 

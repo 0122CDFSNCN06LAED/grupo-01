@@ -118,78 +118,96 @@ const productSequelizeController = {
       }
     
   },
-  edit:(req, res) => {
+  edit: async(req, res) => {
     
-      /* const id = req.params.id;
-  
-      const [product, weight, grinds, productCategory] = await Promise.all([
-        Products.findByPk(id, { include: [{ all: true }] }),
-        Weight.findAll(),
-        Grind.findAll(),
-        ProductCategory.findAll(),
-      ]);
-  
-      res.render("products/product-edit-seq", {
-        product,
-        weight,
-        grinds,
-        productCategory,
-      }); */
-    
-     const product_id = req.params.id;
+    const id = req.params.id;
 
-    const product = Products.findByPk(product_id, {
-      include: [{ all: true }],
-    }).then((product) => {
-      //INPUT CHECK GRANOS PARA PRODUCT-EDIT-SEQ.EJS
-      const callBackGrind = (valor) => {
-        for (const element of product.grind) {
-          if (element === valor) return "checked";
+   const [product, dbweights, dbgrinds, productCategory] = await Promise.all([
+     Products.findByPk(id, { include: [{ all: true }] }),
+     Weight.findAll(),
+     Grind.findAll(),
+     ProductCategory.findAll(),
+   ]);
+   const grindsOfThisProduct = product.grinds;
+   const weightOfThisProduct = product.weight; 
+
+   res.render("products/product-edit-seq", {
+     product,
+     grindsOfThisProduct,
+     weightOfThisProduct,
+     dbweights,
+     dbgrinds,
+     productCategory,
+   }); 
+},
+update: async (req, res)=>{
+   
+   try {
+    const oldProduct =await Products.findByPk(req.params.id);
+       const editProduct = await Products.update({
+         name: req.body.name,
+         region: req.body.region,
+         description: req.body.description,
+         image: req.file ? req.file.filename : oldProduct.image,
+         price: req.body.price,
+         stock: req.body.stock,
+         category_id: req.body.category,
+       },{
+           where: {id: oldProduct.id}
+       })
+
+        const oldGrinds = await GrindsProducts.destroy({
+          where: {
+            id_product: oldProduct.id,
         }
-      };
-
-      //INPUT CHECK GRANOS  Object Mode PARA PRODUCT-EDIT-SEQ.EJS
-      const callBackObjetoGranos = (valor) => {
-        if (product.grind === valor) return "checked";
-      };
-
-      //INPUT CHECK PARA PESO PRODUCT-EDIT-SEQ.EJS
-      const callBackWeight = (valor) => {
-        for (const element of product.weight) {
-          if (element === valor) return "checked";
-        }
-      };
-      //INPUT CHECK PARA PESO Object Mode PRODUCT-EDIT-SEQ.EJS
-      const callBackObjetoWeight = (valor) => {
-        if (product.weight === valor) return "checked";
-      };
-
-      res.render("products/product-edit-seq", {
-        product,
-        callBackGrind,
-        callBackObjetoGranos,
-        callBackWeight,
-        callBackObjetoWeight,
-      });
-    }); 
-  },
-  update: (req, res)=>{
-    const product_id = req.params.id;
-    const file = req.file;
-
-    Products.update({
-      ...req.body,
+        });
+        
+        const newGrinds = req.body.grind;
+      if (newGrinds.length > 1) {
+        newGrinds.forEach((grind) => {
+          GrindsProducts.create({
+            id_grind: grind,
+            id_product: oldProduct.id,
+          });
+        });
+      } else {
+        GrindsProducts.create({
+          id_grind: req.body.grind,
+          id_product: oldProduct.id,
+        });
+      }
       
-  },
-  {
-    where:{
-        id: product_id,
-    }})
-    .then(()=>{
-      res.redirect('/product/detail/' + product_id)
-    })
-  
-  },
+      const oldWeights = await WeightProducts.destroy({
+        where: {
+          id_product: oldProduct.id,
+      }
+      });
+       const newWeights = req.body.weight;
+       if (newWeights.length > 1) {
+         newWeights.forEach((weight) => {
+          WeightProducts.create({
+            id_weight: weight,
+            id_product: oldProduct.id,
+          })
+            
+         });
+       } else {
+        WeightProducts.create({
+          id_weight: newWeights,
+          id_product: oldProduct.id,
+        })
+       }
+       
+ 
+       
+ 
+       res.redirect("/product/detail/" + oldProduct.id);
+     } catch (err) {
+       console.log(err);
+       res.render('products/product-error');
+     }
+   },
+
   
   delete: async (req, res) => {
     let id = req.params.id;
