@@ -6,10 +6,7 @@ const validateRegister = require("../middlewares/validateRegisterMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const userSequelizeController = require("../controllers/userSequelizeController");
-const {
-  validateSearch,
-  validateSearchUserRegister,
-} = require("../middlewares/validationUserSearchMiddleware");
+const validateUserEditRegister = require("../middlewares/validationUserEditMiddleware");
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -38,7 +35,7 @@ router.get("/user/detail/:id", userSequelizeController.userDetail);
 router.put(
   "/user/edit/:id",
   uploadFile.single("avatar"),
-  validateSearchUserRegister,
+  validateUserEditRegister,
   userSequelizeController.update
 );
 router.get(
