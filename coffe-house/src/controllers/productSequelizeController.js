@@ -1,8 +1,6 @@
-
+const {validationResult, body} = require('express-validator');
 const db = require("../database/models");
-
 const { Op } = require("sequelize");
-
 
 const Products = db.Products;
 const GrindsProducts = db.GrindsProducts;
@@ -52,52 +50,71 @@ const productSequelizeController = {
     }
   },
 
+
   store: async (req, res) => {
-    try {
-      const newProduct = await Products.create({
-        name: req.body.name,
-        region: req.body.region,
-        description: req.body.description,
-        image: req.file.filename,
-        price: req.body.price,
-        stock: req.body.stock,
-        category_id: req.body.category,
-      });
-
-      const grinds = req.body.grind;
-      if (grinds.length > 1) {
-        grinds.forEach((grind) => {
+    let erroresValidacion = validationResult(req);
+    const [weight, grinds, productCategory] = await Promise.all([
+      Weight.findAll(),
+      Grind.findAll(),
+      ProductCategory.findAll(),
+    ]);
+    
+    if(!erroresValidacion.isEmpty()){
+      
+    
+      return res.render("products/product-create",{ errors:erroresValidacion.mapped(),
+                                                    weight: weight,
+                                                    grinds: grinds,
+                                                    productCategory: productCategory,
+                                                    oldData:req.body})
+    }
+    else{
+      try {
+        const newProduct = await Products.create({
+          name: req.body.name,
+          region: req.body.region,
+          description: req.body.description,
+          image: req.file.filename,
+          price: req.body.price,
+          stock: req.body.stock,
+          category_id: req.body.category,
+        });
+  
+        const grinds = req.body.grind;
+        if (grinds.length > 1) {
+          grinds.forEach((grind) => {
+            GrindsProducts.create({
+              id_grind: grind,
+              id_product: newProduct.id,
+            });
+          });
+        } else {
           GrindsProducts.create({
-            id_grind: grind,
+            id_grind: req.body.grind,
             id_product: newProduct.id,
           });
-        });
-      } else {
-        GrindsProducts.create({
-          id_grind: req.body.grind,
-          id_product: newProduct.id,
-        });
-      }
-
-      const weight = req.body.weight;
-      if (weight.length > 1) {
-        weight.forEach((weightid) => {
+        }
+  
+        const weight = req.body.weight;
+        if (weight.length > 1) {
+          weight.forEach((weightid) => {
+            WeightProducts.create({
+              id_weight: weightid,
+              id_product: newProduct.id,
+            });
+          });
+        } else {
           WeightProducts.create({
-            id_weight: weightid,
+            id_weight: req.body.weight,
             id_product: newProduct.id,
           });
-        });
-      } else {
-        WeightProducts.create({
-          id_weight: req.body.weight,
-          id_product: newProduct.id,
-        });
+        }
+  
+        res.redirect("/product/detail/" + newProduct.id);
+      } catch (err) {
+        console.log(err);
+        res.render('products/product-error');
       }
-
-      res.redirect("/product/detail/" + newProduct.id);
-    } catch (err) {
-      console.log(err);
-      res.render('products/product-error');
     }
   },
 

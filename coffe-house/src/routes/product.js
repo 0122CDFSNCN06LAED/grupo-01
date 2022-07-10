@@ -5,6 +5,8 @@ const productSequelizeController = require("../controllers/productSequelizeContr
 const multer = require("multer");
 const path = require("path");
 const clientMiddleware = require("../middlewares/clientMiddleware");
+const validateProductEdit = require("../middlewares/validateProductEditMiddleware");
+
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -26,12 +28,16 @@ router.get('/product', productSequelizeController.list)
 router.get("/product/detail/:id", productSequelizeController.product);
 //CREACION PRODUCTO
 router.get("/product/create",clientMiddleware, productSequelizeController.create);
-router.post("/product/create", uploadFile.single("image"), productSequelizeController.store);
+router.post("/product/create", 
+uploadFile.single("image"), 
+validateProductEdit, 
+            productSequelizeController.store);
 //EDICION PRODUCTO
 router.get("/product/edit/:id", clientMiddleware, productSequelizeController.edit);
 router.put(
   "/edit/:id",
   uploadFile.single("editImage"),
+  validateProductEdit,
   productSequelizeController.update
 );
 

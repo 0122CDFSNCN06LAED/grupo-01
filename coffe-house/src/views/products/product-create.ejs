@@ -17,13 +17,24 @@
             <img class="isotipo" src="/img/iconos/isotipo.svg" alt="">  
             <h1 class="carga-prod">Carga tu producto:</h1>
            </div> 
+         
+          
            <form action="/product/create" method="POST" enctype='multipart/form-data'>
             
             <div class="form-container">
               <div class="izquierda">
                 
                 <label for="product-name">Nombre del producto:</label>
-                <input class="input" type="text" name="name"> 
+                <input 
+                    class="input" 
+                    type="text" 
+                    name="name" 
+                    value="<%= locals.oldData ? oldData.name : '' %> "> 
+                    <% if(locals.errors && errors.name){ %> 
+                      <div class="text-danger">
+                        <%= errors.name.msg %> 
+                      </div>
+                      <% } %>
                 <div class="cat-region .alineacion-horizontal">
                   <label for="category">Categoría:</label>
                   <select class="input" name="category" id="category">
@@ -34,14 +45,34 @@
                   </select>
                   <div class="region alineacion-centro-flex">
                     <label for="region">Región:</label>
-                  <input name="region" class="input" type="text">
+                  <input 
+                      name="region" 
+                      class="input" 
+                      type="text"
+                      value="<%= locals.oldData ? oldData.region : '' %> ">
+                      <% if(locals.errors && errors.region){ %> 
+                        <div class="text-danger">
+                          <%= errors.region.msg %> 
+                        </div>
+                        <% } %>
                   </div>
                   
                 </div>
                 <div class="description alineacion-centro-flex">
                   <label for="description">Descripción:</label>
-                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                <textarea 
+                    name="description" 
+                    id="description" 
+                    cols="30" 
+                    rows="10"
+                    value="">
+                  </textarea>
                 </div>
+                <% if(locals.errors && errors.description){ %> 
+                  <div class="text-danger">
+                    <%= errors.description.msg %> 
+                  </div>
+                  <% } %>
                 
               </div>
 
@@ -59,7 +90,11 @@
                     <label for="weight">Peso:</label>
 
                     <% weight.forEach(weight => { %>
-                      <p><input type="checkbox" name="weight" value="<%= weight.id %>"> <%= weight.weight %>g </p>
+                      <p><input 
+                            type="checkbox" 
+                            name="weight" 
+                            value="<%= weight.id %>"> <%= weight.weight %>g </p>
+                            
                     <% }) %>
                    
                   </div>
@@ -68,14 +103,26 @@
                 <div class="file">
                   <label for="file">Sube una imagen:</label>
                   <input type="file" id="file" name="image">
+                  <% if(locals.errors && errors.image){ %> 
+                    <div class="text-danger">
+                      <%= errors.image.msg %> 
+                    </div>
+                    <% } %>
                 </div>
                   
                   <div class="container-price-stock"> 
                       <div class="price-button">
-                              
-                              <label for="price">Precio:</label>
-                               <input name="price" class="input" type="number">
-                             
+                        <label for="price">Precio:</label>
+                          <input 
+                              name="price" 
+                              class="input" 
+                              type="number"
+                              value="<%= locals.oldData ? oldData.price : '' %>">
+                               <% if(locals.errors && errors.price){ %> 
+                                <div class="text-danger">
+                                  <%= errors.price.msg %> 
+                                </div>
+                                <% } %>
                        </div>
                      <div class="stock">
                               
