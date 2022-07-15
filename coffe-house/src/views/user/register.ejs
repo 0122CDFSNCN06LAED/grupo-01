@@ -9,7 +9,12 @@
     <img class="isotipo" src="/img/iconos/isotipo.svg" alt="" />
     <h1 class="crear-cuenta">Crea una cuenta:</h1>
     <main>
-      <form action="/user/register" method="POST" enctype="multipart/form-data">
+      <form
+        action="/user/register"
+        method="POST"
+        enctype="multipart/form-data"
+        id="form-register"
+      >
         <div class="form-container">
           <div class="izquierda">
             <div class="name">
@@ -22,6 +27,7 @@
                 placeholder="Tu nombre"
                 value="<%= locals.oldData ? oldData.name : null%>"
               />
+              <p id="msgError-name" class="p-msgError"></p>
               <% if (locals.errors && errors.name) { %>
               <div class="text-danger"><%= errors.name.msg %></div>
               <% } %>
@@ -36,6 +42,7 @@
                 placeholder="Tu apellido"
                 value="<%= locals.oldData ? oldData.lastname : null%>"
               />
+              <p id="msgError-lastname" class="p-msgError"></p>
               <% if (locals.errors && errors.lastname) { %>
               <div class="text-danger"><%= errors.lastname.msg %></div>
               <% } %>
@@ -50,6 +57,7 @@
                 placeholder="user@user.com"
                 value="<%= locals.oldData ? oldData.email : null%>"
               />
+              <p id="msgError-email" class="p-msgError"></p>
               <% if (locals.errors && errors.email) { %>
               <div class="text-danger"><%= errors.email.msg %></div>
               <% } %>
@@ -57,6 +65,7 @@
             <div class="file">
               <label for="file">Sube una imagen:</label>
               <input type="file" id="file" name="avatar" />
+              <p id="msgError-avatar" class="p-msgError"></p>
             </div>
           </div>
           <div class="derecha">
@@ -70,6 +79,7 @@
                 placeholder="usuario"
                 value="<%= locals.oldData ? oldData.username : null%>"
               />
+              <p id="msgError-username" class="p-msgError"></p>
               <% if (locals.errors && errors.username) { %>
               <div class="text-danger"><%= errors.username.msg %></div>
               <% } %>
@@ -83,6 +93,7 @@
                 id="password"
                 placeholder="**********"
               />
+              <p id="msgError-password" class="p-msgError"></p>
               <% if (locals.errors && errors.password) { %>
               <div class="text-danger"><%= errors.password.msg %></div>
               <% } %>
@@ -96,6 +107,7 @@
                 id="password2"
                 placeholder="**********"
               />
+              <p id="msgError-password2" class="p-msgError"></p>
               <% if (locals.errors && errors.password2) { %>
               <div class="text-danger"><%= errors.password2.msg %></div>
               <% } %>
@@ -109,5 +121,6 @@
       </form>
     </main>
     <div class="footer"><%- include('../partials/footer') %></div>
+    <script src="/js/validationUserRegister.js"></script>
   </body>
 </html>
