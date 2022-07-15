@@ -1,61 +1,58 @@
-@media (min-width:375px) {
-    
-    .footer {
-        display: none;
-    }
-   
-    .main{
-        width: 100%;
-        margin: auto;
-       
-    }
-    .saludo h3 {
-font-weight: 400;
-font-size:40px;
-line-height: 35px;
-letter-spacing: 0.05em;
-color: #232525;
-    }
-    .form-container{
-        text-align: center;
-    }
-    .inputs{
-        margin:20px 0;
-    }
-    label {
-        margin-top:10px;
-    }
-    .input {
-        display: block;
-        width: 100%;
-        padding: 10px;
-       
-    } 
-    .ingresar {
-     margin: 20px 0;
-        
-    }
-    .recordarme {
-        height: 45px;
-        display: flex;
-       justify-content: center;
-     
-    }
-    .recordarme input {
-        width: 10%;
-        height: 20px;
-    }
+@media (min-width: 375px) {
+  .p-msgError {
+    margin: 0;
+  }
+  .footer {
+    display: none;
+  }
+
+  .main {
+    width: 100%;
+    margin: auto;
+  }
+  .saludo h3 {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    color: #232525;
+  }
+  .form-container {
+    text-align: center;
+  }
+  .inputs {
+    margin: 20px 0;
+  }
+  label {
+    margin-top: 10px;
+  }
+  .input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+  .ingresar {
+    margin: 20px 0;
+  }
+  .recordarme {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+  }
+  .recordarme input {
+    width: 10%;
+    height: 20px;
+  }
 }
 
-@media (min-width:780px) {
-    main{
-        margin-bottom: 80px;
-    }
-    .footer {
-        display: block;
-
-    }
-    .form-container{
-width: 300px;
-    }
+@media (min-width: 780px) {
+  main {
+    margin-bottom: 80px;
+  }
+  .footer {
+    display: block;
+  }
+  .form-container {
+    width: 300px;
+  }
 }
