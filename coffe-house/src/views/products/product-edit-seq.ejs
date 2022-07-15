@@ -9,6 +9,7 @@
       <div class="header">
         <img class="isotipo" src="/img/iconos/isotipo.svg" alt="" />
         <h2 class="carga-prod">Edita este producto:</h2>
+       
       </div>
       <form
         action="/edit/<%= product.id %>?_method=put"
@@ -22,8 +23,13 @@
               class="input"
               type="text"
               name="name"
-              value="<%= product.name %> "
+              value="<%= product.name %>"
             />
+            <% if(locals.errors && errors.name){ %> 
+              <div class="text-danger">
+                <%= errors.name.msg %> 
+              </div>
+              <% } %>
             <div class="cat-region .alineacion-horizontal">
               <label for="category">Categoría:</label>
               <select class="input" name="category" id="category">
@@ -42,13 +48,25 @@
                   name="region"
                   value="<%= product.region %>"
                 />
+                <% if(locals.errors && errors.region){ %> 
+                  <div class="text-danger">
+                    <%= errors.region.msg %> 
+                  </div>
+                  <% } %>
               </div>
             </div>
             <div class="description alineacion-centro-flex">
               <label for="description">Descripción:</label>
-              <textarea name="description" id="description" cols="30" rows="10">
+              <textarea name="description" id="description" cols="30" rows="10"value="">
 <%= product.description %>
               </textarea>
+              
+                <% if(locals.errors && errors.description){ %> 
+                  <div class="text-danger">
+                    <%= errors.description.msg %> 
+                  </div>
+                  <% } %>
+              
             </div>
           </div>
 
@@ -97,6 +115,11 @@
             <div class="file">
               <label for="file">Sube una imagen:</label>
               <input type="file" name="editImage" id="file" />
+              <% if(locals.errors && errors.image){ %> 
+                <div class="text-danger">
+                  <%= errors.image.msg %> 
+                </div>
+                <% } %>
             </div>
 
             <div class="container-price-stock"> 
@@ -110,6 +133,11 @@
                   id="price"
                   value="<%= product.price %>"
                 />
+                <% if(locals.errors && errors.price){ %> 
+                  <div class="text-danger">
+                    <%= errors.price.msg %> 
+                  </div>
+                  <% } %>
                      
                </div>
              <div class="stock">

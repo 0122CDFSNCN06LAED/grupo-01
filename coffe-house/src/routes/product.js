@@ -29,16 +29,15 @@ router.get("/product/detail/:id", productSequelizeController.product);
 //CREACION PRODUCTO
 router.get("/product/create",clientMiddleware, productSequelizeController.create);
 router.post("/product/create", 
-uploadFile.single("image"), 
-validateProductEdit, 
-            productSequelizeController.store);
+                                uploadFile.single("image"), 
+                                validateProductEdit, 
+                                productSequelizeController.store);
 //EDICION PRODUCTO
 router.get("/product/edit/:id", clientMiddleware, productSequelizeController.edit);
-router.put(
-  "/edit/:id",
-  uploadFile.single("editImage"),
-  validateProductEdit,
-  productSequelizeController.update
+router.put("/edit/:id",
+                      uploadFile.single("editImage"),
+                      validateProductEdit,
+                      productSequelizeController.update
 );
 
 //BORRAR PRODUCTO

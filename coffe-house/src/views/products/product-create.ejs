@@ -29,7 +29,7 @@
                     class="input" 
                     type="text" 
                     name="name" 
-                    value="<%= locals.oldData ? oldData.name : '' %> "> 
+                    value="<%= locals.oldData ? oldData.name : '' %>"> 
                     <% if(locals.errors && errors.name){ %> 
                       <div class="text-danger">
                         <%= errors.name.msg %> 
@@ -49,7 +49,7 @@
                       name="region" 
                       class="input" 
                       type="text"
-                      value="<%= locals.oldData ? oldData.region : '' %> ">
+                      value="<%= locals.oldData ? oldData.region : ''%>">
                       <% if(locals.errors && errors.region){ %> 
                         <div class="text-danger">
                           <%= errors.region.msg %> 
