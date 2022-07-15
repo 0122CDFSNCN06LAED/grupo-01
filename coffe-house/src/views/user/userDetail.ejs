@@ -1,71 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('../partials/head', {style: 'register.css' , title: 'Userdetail'
+  <%- include ('../partials/head', {style: 'register.css' , title: 'Userdetail'
   }) %>
 
-<body>
+  <body>
     <%- include ('../partials/header') %>
 
     <img class="isotipo" src="/img/iconos/isotipo.svg" alt="" />
     <h1 class="crear-cuenta">Editar cuenta:</h1>
     <main>
-        <form action="/user/edit/<%= locals.oldData.id %>?_method=put" method="POST" enctype="multipart/form-data">
-            <div class="form-container">
-                <div class="izquierda">
-                    <div class="name">
-                        <label for="name">Nombre:</label>
-                        <input class="input" name="name" type="text" id="name" placeholder="Tu nombre"
-                            value="<%= locals.oldData ? oldData.name : null%>" />
-                        <% if (locals.errors && errors.name) { %>
-                        <div class="text-danger"><%= errors.name.msg %></div>
-                        <% } %>
-                    </div>
-                    <div class="lastname">
-                        <label for="lastname">Apellido:</label>
-                        <input class="input" name="lastname" type="text" id="lastname" placeholder="Tu apellido"
-                            value="<%= locals.oldData ? oldData.lastname : null%>" />
-                        <% if (locals.errors && errors.lastname) { %>
-                        <div class="text-danger"><%= errors.lastname.msg %></div>
-                        <% } %>
-                    </div>
-                    <div class="email">
-                        <label for="email">E-mail:</label>
-                        <input class="input" name="email" type="text" id="email" placeholder="user@user.com"
-                            value="<%= locals.oldData ? oldData.email : null%>" />
-                        <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger"><%= errors.email.msg %></div>
-                        <% } %>
-                    </div>
-                    <div class="file">
-                        <label for="file">Sube una imagen:</label>
-                        <input type="file" id="file" name="avatar" />
-                    </div>
-                </div>
-                <div class="derecha">
-                    <div class="user">
-                        <label for="user">Nombre de usuario:</label>
-                        <input class="input" name="username" type="text" id="user" placeholder="usuario"
-                            value="<%= locals.oldData ? oldData.username : null%>" />
-                        <% if (locals.errors && errors.username) { %>
-                        <div class="text-danger"><%= errors.username.msg %></div>
-                        <% } %>
-                    </div>
-                    <div class="password">
-                        <label for="password">Contraseña:</label>
-                        <input class="input" name="password" type="password" id="password" placeholder="**********" />
-                        <% if (locals.errors && errors.password) { %>
-                        <div class="text-danger"><%= errors.password.msg %></div>
-                        <% } %>
-                    </div>
-                </div>
+      <form
+        action="/user/edit/<%= locals.oldData.id %>?_method=put"
+        method="POST"
+        enctype="multipart/form-data"
+        id="form-register"
+      >
+        <div class="form-container">
+          <div class="izquierda">
+            <div class="name">
+              <label for="name">Nombre:</label>
+              <input
+                class="input"
+                name="name"
+                type="text"
+                id="name"
+                placeholder="Tu nombre"
+                value="<%= locals.oldData ? oldData.name : null%>"
+              />
+              <p id="msgError-name" class="p-msgError"></p>
+              <% if (locals.errors && errors.name) { %>
+              <div class="text-danger"><%= errors.name.msg %></div>
+              <% } %>
             </div>
-            <div class="buttons-register">
-                <button type="submit" class="button-amarillo">Editar</button>
-                <a href="/user/delete/confirm/<%= locals.oldData.id %>" class="secundary-button">Borrar usuario</a>
+            <div class="lastname">
+              <label for="lastname">Apellido:</label>
+              <input
+                class="input"
+                name="lastname"
+                type="text"
+                id="lastname"
+                placeholder="Tu apellido"
+                value="<%= locals.oldData ? oldData.lastname : null%>"
+              />
+              <p id="msgError-lastname" class="p-msgError"></p>
+              <% if (locals.errors && errors.lastname) { %>
+              <div class="text-danger"><%= errors.lastname.msg %></div>
+              <% } %>
             </div>
-        </form>
+            <div class="email">
+              <label for="email">E-mail:</label>
+              <input
+                class="input"
+                name="email"
+                type="text"
+                id="email"
+                placeholder="user@user.com"
+                value="<%= locals.oldData ? oldData.email : null%>"
+              />
+              <p id="msgError-email" class="p-msgError"></p>
+              <% if (locals.errors && errors.email) { %>
+              <div class="text-danger"><%= errors.email.msg %></div>
+              <% } %>
+            </div>
+            <div class="file">
+              <label for="file">Sube una imagen:</label>
+              <input type="file" id="file" name="avatar" />
+              <p id="msgError-avatar" class="p-msgError"></p>
+            </div>
+          </div>
+          <div class="derecha">
+            <div class="user">
+              <label for="user">Nombre de usuario:</label>
+              <input
+                class="input"
+                name="username"
+                type="text"
+                id="user"
+                placeholder="usuario"
+                value="<%= locals.oldData ? oldData.username : null%>"
+              />
+              <p id="msgError-username" class="p-msgError"></p>
+              <% if (locals.errors && errors.username) { %>
+              <div class="text-danger"><%= errors.username.msg %></div>
+              <% } %>
+            </div>
+            <div class="password">
+              <label for="password">Contraseña:</label>
+              <input
+                class="input"
+                name="password"
+                type="password"
+                id="password"
+                placeholder="**********"
+              />
+              <p id="msgError-password" class="p-msgError"></p>
+              <% if (locals.errors && errors.password) { %>
+              <div class="text-danger"><%= errors.password.msg %></div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="buttons-register">
+          <button type="submit" class="button-amarillo">Editar</button>
+          <a
+            href="/user/delete/confirm/<%= locals.oldData.id %>"
+            class="secundary-button"
+            >Borrar usuario</a
+          >
+        </div>
+      </form>
     </main>
     <div class="footer"><%- include('../partials/footer') %></div>
-</body>
-
+    <script src="/js/validationUserRegister.js"></script>
+  </body>
 </html>
