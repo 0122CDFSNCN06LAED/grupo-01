@@ -14,13 +14,16 @@
   .form-container {
     text-align: center;
   }
+  .p-msgError {
+    margin: 0;
+  }
   .inputs {
     margin: 20px 0;
   }
   label {
     margin-top: 10px;
   }
-  
+
   .input {
     display: block;
     width: 100%;
