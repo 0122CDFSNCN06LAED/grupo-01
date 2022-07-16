@@ -146,7 +146,17 @@ const validarChecked = (input, campo) =>{
             document.querySelector(`#grupo-weight .formulario-input-error`)
               .classList.remove("formulario-input-error-activo");
             }
-        
+
+            const valorInputFile = file.value;
+            if (valorInputFile.length === 0) {
+              document
+                .querySelector("#grupo-file .formulario-input-empty")
+                .classList.add("formulario-input-empty-activo");
+            } else {
+              document
+                .querySelector("#grupo-file .formulario-input-empty")
+                .classList.remove("formulario-input-empty-activo");
+            }
           
 
       }  else {
