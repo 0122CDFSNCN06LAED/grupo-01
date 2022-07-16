@@ -6,13 +6,17 @@
   .logo {
     display: block;
     position: absolute;
-    z-index: 1000;
+   /*  z-index:700; */
     top: 29px;
     left: 135px;
   }
   #logo-vert {
     display: block;
   }
+  .burger-logo{
+display: none;
+  }
+ 
   .nav-iconos,
   .login-button {
     display: none;
@@ -25,7 +29,10 @@
     margin-bottom: 50px;
     border-radius: 0 0 30px 30px;
   }
-
+  .buscar input {
+    width: 0;
+    border:none;
+  }
   /* imagenes promo */
   .imagenes-promo {
     display: flex;
@@ -62,6 +69,8 @@
   .texto p {
     margin-bottom: 35px;
   }
+
+
 
   /*  SECCION CARACTERISTICAS DE NUESTROS PRODUCTOS */
 
@@ -237,17 +246,18 @@
 
 /*------------DESKTOP-------------*/
 @media (min-width: 1280px) {
-  #logo {
-    width: 130px;
-  }
+  .none {
+    display: none;
+  } 
   .fondo-cafe-tablet {
     top: 150px;
   }
 
   /*header*/
-  .menu-izquierda {
+  nav .menu-izquierda a {
     display: none;
   }
+
   .nav-iconos .login-button {
     display: block;
   }

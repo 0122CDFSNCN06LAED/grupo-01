@@ -62,6 +62,7 @@
   font-size: 16px;
   line-height: 160%;
   }
+ 
   
   /*       MEDIDAS         */
   .width-100 {
@@ -206,9 +207,68 @@
     border:solid 1px #C4C4C4;
     margin-top:10px;
   }
+  #description{
+    width: 100%;
+    height: 150px;
+  }
   label {
     font-weight: 600;
     font-size: 16px;
    }
+
+   .formulario-input {
+    background: #ffffff;
+    transition: 0.3s ease all;
+    box-shadow:3px 0 30px rgba(163, 163, 163, 0.4);
+  }
+  
+  .formulario-input:focus {
+    border: 3px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0 30px rgba(163, 163, 163, 0.4);
+  }
+  
+  .formulario-input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+  }
+  .formulario-input-empty {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+  }
+  
+  .formulario-input-error-activo {
+    display: block;
+    
+  }
+  .formulario-input-empty-activo {
+    display: block;
+    
+  }
+ 
+  small {
+    width: 90%;
+    height: auto;
+  }
+/*-----------Estilos para validacion ---------*/
+.formulario-grupo-correcto .formulario-validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+  }
+  
+  .formulario-grupo-incorrecto .formulario-label {
+    color: #bb2929;
+  }
+  
+  .formulario-grupo-incorrecto .formulario-validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+  }
+  
+  .formulario-grupo-incorrecto .formulario-input {
+    border: 3px solid #bb2929;
+  }  
     
   
