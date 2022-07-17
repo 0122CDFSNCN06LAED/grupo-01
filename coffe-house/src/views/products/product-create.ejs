@@ -85,7 +85,7 @@
 
                   <% grinds.forEach(grind=> { %>
                     <p>
-                      <input type="checkbox" name="grind" value="<%= grind.id %>" <% if(locals.oldData &&
+                      <input type="checkbox" name="grind" id="grind" value="<%= grind.id %>" <% if(locals.oldData &&
                         Array.isArray(locals.oldData.grind)) { %>
                       <% locals.oldData.grind.forEach(oldGrind=> { %>
                         <%= oldGrind==grind.id ? "checked" : "" %>
@@ -105,7 +105,7 @@
 
                   <% weight.forEach(weight=> { %>
                     <p>
-                      <input type="checkbox" name="weight" value="<%= weight.id
+                      <input type="checkbox" name="weight" id="weight" value="<%= weight.id
                   %>" <% if(locals.oldData && Array.isArray(locals.oldData.weight)) { %>
                       <% locals.oldData.weight.forEach(oldWeight=> { %>
                         <%= oldWeight==weight.id ? "checked" : "" %>
