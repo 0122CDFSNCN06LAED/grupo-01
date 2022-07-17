@@ -66,7 +66,8 @@ const productSequelizeController = {
                                                     weight: weight,
                                                     grinds: grinds,
                                                     productCategory: productCategory,
-                                                    oldData:req.body})
+                                                    oldData:req.body,
+                                                    oldDataFile: req.file ? req.file.filename : ""})
     }
     else{
       try {

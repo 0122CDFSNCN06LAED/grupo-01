@@ -31,7 +31,8 @@ const validateProductEdit = [
       
     }
     return true;
-  })
+  }),
+  body("stock").notEmpty().withMessage("Debes especificar el stock"),
 ];
 
 module.exports = validateProductEdit;

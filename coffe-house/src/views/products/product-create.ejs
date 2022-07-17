@@ -89,15 +89,37 @@
                     <label for="grind"> Molienda:</label>
 
                     <% grinds.forEach(grind => { %>
-                      <p><input type="checkbox" name="grind" id="grind" value="<%= grind.id %>"> <%= grind.grind %> </p>
+                      <p>
+                        <input type="checkbox" name="grind" value="<%= grind.id %>" <% if(locals.oldData &&
+                          Array.isArray(locals.oldData.grind)) { %>
+                        <% locals.oldData.grind.forEach(oldGrind=> { %>
+                          <%= oldGrind==grind.id ? "checked" : "" %>
+                            <% }) %>
+                              <% }else{ %>
+                                <%= locals.oldData && locals.oldData.grind==grind.id ? "checked" : "" %>
+                                  <% } %> />
+                                    <%= grind.grind %>
+                      </p>
                     <% }) %>
+
+
                     <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
                   </div>
                   <div class="weight" id="grupo-weight">
                     <label for="weight">Peso:</label>
 
                     <% weight.forEach(weight => { %>
-                      <p><input type="checkbox" name="weight" id="weight" value="<%= weight.id %>"> <%= weight.weight %>g </p>
+                      <p>
+                      <input type="checkbox" name="weight" value="<%= weight.id
+                  %>" <% if(locals.oldData && Array.isArray(locals.oldData.weight)) { %>
+                      <% locals.oldData.weight.forEach(oldWeight=> { %>
+                        <%= oldWeight==weight.id ? "checked" : "" %>
+                          <% }) %>
+                            <% }else{ %>
+                              <%= locals.oldData && locals.oldData.weight==weight.id ? "checked" : "" %>
+                                <% } %>/>
+                                  <%= weight.weight %>g
+                    </p>
                             
                     <% }) %>
                     <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
@@ -120,7 +142,8 @@
                       <div class="price-button formulario-grupo-input" id="grupo-price">
                         <label for="price">Precio:</label>
                           <input 
-                              name="price" class="input formulario-input" type="number" id="price" value="<%= locals.oldData ? oldData.price : '' %>">
+                              name="price" class="input formulario-input" type="number" id="price" 
+                              value="<%= locals.oldData ? oldData.price : '' %>">
                                <% if(locals.errors && errors.price){ %> 
                                 <div class="text-danger">
                                   <%= errors.price.msg %> 
@@ -133,7 +156,13 @@
                      <div class="stock formulario-grupo-input" id="grupo-stock">
                               
                               <label for="stock">Stock disponible:</label>
-                              <input name="stock" class="input formulario-input" type="number" id="stock">
+                              <input name="stock" class="input formulario-input" type="number" id="stock" value="<%=
+                locals.oldData ? oldData.stock : "" %>" />
+                <% if(locals.errors && errors.stock){ %>
+                              <div class="text-danger">
+                                <%= errors.stock.msg %>
+                              </div>
+                              <% } %>
                               <small class="formulario-input-empty">El stock del producto debe completarse.</small>
                               <small class="formulario-input-error">Este campo solo puede contener números.</small>
                               

@@ -1,161 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('../partials/head', {style: "product-create.css",
-  title: "Edit product",}) %>
+<%- include ('../partials/head', {style: "product-create.css" , title: "Edit product" ,}) %>
+
   <body>
     <%- include ('../partials/header') %>
 
-    <main>
-      <div class="header">
-        <img class="isotipo" src="/img/iconos/isotipo.svg" alt="" />
-        <h2 class="carga-prod">Edita este producto:</h2>
-       
-      </div>
-      <form
-        action="/edit/<%= product.id %>?_method=put"
-        method="post"
-        enctype="multipart/form-data"
-      >
-        <div class="form-container">
-          <div class="izquierda">
-            <label for="product-name">Nombre del producto:</label>
-            <input
-              class="input"
-              type="text"
-              name="name"
-              value="<%= product.name %>"
-            />
-            <% if(locals.errors && errors.name){ %> 
-              <div class="text-danger">
-                <%= errors.name.msg %> 
-              </div>
-              <% } %>
-            <div class="cat-region .alineacion-horizontal">
-              <label for="category">Categoría:</label>
-              <select class="input" name="category" id="category">
-                <% productCategory.forEach(category => { %>
-                  <option name="category" value="<%= category.id %>"
-                <%= product.productCategory.id == category.id? "selected" : "" %>> <%= category.type %> Roast </option>
+      <main>
+        <div class="header">
+          <img class="isotipo" src="/img/iconos/isotipo.svg" alt="" />
+          <h2 class="carga-prod">Edita este producto:</h2>
 
-               <% } )%>
-                
-              </select>
-              <div class="region alineacion-centro-flex">
-                <label for="region">Región:</label>
-                <input
-                  class="input"
-                  type="text"
-                  name="region"
-                  value="<%= product.region %>"
-                />
-                <% if(locals.errors && errors.region){ %> 
-                  <div class="text-danger">
-                    <%= errors.region.msg %> 
-                  </div>
-                  <% } %>
-              </div>
-            </div>
-            <div class="description alineacion-centro-flex">
-              <label for="description">Descripción:</label>
-              <textarea name="description" id="description" cols="30" rows="10"value="">
-<%= product.description %>
-              </textarea>
-              
-                <% if(locals.errors && errors.description){ %> 
-                  <div class="text-danger">
-                    <%= errors.description.msg %> 
-                  </div>
-                  <% } %>
-              
-            </div>
-          </div>
-
-          <div class="derecha alineacion-centro-flex">
-            <div class="checks">
-              <div class="grind">
-                <label for="grind"> Molienda:</label>
-                <!--Recorro las opciones de molienda que me trae la db-->
-                <% dbgrinds.forEach(dbgrind => { %>
-                        
-                <p>
-                    <input type="checkbox" name="grind" value="<%= dbgrind.id %>" 
-                       <%  if(grindsOfThisProduct.length >= 1){ grindsOfThisProduct.forEach(grindChecked =>{  %>
-                        <%=grindChecked.id == dbgrind.id ? "checked" : ""%> <% });}%>
-                        />
-                       <%= dbgrind.grind %>
-                </p>
-
-                  <% })%>
-                
-              </div>
-               <div class="weight">
-                <label for="weight"> Peso:</label>
-                <!--Recorro las opciones de molienda que me trae la db-->
-                <% dbweights.forEach(dbweight => { %>
-                        
-                  <p>
-                      <input type="checkbox" name="weight" value="<%= dbweight.id %>" 
-                         <%  if(weightOfThisProduct.length >= 1){ weightOfThisProduct.forEach(weightChecked =>{  %>
-                          <%=weightChecked.id == dbweight.id ? "checked" : ""%> <% }); }%>
-                             />
-                         <%= dbweight.weight %>
-                  </p>
-  
-                    <% })%>
-               
-                  
-                
-              </div>
-             
-              
-            </div>
-            
-
-
-            <div class="file">
-              <label for="file">Sube una imagen:</label>
-              <input type="file" name="editImage" id="file" />
-              <% if(locals.errors && errors.image){ %> 
+        </div>
+        <form action="/edit/<%= product.id %>?_method=put" method="post" enctype="multipart/form-data">
+          <div class="form-container">
+            <div class="izquierda">
+              <label for="product-name">Nombre del producto:</label>
+              <input class="input" type="text" name="name" value="<%= product.name %>" />
+              <% if(locals.errors && errors.name){ %>
                 <div class="text-danger">
-                  <%= errors.image.msg %> 
+                  <%= errors.name.msg %>
                 </div>
                 <% } %>
+                  <div class="cat-region .alineacion-horizontal">
+                    <label for="category">Categoría:</label>
+                    <select class="input" name="category" id="category">
+                      <% productCategory.forEach(category=> { %>
+                        <option name="category" value="<%= category.id %>"
+                          <%=product.productCategory.id==category.id? "selected" : "" %>> <%= category.type %> Roast
+                        </option>
+
+                        <% } )%>
+
+                    </select>
+                    <div class="region alineacion-centro-flex">
+                      <label for="region">Región:</label>
+                      <input class="input" type="text" name="region" value="<%= product.region %>" />
+                      <% if(locals.errors && errors.region){ %>
+                        <div class="text-danger">
+                          <%= errors.region.msg %>
+                        </div>
+                        <% } %>
+                    </div>
+                  </div>
+                  <div class="description alineacion-centro-flex">
+                    <label for="description">Descripción:</label>
+                    <textarea name="description" id="description" cols="30" rows="10" value="">
+<%= product.description %>
+              </textarea>
+
+                    <% if(locals.errors && errors.description){ %>
+                      <div class="text-danger">
+                        <%= errors.description.msg %>
+                      </div>
+                      <% } %>
+
+                  </div>
             </div>
 
-            <div class="container-price-stock"> 
-              <div class="price-button">
-                      
-                      <label for="price">Precio:</label>
-                       <input
-                  class="input"
-                  type="number"
-                  name="price"
-                  id="price"
-                  value="<%= product.price %>"
-                />
-                <% if(locals.errors && errors.price){ %> 
+            <div class="derecha alineacion-centro-flex">
+              <div class="checks">
+                <div class="grind">
+                  <label for="grind"> Molienda:</label>
+                  <!--Recorro las opciones de molienda que me trae la db-->
+                  <% dbgrinds.forEach(dbgrind=> { %>
+
+                    <p>
+                      <input type="checkbox" name="grind" value="<%= dbgrind.id %>" <% if(grindsOfThisProduct.length>=
+                      1){ grindsOfThisProduct.forEach(grindChecked =>{ %>
+                      <%=grindChecked.id==dbgrind.id ? "checked" : "" %>
+                        <% });}%>
+                          />
+                          <%= dbgrind.grind %>
+                    </p>
+
+                    <% })%>
+
+                </div>
+                <div class="weight">
+                  <label for="weight"> Peso:</label>
+                  <!--Recorro las opciones de molienda que me trae la db-->
+                  <% dbweights.forEach(dbweight=> { %>
+
+                    <p>
+                      <input type="checkbox" name="weight" value="<%= dbweight.id %>" <% if(weightOfThisProduct.length>=
+                      1){ weightOfThisProduct.forEach(weightChecked =>{ %>
+                      <%=weightChecked.id==dbweight.id ? "checked" : "" %>
+                        <% }); }%>
+                          />
+                          <%= dbweight.weight %>
+                    </p>
+
+                    <% })%>
+
+
+
+                </div>
+
+
+              </div>
+              <% if(locals.errors && errors.grind){ %>
+                <p class="text-danger">
+                  <%= errors.grind.msg %>
+                </p>
+                <% }else{ %>
+                  <% if(locals.errors && errors.weight) { %>
+                    <p class="text-danger">
+                      <%= errors.weight.msg %>
+                    </p>
+                    <% } %>
+                      <% } %>
+
+
+
+              <div class="file">
+                <label for="file">Sube una imagen:</label>
+                <input type="file" name="editImage" id="file" />
+                <% if(locals.errors && errors.image){ %>
                   <div class="text-danger">
-                    <%= errors.price.msg %> 
+                    <%= errors.image.msg %>
                   </div>
                   <% } %>
-                     
-               </div>
-             <div class="stock">
-                      
-                      <label for="stock">Stock disponible:</label>
-                      <input name="stock" class="input" type="number" name="stock" value="<%= product.stock %>">
-                      
-               </div> 
+              </div>
+
+              <div class="container-price-stock">
+                <div class="price-button">
+
+                  <label for="price">Precio:</label>
+                  <input class="input" type="number" name="price" id="price" value="<%= product.price %>" />
+                  <% if(locals.errors && errors.price){ %>
+                    <div class="text-danger">
+                      <%= errors.price.msg %>
+                    </div>
+                    <% } %>
+
+                </div>
+                <div class="stock">
+
+                  <label for="stock">Stock disponible:</label>
+                  <input name="stock" class="input" type="number" name="stock" value="<%= product.stock %>">
+
+                  <% if(locals.errors && errors.stock){ %>
+                    <div class="text-danger">
+                      <%= errors.stock.msg %>
+                    </div>
+                    <% } %>
+
+                </div>
+              </div>
+              <div class="buttons-borrar-cargar">
+                <button class="secundary-button" type="reset">Borrar</button>
+                <button class="send button-amarillo" type="submit">Cargar producto</button>
+              </div>
+
+            </div>
           </div>
-          <div class="buttons-borrar-cargar">
-            <button class="secundary-button"type="reset">Borrar</button>
-            <button class="send button-amarillo" type="submit">Cargar producto</button>
-          </div> 
-          
-          </div>
-        </div>
-      </form>
-    </main>
-    <%- include('../partials/footer') %>
+        </form>
+      </main>
+      <%- include('../partials/footer') %>
   </body>
+
 </html>
