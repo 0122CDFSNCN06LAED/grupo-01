@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('../partials/head', {style: 'product-delete.css', title:
-  'Delete'}) %>
-  <body class="bg-white">
-    <%- include ('../partials/header') %>
+<%- include ('../partials/head', {style: 'product-delete.css' , title: 'Delete' }) %>
 
-<main class="contenedor-principal">
-    <div class="confirm">
-        <h2>¿Estás seguro de que deseas <strong>eliminar</strong> el siguiente producto? </h2>
-        <div class="product-card-confirm">
-            <div class="title">
-                <h3><%= product.name %>  |  <%= product.productCategory.type %>   </h3>
-            </div>
-                <img class="product-image-confirm" src="/img/products/<%= product.image %>" alt=""> 
+    <body class="bg-white">
+        <%- include ('../partials/header') %>
 
-        </div>
-        <div class="buttons-confirm">
-            <form
-            action="/product/delete/<%=product.id%>?_method=DELETE"
-            method="POST"
-          >
-          <button class="button-amarillo" type="submit">Eliminar</button>
-          </form>
-         
-            <a href="/product/detail/<%= product.id %>" class="cancelar secundary-button" >Cancelar</a>
-        </div>
-    </div>
+            <main class="contenedor-principal">
+                <div class="confirm">
+                    <h2>¿Estás seguro de que deseas <strong>eliminar</strong> el siguiente producto? </h2>
+                    <div class="product-card-confirm">
+                        <div class="title">
+                            <h3>
+                                <%= product.name %> | <%= product.productCategory.type %>
+                            </h3>
+                        </div>
+                        <img class="product-image-confirm" src="/img/products/<%= product.image %>" alt="">
 
-</main>
+                    </div>
+                    <div class="buttons-confirm">
+                        <form action="/product/delete/<%=product.id%>?_method=DELETE" method="POST">
+                            <button class="button-amarillo" type="submit">Eliminar</button>
+                        </form>
 
-<%- include('../partials/footer') %>  
-  
-</body>
+                        <a href="/product/detail/<%= product.id %>" class="cancelar secundary-button">Cancelar</a>
+                    </div>
+                </div>
+
+            </main>
+
+            <%- include('../partials/footer') %>
+
+    </body>
+
 </html>

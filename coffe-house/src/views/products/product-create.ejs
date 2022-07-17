@@ -1,115 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('../partials/head', {
-    style: "product-create.css",
-    title: "Create product",
-  }) %>
+<%- include ('../partials/head', { style: "product-create.css" , title: "Create product" , }) %>
 
-<body>
-   
-   
-  <%- include ('../partials/header') %>
+  <body>
+
+
+    <%- include ('../partials/header') %>
 
 
       <main>
-          
-           <div class="header">
-            <img class="isotipo" src="/img/iconos/isotipo.svg" alt="">  
-            <h1 class="carga-prod">Carga tu producto:</h1>
-           </div> 
-         
-          
-           <form action="/product/create" method="POST" enctype='multipart/form-data' id="formulario">
-            
-            <div class="form-container">
-              <div class="izquierda">
-                <div class="formulario-grupo-input" id="grupo-name"> 
+
+        <div class="header">
+          <img class="isotipo" src="/img/iconos/isotipo.svg" alt="">
+          <h1 class="carga-prod">Carga tu producto:</h1>
+        </div>
+
+
+        <form action="/product/create" method="POST" enctype='multipart/form-data' id="formulario">
+
+          <div class="form-container">
+            <div class="izquierda">
+              <div class="formulario-grupo-input" id="grupo-name">
                 <label for="product-name">Nombre del producto:</label>
-                <input 
-                    class="input formulario-input" 
-                    type="text" 
-                    name="name" 
-                    id="name"
-                    value="<%= locals.oldData ? oldData.name : '' %>"> 
-                    <% if(locals.errors && errors.name){ %> 
-                      <div class="text-danger">
-                        <%= errors.name.msg %> 
-                      </div>
-                      <% } %>
-                      <small class="formulario-input-empty">El nombre del producto debe completarse.</small>
-                  <small class="formulario-input-error">El nombre solo puede contener letras, números y espacios.</small>
-                </div>
-                <div class="cat-region formulario-grupo-input .alineacion-horizontal">
-                  <div class="category">
+                <input class="input formulario-input" type="text" name="name" id="name"
+                  value="<%= locals.oldData ? oldData.name : '' %>">
+                <% if(locals.errors && errors.name){ %>
+                  <div class="text-danger">
+                    <%= errors.name.msg %>
+                  </div>
+                  <% } %>
+                    <small class="formulario-input-empty">El nombre del producto debe completarse.</small>
+                    <small class="formulario-input-error">El nombre solo puede contener letras, números y
+                      espacios.</small>
+              </div>
+              <div class="cat-region formulario-grupo-input .alineacion-horizontal">
+                <div class="category">
                   <label for="category">Categoría:</label>
                   <select class="input" name="category" id="category">
-                    <% productCategory.forEach(category => { %>
-                      <option name="category" value="<%= category.id %>"><%= category.type %> Roast</option>
-                    <% }) %>
-                    
+                    <% productCategory.forEach(category=> { %>
+                      <option name="category" value="<%= category.id %>">
+                        <%= category.type %> Roast
+                      </option>
+                      <% }) %>
+
                   </select>
                 </div>
 
-                  <div class="region formulario-grupo-input alineacion-centro-flex" id="grupo-region">
-                    <label for="region">Región:</label>
-                  <input 
-                      name="region" 
-                      class="input formulario-input"
-                      type="text" id="region"
-                      value="<%= locals.oldData ? oldData.region : ''%>">
-                      <% if(locals.errors && errors.region){ %> 
-                        <div class="text-danger">
-                          <%= errors.region.msg %> 
-                        </div>
-                        <% } %>
-                        <small class="formulario-input-empty">La región del producto debe completarse.</small>
-                  <small class="formulario-input-error">Este campo solo puede contener letras y espacios.</small>
-                 
-                  </div>
-                  
+                <div class="region formulario-grupo-input alineacion-centro-flex" id="grupo-region">
+                  <label for="region">Región:</label>
+                  <input name="region" class="input formulario-input" type="text" id="region"
+                    value="<%= locals.oldData ? oldData.region : ''%>">
+                  <% if(locals.errors && errors.region){ %>
+                    <div class="text-danger">
+                      <%= errors.region.msg %>
+                    </div>
+                    <% } %>
+                      <small class="formulario-input-empty">La región del producto debe completarse.</small>
+                      <small class="formulario-input-error">Este campo solo puede contener letras y espacios.</small>
+
                 </div>
-                <div class="description formulario-grupo-input alineacion-centro-flex" id="grupo-description">
-                  <label for="description">Descripción:</label>
-                <textarea name="description" class="input formulario-input" id="description" cols="30" rows="10" value="<%= locals.oldData ? oldData.description : '' %>"></textarea>
-                
-                <% if(locals.errors && errors.description){ %> 
+
+              </div>
+              <div class="description formulario-grupo-input alineacion-centro-flex" id="grupo-description">
+                <label for="description">Descripción:</label>
+                <textarea name="description" class="input formulario-input" id="description" cols="30" rows="10"
+                  value="<%= locals.oldData ? oldData.description : '' %>"></textarea>
+
+                <% if(locals.errors && errors.description){ %>
                   <div class="text-danger">
-                    <%= errors.description.msg %> 
+                    <%= errors.description.msg %>
                   </div>
                   <% } %>
-                  <small class="formulario-input-empty">La descripción del producto debe completarse.</small>
-                  <small class="formulario-input-error">Este campo solo puede contener letras, números, caracteres especiales y espacios.</small>
-                 
-              </div>
-              </div>
+                    <small class="formulario-input-empty">La descripción del producto debe completarse.</small>
+                    <small class="formulario-input-error">Este campo solo puede contener letras, números, caracteres
+                      especiales y espacios.</small>
 
-              <div class="derecha alineacion-centro-flex">
-                <div class="checks">
-                  <div class="grind" id="grupo-grind">
-                    <label for="grind"> Molienda:</label>
+              </div>
+            </div>
 
-                    <% grinds.forEach(grind => { %>
-                      <p>
-                        <input type="checkbox" name="grind" value="<%= grind.id %>" <% if(locals.oldData &&
-                          Array.isArray(locals.oldData.grind)) { %>
-                        <% locals.oldData.grind.forEach(oldGrind=> { %>
-                          <%= oldGrind==grind.id ? "checked" : "" %>
-                            <% }) %>
-                              <% }else{ %>
-                                <%= locals.oldData && locals.oldData.grind==grind.id ? "checked" : "" %>
-                                  <% } %> />
-                                    <%= grind.grind %>
-                      </p>
+            <div class="derecha alineacion-centro-flex">
+              <div class="checks">
+                <div class="grind" id="grupo-grind">
+                  <label for="grind"> Molienda:</label>
+
+                  <% grinds.forEach(grind=> { %>
+                    <p>
+                      <input type="checkbox" name="grind" value="<%= grind.id %>" <% if(locals.oldData &&
+                        Array.isArray(locals.oldData.grind)) { %>
+                      <% locals.oldData.grind.forEach(oldGrind=> { %>
+                        <%= oldGrind==grind.id ? "checked" : "" %>
+                          <% }) %>
+                            <% }else{ %>
+                              <%= locals.oldData && locals.oldData.grind==grind.id ? "checked" : "" %>
+                                <% } %> />
+                                  <%= grind.grind %>
+                    </p>
                     <% }) %>
 
 
-                    <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
-                  </div>
-                  <div class="weight" id="grupo-weight">
-                    <label for="weight">Peso:</label>
+                      <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
+                </div>
+                <div class="weight" id="grupo-weight">
+                  <label for="weight">Peso:</label>
 
-                    <% weight.forEach(weight => { %>
-                      <p>
+                  <% weight.forEach(weight=> { %>
+                    <p>
                       <input type="checkbox" name="weight" value="<%= weight.id
                   %>" <% if(locals.oldData && Array.isArray(locals.oldData.weight)) { %>
                       <% locals.oldData.weight.forEach(oldWeight=> { %>
@@ -120,73 +115,73 @@
                                 <% } %>/>
                                   <%= weight.weight %>g
                     </p>
-                            
+
                     <% }) %>
-                    <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
-                  </div>
-                 
+                      <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
                 </div>
-                <div class="file" id="grupo-file">
-                  <label for="file">Sube una imagen:</label>
-                  <input type="file" class="formulario-input" id="file" name="image">
-                  <% if(locals.errors && errors.image){ %> 
-                    <div class="text-danger">
-                      <%= errors.image.msg %> 
-                    </div>
-                    <% } %>
+
+              </div>
+              <div class="file" id="grupo-file">
+                <label for="file">Sube una imagen:</label>
+                <input type="file" class="formulario-input" id="file" name="image">
+                <% if(locals.errors && errors.image){ %>
+                  <div class="text-danger">
+                    <%= errors.image.msg %>
+                  </div>
+                  <% } %>
                     <small class="formulario-input-empty">Debes incluir una imagen.</small>
                     <small class="formulario-input-error">La extensión del archivo debe ser .jpg, .jpeg o .png.</small>
-                  </div>
-                  
-                  <div class="container-price-stock"> 
-                      <div class="price-button formulario-grupo-input" id="grupo-price">
-                        <label for="price">Precio:</label>
-                          <input 
-                              name="price" class="input formulario-input" type="number" id="price" 
-                              value="<%= locals.oldData ? oldData.price : '' %>">
-                               <% if(locals.errors && errors.price){ %> 
-                                <div class="text-danger">
-                                  <%= errors.price.msg %> 
-                                </div>
-                                <% } %>
-                                <small class="formulario-input-empty">El precio del producto debe completarse.</small>
-                           <small class="formulario-input-error">Este campo solo puede contener números.</small>
-                         
-                       </div>
-                     <div class="stock formulario-grupo-input" id="grupo-stock">
-                              
-                              <label for="stock">Stock disponible:</label>
-                              <input name="stock" class="input formulario-input" type="number" id="stock" value="<%=
+              </div>
+
+              <div class="container-price-stock">
+                <div class="price-button formulario-grupo-input" id="grupo-price">
+                  <label for="price">Precio:</label>
+                  <input name="price" class="input formulario-input" type="number" id="price"
+                    value="<%= locals.oldData ? oldData.price : '' %>">
+                  <% if(locals.errors && errors.price){ %>
+                    <div class="text-danger">
+                      <%= errors.price.msg %>
+                    </div>
+                    <% } %>
+                      <small class="formulario-input-empty">El precio del producto debe completarse.</small>
+                      <small class="formulario-input-error">Este campo solo puede contener números.</small>
+
+                </div>
+                <div class="stock formulario-grupo-input" id="grupo-stock">
+
+                  <label for="stock">Stock disponible:</label>
+                  <input name="stock" class="input formulario-input" type="number" id="stock" value="<%=
                 locals.oldData ? oldData.stock : "" %>" />
-                <% if(locals.errors && errors.stock){ %>
-                              <div class="text-danger">
-                                <%= errors.stock.msg %>
-                              </div>
-                              <% } %>
-                              <small class="formulario-input-empty">El stock del producto debe completarse.</small>
-                              <small class="formulario-input-error">Este campo solo puede contener números.</small>
-                              
-                       </div> 
-                       <div class="errores-alert" id="errores-alert">
-                        <p>Debes rellenar correctamente el formulario.</p>
-                       </div>
-                      <div class="buttons-borrar-cargar">
-                       <button class="secundary-button"type="reset">Borrar</button>
-                       <button class="send button-amarillo" type="submit">Cargar producto</button>
-                     </div> 
+                  <% if(locals.errors && errors.stock){ %>
+                    <div class="text-danger">
+                      <%= errors.stock.msg %>
+                    </div>
+                    <% } %>
+                      <small class="formulario-input-empty">El stock del producto debe completarse.</small>
+                      <small class="formulario-input-error">Este campo solo puede contener números.</small>
 
-                  </div>
-                  
-
+                </div>
+                <div class="errores-alert" id="errores-alert">
+                  <p>Debes rellenar correctamente el formulario.</p>
+                </div>
+                <div class="buttons-borrar-cargar">
+                  <button class="secundary-button" type="reset">Borrar</button>
+                  <button class="send button-amarillo" type="submit">Cargar producto</button>
+                </div>
 
               </div>
 
+
+
             </div>
-          
-           
-          </form>
+
+          </div>
+
+
+        </form>
       </main>
       <script src="/js/product-validation.js"></script>
       <%- include('../partials/footer') %>
-</body>
+  </body>
+
 </html>

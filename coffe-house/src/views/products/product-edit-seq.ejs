@@ -112,45 +112,45 @@
 
 
 
-              <div class="file">
-                <label for="file">Sube una imagen:</label>
-                <input type="file" name="editImage" id="file" />
-                <% if(locals.errors && errors.image){ %>
-                  <div class="text-danger">
-                    <%= errors.image.msg %>
-                  </div>
-                  <% } %>
-              </div>
+                        <div class="file">
+                          <label for="file">Sube una imagen:</label>
+                          <input type="file" name="editImage" id="file" />
+                          <% if(locals.errors && errors.image){ %>
+                            <div class="text-danger">
+                              <%= errors.image.msg %>
+                            </div>
+                            <% } %>
+                        </div>
 
-              <div class="container-price-stock">
-                <div class="price-button">
+                        <div class="container-price-stock">
+                          <div class="price-button">
 
-                  <label for="price">Precio:</label>
-                  <input class="input" type="number" name="price" id="price" value="<%= product.price %>" />
-                  <% if(locals.errors && errors.price){ %>
-                    <div class="text-danger">
-                      <%= errors.price.msg %>
-                    </div>
-                    <% } %>
+                            <label for="price">Precio:</label>
+                            <input class="input" type="number" name="price" id="price" value="<%= product.price %>" />
+                            <% if(locals.errors && errors.price){ %>
+                              <div class="text-danger">
+                                <%= errors.price.msg %>
+                              </div>
+                              <% } %>
 
-                </div>
-                <div class="stock">
+                          </div>
+                          <div class="stock">
 
-                  <label for="stock">Stock disponible:</label>
-                  <input name="stock" class="input" type="number" name="stock" value="<%= product.stock %>">
+                            <label for="stock">Stock disponible:</label>
+                            <input name="stock" class="input" type="number" name="stock" value="<%= product.stock %>">
 
-                  <% if(locals.errors && errors.stock){ %>
-                    <div class="text-danger">
-                      <%= errors.stock.msg %>
-                    </div>
-                    <% } %>
+                            <% if(locals.errors && errors.stock){ %>
+                              <div class="text-danger">
+                                <%= errors.stock.msg %>
+                              </div>
+                              <% } %>
 
-                </div>
-              </div>
-              <div class="buttons-borrar-cargar">
-                <button class="secundary-button" type="reset">Borrar</button>
-                <button class="send button-amarillo" type="submit">Cargar producto</button>
-              </div>
+                          </div>
+                        </div>
+                        <div class="buttons-borrar-cargar">
+                          <button class="secundary-button" type="reset">Borrar</button>
+                          <button class="send button-amarillo" type="submit">Cargar producto</button>
+                        </div>
 
             </div>
           </div>

@@ -10,25 +10,25 @@ const validateProductEdit = [
     .withMessage("Tienes que escribir la región de origen"),
   body("description")
     .notEmpty()
-    .withMessage("Tienes que escribir una descripcion con al menos 16 caracteres"),    
+    .withMessage("Tienes que escribir una descripcion con al menos 16 caracteres"),
   body("weight")
-  .notEmpty()
-  .withMessage("Tienes que especificar el peso neto del producto"),
+    .notEmpty()
+    .withMessage("Tienes que especificar el peso neto del producto"),
   body("price")
-  .notEmpty()
-  .withMessage("Tienes que especificar el valor del producto en $ argentinos"),
-  body("image").custom((value, {req})=>{
+    .notEmpty()
+    .withMessage("Tienes que especificar el valor del producto en $ argentinos"),
+  body("image").custom((value, { req }) => {
     let file = req.file;
     let extencionesAceptadas = ['.jpg', '.png', '.gif'];
-    
-    if(!file){
+
+    if (!file) {
       throw new Error('Tienes subir una imagen');
-    } else{
+    } else {
       let fileExtension = path.extname(file.originalname);
-      if(!extencionesAceptadas.includes(fileExtension)){
+      if (!extencionesAceptadas.includes(fileExtension)) {
         throw new Error(`Las extensiones de archivo permitidas son ${extencionesAceptadas.join(', ')}`);
       }
-      
+
     }
     return true;
   }),

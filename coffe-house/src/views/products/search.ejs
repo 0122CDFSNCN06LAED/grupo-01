@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include ('../partials/head', { style: "products-index.css",
-  title: "Buscar"}) %>
+<%- include ('../partials/head', { style: "products-index.css" , title: "Buscar" }) %>
 
-<body>
-   
-   
-  <%- include ('../partials/header') %>
-
-<main>
-
-    <h1 class="color-verde-oscuro"> Nuestros productos</h1>
-    <h2 class="color-verde-claro">Coinciden con tu búsqueda:</h2>
-    
-    <div class="categories-container">
-
-    <section class="blonde">
-        
-        <div class="container-products-cards">
-    <% products.forEach(product => { %>
-    <article class="card-container">
-        <img src="/img/products/<%=product.image%>" alt="">
-        <div class="text-card">
-           <h5 class="black"><%= product.name %></h5>
-            <p>Proveniente de <%= product.region %>.</p>
-             <div class="precio">
-              <h5 class="black">$<%= product.price %></h5>
-              <a class="color-amarillo sin-estilos"href="/product/detail/<%=product.id%>">Ver más...</a>
-           </div>
-    
-         </div>
-
-       </article>
-       <%	}); %>
-    </div>
-    </section>
-
-</div>
-</main>
+  <body>
 
 
+    <%- include ('../partials/header') %>
+
+      <main>
+
+        <h1 class="color-verde-oscuro"> Nuestros productos</h1>
+        <h2 class="color-verde-claro">Coinciden con tu búsqueda:</h2>
+
+        <div class="categories-container">
+
+          <section class="blonde">
+
+            <div class="container-products-cards">
+              <% products.forEach(product=> { %>
+                <article class="card-container">
+                  <img src="/img/products/<%=product.image%>" alt="">
+                  <div class="text-card">
+                    <h5 class="black">
+                      <%= product.name %>
+                    </h5>
+                    <p>Proveniente de <%= product.region %>.</p>
+                    <div class="precio">
+                      <h5 class="black">$<%= product.price %>
+                      </h5>
+                      <a class="color-amarillo sin-estilos" href="/product/detail/<%=product.id%>">Ver más...</a>
+                    </div>
+
+                  </div>
+
+                </article>
+                <% }); %>
+            </div>
+          </section>
+
+        </div>
+      </main>
 
 
-  <%- include('../partials/footer') %>
- 
-</body>
+
+
+      <%- include('../partials/footer') %>
+
+  </body>
 
 </html>

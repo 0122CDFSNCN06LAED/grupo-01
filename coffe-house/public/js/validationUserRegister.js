@@ -180,9 +180,8 @@ window.onload = async function () {
             //Si es menor a ocho carateres, mensaje de error.
             if (inputValue.length < 8) {
               errors.push(`The ${inputName} must have at least 8 characters`);
-              elementMsgError.innerHTML = `The ${
-                inputName == "password2" ? "password" : inputName
-              } must have at least 8 characters`;
+              elementMsgError.innerHTML = `The ${inputName == "password2" ? "password" : inputName
+                } must have at least 8 characters`;
             }
             //Si las contraseñas no son iguales mensaje de error.
             else if (!(confirmPassword == inputValue)) {
@@ -198,9 +197,8 @@ window.onload = async function () {
             elementMsgError.innerHTML = "";
           } else {
             errors.push(`The ${inputName} field cannot be empty`);
-            elementMsgError.innerHTML = `The ${
-              inputName == "password2" ? "password" : inputName
-            } field cannot be empty`;
+            elementMsgError.innerHTML = `The ${inputName == "password2" ? "password" : inputName
+              } field cannot be empty`;
           }
         }
       }
