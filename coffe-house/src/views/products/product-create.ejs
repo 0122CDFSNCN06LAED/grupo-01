@@ -61,6 +61,7 @@
                 </div>
 
               </div>
+
               <div class="description formulario-grupo-input alineacion-centro-flex" id="grupo-description">
                 <label for="description">Descripción:</label>
                 <textarea name="description" class="input formulario-input" id="description" cols="30" rows="10"
@@ -85,8 +86,8 @@
 
                   <% grinds.forEach(grind=> { %>
                     <p>
-                      <input type="checkbox" name="grind" id="grind" value="<%= grind.id %>" <% if(locals.oldData &&
-                        Array.isArray(locals.oldData.grind)) { %>
+                      <input type="checkbox" name="grind" id="grind" value="<%= grind.id %>" 
+                      <% if(locals.oldData && Array.isArray(locals.oldData.grind)) { %>
                       <% locals.oldData.grind.forEach(oldGrind=> { %>
                         <%= oldGrind==grind.id ? "checked" : "" %>
                           <% }) %>
@@ -105,8 +106,8 @@
 
                   <% weight.forEach(weight=> { %>
                     <p>
-                      <input type="checkbox" name="weight" id="weight" value="<%= weight.id
-                  %>" <% if(locals.oldData && Array.isArray(locals.oldData.weight)) { %>
+                      <input type="checkbox" name="weight" id="weight" value="<%= weight.id %>"
+                   <% if(locals.oldData && Array.isArray(locals.oldData.weight)) { %>
                       <% locals.oldData.weight.forEach(oldWeight=> { %>
                         <%= oldWeight==weight.id ? "checked" : "" %>
                           <% }) %>
