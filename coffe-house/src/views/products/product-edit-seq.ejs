@@ -15,60 +15,62 @@
           <div class="form-container">
             <div class="izquierda">
               <div class="formulario-grupo-input" id="grupo-name">
-              <label for="product-name">Nombre del producto:</label>
-              <input class="input formulario-input" type="text" name="name" id="name" value="<%= product.name %>" />
-              <% if(locals.errors && errors.name){ %>
-                <div class="text-danger">
-                  <%= errors.name.msg %>
-                </div>
-                <% } %>
-                <small class="formulario-input-empty">El nombre del producto debe completarse.</small>
+                <label for="product-name">Nombre del producto:</label>
+                <input class="input formulario-input" type="text" name="name" id="name" value="<%= product.name %>" />
+                <% if(locals.errors && errors.name){ %>
+                  <div class="text-danger">
+                    <%= errors.name.msg %>
+                  </div>
+                  <% } %>
+                    <small class="formulario-input-empty">El nombre del producto debe completarse.</small>
                     <small class="formulario-input-error">El nombre solo puede contener letras, números y
                       espacios.</small>
               </div>
               <div class="cat-region formulario-grupo-input .alineacion-horizontal">
                 <div class="category">
-                    <label for="category">Categoría:</label>
-                    <select class="input" name="category" id="category">
-                      <% productCategory.forEach(category=> { %>
-                        <option name="category" value="<%= category.id %>"
-                          <%=product.productCategory.id==category.id? "selected" : "" %>> <%= category.type %> Roast
-                        </option>
+                  <label for="category">Categoría:</label>
+                  <select class="input" name="category" id="category">
+                    <% productCategory.forEach(category=> { %>
+                      <option name="category" value="<%= category.id %>"
+                        <%=product.productCategory.id==category.id? "selected" : "" %>><%= category.type %> Roast
+                      </option>
 
-                        <% } )%>
+                      <% } )%>
 
-                    </select>
-                  </div>
-                  <div class="region formulario-grupo-input alineacion-centro-flex" id="grupo-region">
-                      <label for="region">Región:</label>
-                      <input name="region" class="input formulario-input" type="text" id="region" value="<%= product.region %>" />
-                      <% if(locals.errors && errors.region){ %>
-                        <div class="text-danger">
-                          <%= errors.region.msg %>
-                        </div>
-                        <% } %>
-                        <small class="formulario-input-empty">La región del producto debe completarse.</small>
+                  </select>
+                </div>
+                <div class="region formulario-grupo-input alineacion-centro-flex" id="grupo-region">
+                  <label for="region">Región:</label>
+                  <input name="region" class="input formulario-input" type="text" id="region"
+                    value="<%= product.region %>" />
+                  <% if(locals.errors && errors.region){ %>
+                    <div class="text-danger">
+                      <%= errors.region.msg %>
+                    </div>
+                    <% } %>
+                      <small class="formulario-input-empty">La región del producto debe completarse.</small>
                       <small class="formulario-input-error">Este campo solo puede contener letras y espacios.</small>
 
-                    </div>
+                </div>
 
-                  </div>
+              </div>
 
-                  <div class="description formulario-grupo-input alineacion-centro-flex" id="grupo-description">
-                    <label for="description">Descripción:</label>
-                    <textarea name="description" class="input formulario-input" id="description" cols="30" rows="10" value="">
+              <div class="description formulario-grupo-input alineacion-centro-flex" id="grupo-description">
+                <label for="description">Descripción:</label>
+                <textarea name="description" class="input formulario-input" id="description" cols="30" rows="10"
+                  value="">
 <%= product.description %></textarea>
 
-                    <% if(locals.errors && errors.description){ %>
-                      <div class="text-danger">
-                        <%= errors.description.msg %>
-                      </div>
-                      <% } %>
-                      <small class="formulario-input-empty">La descripción del producto debe completarse.</small>
+                <% if(locals.errors && errors.description){ %>
+                  <div class="text-danger">
+                    <%= errors.description.msg %>
+                  </div>
+                  <% } %>
+                    <small class="formulario-input-empty">La descripción del producto debe completarse.</small>
                     <small class="formulario-input-error">Este campo solo puede contener letras, números, caracteres
                       especiales y espacios.</small>
 
-                  </div>
+              </div>
             </div>
 
             <div class="derecha alineacion-centro-flex">
@@ -79,7 +81,8 @@
                   <% dbgrinds.forEach(dbgrind=> { %>
 
                     <p>
-                      <input type="checkbox" name="grind" id="grind "value="<%= dbgrind.id %>" <% if(grindsOfThisProduct.length>=1){ grindsOfThisProduct.forEach(grindChecked =>{ %>
+                      <input type="checkbox" name="grind" id="grind " value="<%= dbgrind.id %>" <%
+                        if(grindsOfThisProduct.length>=1){ grindsOfThisProduct.forEach(grindChecked =>{ %>
                       <%=grindChecked.id==dbgrind.id ? "checked" : "" %>
                         <% });}%>
                           />
@@ -87,26 +90,26 @@
                     </p>
 
                     <% })%>
-                    <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
+                      <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
 
                 </div>
                 <div class="weight" id="grupo-weight">
                   <label for="weight"> Peso:</label>
-                  <!--Recorro las opciones de molienda que me trae la db-->
-                  <% dbweights.forEach(dbweight=> { %>
+                  <%#--Recorro las opciones de molienda que me trae la db--%>
+                    <% dbweights.forEach(dbweight=> { %>
 
-                    <p>
-                      <input type="checkbox" name="weight" id="weight" value="<%= dbweight.id %>" 
-                      <% if(weightOfThisProduct.length>= 1){ weightOfThisProduct.forEach(weightChecked =>{ %>
-                      <%=weightChecked.id==dbweight.id ? "checked" : "" %>
-                        <% }); }%>
-                          />
-                          <%= dbweight.weight %>
-                    </p>
+                      <p>
+                        <input type="checkbox" name="weight" id="weight" value="<%= dbweight.id %>" <%
+                          if(weightOfThisProduct.length>= 1){ weightOfThisProduct.forEach(weightChecked =>{ %>
+                        <%=weightChecked.id==dbweight.id ? "checked" : "" %>
+                          <% }); }%>
+                            />
+                            <%= dbweight.weight %>
+                      </p>
 
-                    <% })%>
+                      <% })%>
 
-                    <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
+                        <small class="formulario-input-error">Debes seleccionar al menos una opción.</small>
 
 
                 </div>
@@ -130,42 +133,45 @@
                         <div class="file" id="grupo-file">
                           <label for="file">Sube una imagen:</label>
                           <input type="file" class="formulario-input" name="editImage" id="file" />
-                          <% if(locals.errors && errors.image){ %>
+                          <% if(locals.errors && errors.editImage){ %>
                             <div class="text-danger">
-                              <%= errors.image.msg %>
+                              <%= errors.editImage.msg %>
                             </div>
                             <% } %>
-                            <small class="formulario-input-empty">Debes incluir una imagen.</small>
-                            <small class="formulario-input-error">La extensión del archivo debe ser .jpg, .jpeg o .png.</small>
-                     
+                              <small class="formulario-input-empty">Debes incluir una imagen.</small>
+                              <small class="formulario-input-error">La extensión del archivo debe ser .jpg, .jpeg o
+                                .png.</small>
+
                         </div>
 
                         <div class="container-price-stock">
                           <div class="price-button formulario-grupo-input" id="grupo-price">
 
                             <label for="price">Precio:</label>
-                            <input class="input" class="input formulario-input" type="number" name="price" id="price" value="<%= product.price %>" />
+                            <input class="input formulario-input" type="number" name="price" id="price"
+                              value="<%= product.price %>" />
                             <% if(locals.errors && errors.price){ %>
                               <div class="text-danger">
                                 <%= errors.price.msg %>
                               </div>
                               <% } %>
-                              <small class="formulario-input-empty">El precio del producto debe completarse.</small>
-                              <small class="formulario-input-error">Este campo solo puede contener números.</small>
-        
+                                <small class="formulario-input-empty">El precio del producto debe completarse.</small>
+                                <small class="formulario-input-error">Este campo solo puede contener números.</small>
+
                           </div>
                           <div class="stock formulario-grupo-input" id="grupo-stock">
 
                             <label for="stock">Stock disponible:</label>
-                            <input name="stock" class="input formulario-input" type="number" name="stock" value="<%= product.stock %>">
+                            <input name="stock" class="input formulario-input" type="number" name="stock"
+                              value="<%= product.stock %>">
 
                             <% if(locals.errors && errors.stock){ %>
                               <div class="text-danger">
                                 <%= errors.stock.msg %>
                               </div>
                               <% } %>
-                              <small class="formulario-input-empty">El stock del producto debe completarse.</small>
-                             <small class="formulario-input-error">Este campo solo puede contener números.</small>
+                                <small class="formulario-input-empty">El stock del producto debe completarse.</small>
+                                <small class="formulario-input-error">Este campo solo puede contener números.</small>
 
                           </div>
                           <div class="errores-alert" id="errores-alert">
