@@ -1,4 +1,65 @@
 /* LOGO - VERTICAL - unicamente en HOME */
+@media screen and (max-width:374px) {
+ .contenedor-principal{
+  width: 102%;
+ }
+  .logo {
+
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 35%
+  }
+  #burger-logo{
+    display: none;
+  }
+  
+  .fondo-cafe-tablet {
+    display: none;
+  }
+  .product-promo{
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top:190px;
+    left: 19%;
+  }
+  .fondo{
+    margin-top:-10px;
+    height: 650px;
+  }
+  .texto{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+  }
+  .only-desktop{
+    display: none;
+  }
+  .logo-footer{
+    width: 50%;
+    margin-top:10px;
+  }
+  footer li,
+  footer a {
+    list-style: none;
+    margin-left: -20px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
+  .enlaces-footer {
+    text-align: center;
+  }
+
+  .redes {
+    width: 60%;
+  }
+  .buscar{
+    display: none;
+  }
+}
 @media (min-width: 375px) {
   #logo {
     display: none;
@@ -8,7 +69,7 @@
     position: absolute;
    /*  z-index:700; */
     top: 29px;
-    left: 135px;
+    left: 40%
   }
   #logo-vert {
     display: block;
@@ -125,31 +186,44 @@ display: none;
     width: 100%;
   }
   .logo-footer {
-    width: 60%;
+    width: 40%;
     margin-left: -5px;
     margin-bottom: 30px;
   }
-  footer li,
-  footer a {
-    list-style: none;
-    margin-left: -20px;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-  }
-  .enlaces-footer {
-    text-align: center;
-  }
+  
+}
 
-  .redes {
-    width: 60%;
+@media screen and (min-width:430px) {
+  .fondo-cafe{
+    display: none;
+  }
+  .fondo-cafe-tablet {
+    display: block;
+    width: 100%;
+    position: relative;
+    top:80px;
+  }
+  .product-promo {
+    width: 45%;
+    height: auto;
+  }
+  .logo{
+    left:42%
+  }
+  .texto{
+    margin-top: 150px;
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
   }
 }
 
 /*--------------TABLET-----------------*/
 
 @media (min-width: 768px) {
+  .logo{
+    left:10%
+  }
   .nav-iconos,
   .login-button {
     display: block;
@@ -166,9 +240,9 @@ display: none;
   .fondo-cafe-tablet {
     display: block;
     position: absolute;
-    right: -15px;
+    right: 4px;
     width: 60%;
-    top: 10%;
+    top: 15%;
   }
   .fondo {
     height: 450px;
@@ -176,14 +250,15 @@ display: none;
   .product-promo {
     position: absolute;
     left: 55%;
-    top: 10%;
+    top: 15%;
     width: 285px;
-    height: 350px;
+    height: auto
   }
   .texto {
     width: 45%;
     position: absolute;
-    top: 11%;
+    top:5%;
+    left:5%
   }
   /*caracteristicas productos */
   .caracteristicas-productos {
@@ -243,6 +318,19 @@ display: none;
     display: none;
   }
 }
+@media (min-width: 1000px) {
+  .product-promo{
+    left:60%;
+    width:285px ;
+  }
+  .fondo-cafe-tablet{
+    width: 55%;
+  }
+  .texto{
+    top:10%
+  }
+}
+
 
 /*------------DESKTOP-------------*/
 @media (min-width: 1280px) {
@@ -269,7 +357,7 @@ display: none;
     width: 600px;
     position: absolute;
     left: 100px;
-    top: 25%;
+    top: 8%
   }
   .texto h1 {
     font-weight: 300;
@@ -284,8 +372,8 @@ display: none;
   }
   .product-promo {
     top: 15%;
-    width: 450px;
-    height: 500px;
+    width: 30%;
+    height: auto;
     filter: drop-shadow(4px 10px 4px rgba(0, 0, 0, 0.35));
   }
   .nav-tablet {
@@ -301,7 +389,7 @@ display: none;
     margin: 0;
   }
   .nav-iconos {
-    width: 195px;
+    width: 160px;
     display: flex;
     justify-content: space-between;
   }

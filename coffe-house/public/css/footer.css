@@ -1,14 +1,12 @@
 /*footer */
-@media (min-width: 375px) {
-  footer {
-    padding: 35px;
-    height: 450px;
-    width: 100%;
+@media screen and (max-width:374px) {
+  .logo-footer{
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
-  .logo-footer {
-    width: 60%;
-    margin-left: -5px;
-    margin-bottom: 30px;
+  .enlaces-footer-desktop{
+    display: none;
   }
   footer li,
   footer a {
@@ -22,13 +20,39 @@
   .enlaces-footer {
     text-align: center;
   }
+  .redes{
+    width: 60%;
+  }
+}
+@media (min-width: 375px) {
+  footer {
+    padding: 35px;
+    height: 450px;
+    width: 100%;
+  }
+  .logo-footer {
+    width: 50%;
+    margin-left: -5px;
+    margin-bottom: 30px;
+  }
+  footer li,
+  footer a {
+    list-style: none;
+    margin-left: -20px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
   .enlaces-footer-desktop {
     display: none;
   }
-
+  .enlaces-footer {
+    text-align: center;
+  }
   .redes {
     width: 60%;
-  }
+  } 
 }
 
 @media (min-width: 768px) {
