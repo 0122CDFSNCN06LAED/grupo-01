@@ -1,4 +1,7 @@
 @media (min-width: 375px) {
+ul{
+    padding-left: 0rem;
+}
     main {
     margin-top: 20px;
     margin-bottom: 30px;
@@ -34,7 +37,7 @@ h1, h2 {
 }
 .desplegable-categorias .categorias{
     list-style: none;
-    margin-left: -10px ;
+    margin:auto;
     display: flex;
     flex-direction: column;
     text-align: center;

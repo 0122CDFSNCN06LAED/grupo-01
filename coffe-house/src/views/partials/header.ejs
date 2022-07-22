@@ -13,7 +13,14 @@
     </div>
     <div class="nav-burger">
       <ul class="nav">
-        <li><a href="/user/register">Registrarme</a></li>
+        <% if (locals.isLogged) { %> 
+          <li><a class="text-decoration-none" href="/user/login"><%= userLogged.name %></a></li>
+          
+          <% } else { %> 
+            <li><a class="text-decoration-none" href="/user/login">Log In</a></li>
+          
+        <% } %> 
+       
        <li><a href="/product">Productos</a></li>
          <li><a href="#">Quiénes somos</a></li>
          <li><a href="#">Nuestros cafés</a></li>
