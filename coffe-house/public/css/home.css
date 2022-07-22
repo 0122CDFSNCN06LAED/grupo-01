@@ -130,8 +130,9 @@ display: none;
   .texto p {
     margin-bottom: 35px;
   }
-
-
+  .texto-centrado{
+    margin: auto;
+  }
 
   /*  SECCION CARACTERISTICAS DE NUESTROS PRODUCTOS */
 
@@ -152,16 +153,19 @@ display: none;
   }
   /*section "destacados" */
   .destacados {
-    height: 530px;
+    display: block;
+    height: auto;
     width: 100%;
   }
 
   .container-destacados {
     width: 100%;
+    height: auto;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 20px;
   }
   .flechas {
     width: 24px;
@@ -190,6 +194,7 @@ display: none;
     margin-left: -5px;
     margin-bottom: 30px;
   }
+ 
   
 }
 
@@ -277,6 +282,15 @@ display: none;
     display: flex;
     flex-direction: row;
     width: 100%;
+  }
+  .container-destacados{
+    flex-direction: row;
+    width: 90%;
+    height: auto;
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: space-evenly;
+    align-items: flex-start;
   }
   /* productos-destacados */
   .card-container.card-tablet {

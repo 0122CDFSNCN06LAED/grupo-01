@@ -52,9 +52,45 @@
     <section class="destacados alineacion-centro-flex separacion-30px">
       <h2 class="texto-centrado regular color-verde-oscuro width-70">Nuestros <strong>productos destacados</strong></h2>
       <div class="container-destacados separacion-10px">
-        <img class="flechas"src="/img/iconos/flecha-izq.svg" alt="flecha">
-     
-            <article class="card-container">
+        <!-- <img class="flechas"src="/img/iconos/flecha-izq.svg" alt="flecha"> -->
+     <% blonde.forEach(product=> { %>
+                <article class="card-container">
+                  <img src="/img/products/<%=product.image%>" alt="">
+                  <div class="text-card">
+                    <h5 class="black">
+                      <%= product.name %>
+                    </h5>
+                    <p>Proveniente de <%= product.region %>.</p>
+                    <div class="precio">
+                      <h5 class="black">$<%= product.price %>
+                      </h5>
+                      <a class="color-amarillo sin-estilos" href="/product/detail/<%=product.id%>">Ver más...</a>
+                    </div>
+
+                  </div>
+
+                </article>
+                <% }); %>
+                <% dark.forEach(product=> { %>
+                  <article class="card-container">
+                    <img src="/img/products/<%=product.image%>" alt="">
+                    <div class="text-card">
+                      <h5 class="black">
+                        <%= product.name %>
+                      </h5>
+                      <p>Proveniente de <%= product.region %>.</p>
+                      <div class="precio">
+                        <h5 class="black">$<%= product.price %>
+                        </h5>
+                        <a class="color-amarillo sin-estilos" href="/product/detail/<%=product.id%>">Ver más...</a>
+                      </div>
+  
+                    </div>
+  
+                  </article>
+                  <% }); %>
+
+            <!-- <article class="card-container">
              <img src="/img/products/muestra2.jpg" alt="">
              <div class="text-card">
                 <h5 class="black">Nombre producto</h5>
@@ -105,9 +141,9 @@
            
                 </div>
   
-              </article>
+              </article> -->
              
-            <img class="flechas" src="/img/iconos/flecha-der.svg" alt="flecha">
+            <!-- <img class="flechas" src="/img/iconos/flecha-der.svg" alt="flecha"> -->
       </div>
      
     </div>

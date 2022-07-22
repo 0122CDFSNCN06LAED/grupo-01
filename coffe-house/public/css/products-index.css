@@ -23,6 +23,45 @@ h1, h2 {
 .card-container {
     margin:40px 0;
 }
+.desplegable-categorias{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left:auto;
+    margin-right: auto;
+    width: 200px;
+    height: auto;
+}
+.desplegable-categorias .categorias{
+    list-style: none;
+    margin-left: -10px ;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+.desplegable-categorias .categorias li{
+    margin-bottom: 10px;
+}
+.desplegable-categorias .categorias li a{
+   font-size: 20px;
+  box-shadow: inset 0 0 0 0 #6D9773;
+  color: #6D9773;
+  margin: 0 -.25rem;
+  padding: 0 .25rem; 
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+text-decoration: none;
+   
+}
+.desplegable-categorias .categorias li a:hover{
+
+box-shadow: inset 150px 0 0 0  #6D9773;
+  color: white;
+
+
+}
+
+
 }
 @media (min-width: 810px) {
 .container-products-cards{
@@ -36,6 +75,16 @@ h1, h2 {
     margin-right: 25px;
     margin-left: 25px;
 }
-
+.desplegable-categorias{
+    width: 500px;
+}
+.desplegable-categorias .categorias {
+    flex-direction: row;
+    justify-content: space-between;
+}
+.desplegable-categorias .categorias li a{
+    display: block;
+    width: auto;
+}
 
 }

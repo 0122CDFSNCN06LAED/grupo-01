@@ -11,25 +11,37 @@ const ProductCategory = db.ProductCategories;
 
 const productSequelizeController = {
   list: async (req, res) => {
-    const products = await Products.findAll({
-      include: [
-        {
-          association: "productCategory",
-        },
-      ],
-    });
-
+    const [products, productCategory] = await Promise.all ([
+      Products.findAll({
+        include: [
+          {
+            association: "productCategory",
+          },
+        ],
+      }),
+      ProductCategory.findAll({
+        include: [
+          {
+            association: "products",
+          },
+        ],
+      })
+    ])
+    
+   
     const blonde = products.filter((p) => p.productCategory.type == "Blonde");
     const medium = products.filter((p) => p.productCategory.type == "Medium");
     const dark = products.filter((p) => p.productCategory.type == "Dark");
-
+    
     res.render("products/products-index", {
+    productCategory:productCategory,
+      products:products,
       blonde: blonde,
       medium: medium,
       dark: dark,
     });
   },
-
+  
   create: async (req, res) => {
     try {
       const [weight, grinds, productCategory] = await Promise.all([

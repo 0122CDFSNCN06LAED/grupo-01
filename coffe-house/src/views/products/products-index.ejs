@@ -11,13 +11,26 @@
 
         <h1 class="color-verde-oscuro"> Nuestros productos</h1>
         <h2 class="color-verde-claro">Categorías principales</h2>
+        <div class="desplegable-categorias">
+         
+          <ul class="categorias">
+            <% productCategory.forEach(category => { %>
+              <li><a href="#<%= category.type %>"><%= category.type %> Roast</a></li>
+              <% }) %>
+            
+          </ul>
+        </div>
+
+        
 
         <div class="categories-container">
-
-          <section class="blonde">
-            <h2 class="color-verde-oscuro"><strong>Blonde</strong> Roast</h2>
+         <% productCategory.forEach(category => { %>
+          <section class="blonde"><a name="<%= category.type %>"></a>
+            <h2 class="color-verde-oscuro"><strong><%= category.type %> </strong> Roast </h2>
             <div class="container-products-cards">
-              <% blonde.forEach(product=> { %>
+
+              <% category.products.forEach(product=> { 
+                %>
                 <article class="card-container">
                   <img src="/img/products/<%=product.image%>" alt="">
                   <div class="text-card">
@@ -37,52 +50,14 @@
                 <% }); %>
             </div>
           </section>
-          <section class="medium">
-            <h2 class="color-verde-oscuro"><strong>Medium</strong> Roast</h2>
-            <div class="container-products-cards">
-              <% medium.forEach(product=> { %>
-                <article class="card-container">
-                  <img src="/img/products/<%=product.image%>" alt="">
-                  <div class="text-card">
-                    <h5 class="black">
-                      <%= product.name %>
-                    </h5>
-                    <p>Proveniente de <%= product.region %>.</p>
-                    <div class="precio">
-                      <h5 class="black">$<%= product.price %>
-                      </h5>
-                      <a class="color-amarillo sin-estilos" href="/product/detail/<%=product.id%>">Ver más...</a>
-                    </div>
+         <% }) %>
+          
+       
+          
+         
+         
 
-                  </div>
-
-                </article>
-                <% }); %>
-            </div>
-          </section>
-          <section class="dark">
-            <h2 class="color-verde-oscuro"><strong>Dark</strong> Roast</h2>
-            <div class="container-products-cards">
-              <% dark.forEach(product=> { %>
-                <article class="card-container">
-                  <img src="/img/products/<%=product.image%>" alt="">
-                  <div class="text-card">
-                    <h5 class="black">
-                      <%= product.name %>
-                    </h5>
-                    <p>Proveniente de <%= product.region %>.</p>
-                    <div class="precio">
-                      <h5 class="black">$<%= product.price %>
-                      </h5>
-                      <a class="color-amarillo sin-estilos" href="/product/detail/<%=product.id%>">Ver más...</a>
-                    </div>
-
-                  </div>
-
-                </article>
-                <% }); %>
-            </div>
-          </section>
+          
 
         </div>
       </main>
