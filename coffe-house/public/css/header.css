@@ -198,7 +198,7 @@ main{
   flex-direction: row;
   align-items: center;
   position: relative;
-  right: -100px;
+  right: -10px;
   
 }
 .buscar input {
