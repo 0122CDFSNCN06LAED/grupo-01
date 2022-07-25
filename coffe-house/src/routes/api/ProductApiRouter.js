@@ -4,7 +4,7 @@ const {
 } = require("../../controllers/api/CategoriesProdApiController");
 const {
   productsList,
-} = require("../../controllers/api/ProductsListApiController");
+} = require("../../controllers/api/ProductListApiController");
 const router = Router();
 
 router.get("/table-products", productsList);

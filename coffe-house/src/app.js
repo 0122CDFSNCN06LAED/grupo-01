@@ -10,7 +10,7 @@ const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const cookies = require("cookie-parser");
 const adminMiddleware = require("./middlewares/adminMiddleware");
 const userListApiRouter = require("./routes/api/UserListApiRouter");
-const productsApiRouter = require("./routes/api/ProductsApiRouter");
+const productsApiRouter = require("./routes/api/ProductApiRouter");
 
 app.use(
   session({
