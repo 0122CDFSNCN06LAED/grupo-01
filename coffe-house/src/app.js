@@ -40,5 +40,6 @@ app.listen(3000, () => {
 app.use(rutaHome);
 app.use(rutaUser);
 app.use("/api", userListApiRouter);
+app.use("/api", productsApiRouter);
 
 app.use(rutaProduct);
