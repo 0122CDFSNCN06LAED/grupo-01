@@ -11,19 +11,19 @@ class ContenRowProducts extends Component {
           title: "Total de productos",
           value: 21,
           color: "primary",
-          icon: "fa-film",
+          icon: "fa-solid fa-mug-hot",
         },
         {
           title: "Cantidad de usuarios",
           value: 79,
           color: "success",
-          icon: "fa-awards",
+          icon: "fas fa-user-friends",
         },
         {
-          title: "Catedorías de café",
+          title: "Categorías de café",
           value: 49,
           color: "warning",
-          icon: "fa-user",
+          icon: "fas fa-store"
         },
       ],
       userQuantity: null,
