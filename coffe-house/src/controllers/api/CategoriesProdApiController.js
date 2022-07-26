@@ -2,7 +2,9 @@ const db = require("../../database/models");
 
 module.exports = {
   ProductCategories: (req, res) => {
-    db.ProductCategories.findAndCountAll().then(({ count, rows }) => {
+    db.ProductCategories.findAndCountAll({
+      include: [{ all: true }]}
+    ).then(({ count, rows }) => {
       let respuesta = {
         meta: {
           status: 200,

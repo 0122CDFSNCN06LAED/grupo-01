@@ -13,7 +13,7 @@ function ProductsInDB(props) {
             <img
               className="img-fluid px-3 px-sm-4 mt-3 mb-4"
               style={{ width: "40rem" }}
-              src={ImageProd}
+              src={props.image}
               alt="img Of products"
             />
           </div>

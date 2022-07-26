@@ -59,7 +59,7 @@ class TableProductsList extends Component {
             </tr>
           </thead>
           <tbody>
-            {/* ------ Aqui van los datos de la tabla de productos ------*/}
+            {/* ------ Aqui van los datos de la tabla Movies ------*/}
             {this.state.products.map((product) => {
               return (
                 <tr key={product.id}>
@@ -68,13 +68,18 @@ class TableProductsList extends Component {
                   <td>{product.description}</td>
                   <td>{product.price}</td>
                   <td>{product.region}</td>
-                  <td>{product.image}</td>
-                  <td>{product.category_id}</td>
+                  <td><img
+              className="img-fluid px-3 px-sm-4 mt-3 mb-4"
+              style={{ width: "110rem" }}
+              src= {product.image}
+              alt={product.image}
+            /></td>
+                  <td>{product.category}</td>
                   <td>{product.stock}</td>
                 </tr>
               );
             })}
-            {/*------ Fin de los datos de la tabla productos-------- */}
+            {/*------ Fin de los datos de la tabla movies-------- */}
           </tbody>
         </table>
         <div className="d-flex justify-content-center">

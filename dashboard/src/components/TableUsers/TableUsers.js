@@ -56,7 +56,7 @@ class TableUsersList extends Component {
             </tr>
           </thead>
           <tbody>
-            {/* ------ Aqui van los datos de la tabla Usuarios ------*/}
+            {/* ------ Aqui van los datos de la tabla Movies ------*/}
             {this.state.users.map((user) => {
               return (
                 <tr key={user.id}>
@@ -65,12 +65,16 @@ class TableUsersList extends Component {
                   <td>{user.lastname}</td>
                   <td>{user.email}</td>
                   <td>{user.username}</td>
-                  <td>{user.avatar}</td>
-                  <td>{user.user_category_id}</td>
+                  <td><img
+              className="img-fluid px-3 px-sm-4 mt-3 mb-4"
+              style={{ width: "8rem" }}
+              src= {user.avatar}
+              alt={user.avatar}/></td>
+              <td>{user.category}</td>
                 </tr>
               );
             })}
-            {/*------ Fin de los datos de la tabla Usuarios-------- */}
+            {/*------ Fin de los datos de la tabla movies-------- */}
           </tbody>
         </table>
         <div className="d-flex justify-content-center">

@@ -291,6 +291,7 @@ display: none;
     gap:10px;
     justify-content: space-evenly;
     align-items: flex-start;
+   
   }
   /* productos-destacados */
   .card-container.card-tablet {
@@ -348,6 +349,7 @@ display: none;
 
 /*------------DESKTOP-------------*/
 @media (min-width: 1280px) {
+  
   .none {
     display: none;
   } 
@@ -467,10 +469,10 @@ display: none;
     line-height: 70px;
   }
   .destacados {
-    height: 550px;
+    height:auto;
   }
   .container-destacados {
-    height: 410px;
+    height: auto;
   }
   .card-container.card-desktop {
     display: block;
@@ -485,7 +487,7 @@ display: none;
     display: block;
     width: 85%;
     height: 400px;
-
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;

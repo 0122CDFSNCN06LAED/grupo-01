@@ -12,12 +12,14 @@ class ContenRowProducts extends Component {
           value: 21,
           color: "primary",
           icon: "fa-solid fa-mug-hot",
+         
         },
         {
           title: "Cantidad de usuarios",
           value: 79,
           color: "success",
           icon: "fas fa-user-friends",
+          
         },
         {
           title: "Categorías de café",
@@ -37,7 +39,7 @@ class ContenRowProducts extends Component {
 
     return (
       <div className="row">
-        {/* <!-- Content Row Products--> */}
+        {/* <!-- Content Row Movies--> */}
         {this.state.rowProduct.map((description) => {
           // eslint-disable-next-line react/no-direct-mutation-state
           this.state.rowProduct[0].value = this.state.products;
@@ -48,7 +50,7 @@ class ContenRowProducts extends Component {
 
           return <RowProducts key={description.title} {...description} />;
         })}
-        {/* <!-- End products in Data Base --> */}
+        {/* <!-- End movies in Data Base --> */}
       </div>
     );
   }

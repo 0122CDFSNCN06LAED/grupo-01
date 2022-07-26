@@ -11,7 +11,7 @@ module.exports = {
     });
     res.json(usersEmail);
   },
-  userList: async (req, res) => {
+  userList: (req, res) => {
     const page = Number(req.query.page) || 0;
     const pageSize = req.query.pageSize ?? 10;
 
@@ -22,8 +22,17 @@ module.exports = {
     })
       .then(({ count, rows }) => {
         const users = rows.map((user) => {
-          user.password = null;
-          return user;
+          const userDB = {
+          id: user.id,
+          name:user.name,
+          lastname: user.lastname,
+          username: user.username,
+          email: user.email,
+          avatar:`http://localhost:3002/img/users/${user.avatar}`,
+          category: user.category.type
+        }
+         /*  user.password = null;  */
+          return userDB;
         });
         let respuesta = {
           meta: {
@@ -41,6 +50,4 @@ module.exports = {
         console.log(error);
       });
   },
-
-
 };

@@ -41,7 +41,7 @@ class ContentProductsInDB extends Component {
                     key={product.id}
                     title={product.name}
                     description={product.description}
-                    image={this.state.image}
+                    image={product.image}
                   />
                 );
               })}

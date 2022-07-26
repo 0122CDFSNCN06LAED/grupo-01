@@ -7,9 +7,27 @@ module.exports = {
 
     db.Products.findAndCountAll({
       include: [{ all: true }],
-      limit: pageSize,
-      offset: page * pageSize,
+     /*  limit: pageSize,
+      offset: page * pageSize, */
+
+
     }).then(({ count, rows }) => {
+              
+      rows = rows.map((product, i) => {
+        product = {
+            id: product.id,
+            name: product.name,
+            description: product.description,
+            price: product.price,
+            image: `http://localhost:3002/img/products/${product.image}`,
+            region: product.region,
+            category: product.productCategory.type,
+            stock: product.stock
+           
+    }
+     return product  
+    })
+
       let respuesta = {
         meta: {
           status: 200,
