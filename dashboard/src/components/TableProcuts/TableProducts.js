@@ -59,7 +59,7 @@ class TableProductsList extends Component {
             </tr>
           </thead>
           <tbody>
-            {/* ------ Aqui van los datos de la tabla Movies ------*/}
+            {/* ------ Aqui van los datos de la tabla products ------*/}
             {this.state.products.map((product) => {
               return (
                 <tr key={product.id}>
@@ -79,7 +79,7 @@ class TableProductsList extends Component {
                 </tr>
               );
             })}
-            {/*------ Fin de los datos de la tabla movies-------- */}
+            {/*------ Fin de los datos de la tabla products-------- */}
           </tbody>
         </table>
         <div className="d-flex justify-content-center">

@@ -39,7 +39,7 @@ class ContenRowProducts extends Component {
 
     return (
       <div className="row">
-        {/* <!-- Content Row Movies--> */}
+        {/* <!-- Content Row Products--> */}
         {this.state.rowProduct.map((description) => {
           // eslint-disable-next-line react/no-direct-mutation-state
           this.state.rowProduct[0].value = this.state.products;
@@ -50,7 +50,7 @@ class ContenRowProducts extends Component {
 
           return <RowProducts key={description.title} {...description} />;
         })}
-        {/* <!-- End movies in Data Base --> */}
+        {/* <!-- End products in Data Base --> */}
       </div>
     );
   }
