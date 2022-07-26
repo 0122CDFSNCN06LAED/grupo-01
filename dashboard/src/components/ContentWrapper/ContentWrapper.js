@@ -2,7 +2,7 @@ import { Component } from "react";
 import TopBar from "../TopBar/TopBar";
 import Footer from "../Footer/Footer";
 import { Switch, Route } from "react-router-dom";
-import ContentRowTop from "../ContentRowTop/ContenRowTop";
+import ContentRowTop from "../ContentRowTop/ContentRowTop";
 import LastsProductsInDB from "../LastsProductsInDB/LastsproductsInDB";
 // import ContentCategoriesInDb from "../ContentProductsInDb/ContentProductsInDb";
 import TableProductsList from "../TableProcuts/TableProducts";
@@ -63,11 +63,11 @@ class ContentWrapper extends Component {
     );
   }
   async componentDidMount() {
-    const products = await fetch(
-      "http://localhost:3002/api/table-products"
-    ).catch((error) => {
-      console.log(error);
-    });
+    const products = await fetch("http://localhost:3002/api/products").catch(
+      (error) => {
+        console.log(error);
+      }
+    );
     const response = await products.json();
 
     this.setState({
