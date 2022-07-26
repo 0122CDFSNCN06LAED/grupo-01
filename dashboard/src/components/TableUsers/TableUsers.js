@@ -56,7 +56,7 @@ class TableUsersList extends Component {
             </tr>
           </thead>
           <tbody>
-            {/* ------ Aqui van los datos de la tabla Movies ------*/}
+            {/* ------ Aqui van los datos de la tabla products ------*/}
             {this.state.users.map((user) => {
               return (
                 <tr key={user.id}>
@@ -74,7 +74,7 @@ class TableUsersList extends Component {
                 </tr>
               );
             })}
-            {/*------ Fin de los datos de la tabla movies-------- */}
+            {/*------ Fin de los datos de la tabla products-------- */}
           </tbody>
         </table>
         <div className="d-flex justify-content-center">
