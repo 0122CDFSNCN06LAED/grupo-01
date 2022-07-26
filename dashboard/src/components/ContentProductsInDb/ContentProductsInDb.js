@@ -53,7 +53,7 @@ class ContentProductsInDB extends Component {
   }
 
   async componentDidMount() {
-    const url = "http://localhost:3002/api/table-products";
+    const url = "http://localhost:3002/api/products";
     const products = await fetch(url).catch((error) => {
       console.log(error);
     });
@@ -64,18 +64,5 @@ class ContentProductsInDB extends Component {
     });
   }
 }
-
-// const imageUrl = url;
-
-// (async () => {
-//   const response = await fetch(imageUrl);
-//   const imageBlob = await response.blob();
-//   const reader = new FileReader();
-//   reader.readAsDataURL(imageBlob);
-//   reader.onloadend = () => {
-//     const base64data = reader.result;
-//     console.log(base64data);
-//   };
-// })();
 
 export default ContentProductsInDB;
