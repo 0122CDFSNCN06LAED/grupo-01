@@ -1,5 +1,4 @@
 import React from "react";
-import ImageProd from "../../assets/images/products/promo-medium-roast.png";
 
 function ProductsInDB(props) {
   return (
@@ -22,7 +21,6 @@ function ProductsInDB(props) {
             View product detail
           </a>
         </div>
-        {/* <script src="../ContentProductsInDb/ContentProductsInDb.js"></script> */}
       </div>
     </div>
   );
