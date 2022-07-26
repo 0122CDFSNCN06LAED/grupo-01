@@ -19,7 +19,7 @@ function LastsProductsInDB(props) {
           </div>
           <p>{props.description}</p>
           <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">
-            View movie detail
+            View product detail
           </a>
         </div>
       </div>
