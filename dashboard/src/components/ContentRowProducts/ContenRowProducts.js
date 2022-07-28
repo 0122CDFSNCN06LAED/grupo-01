@@ -12,20 +12,18 @@ class ContenRowProducts extends Component {
           value: 21,
           color: "primary",
           icon: "fa-solid fa-mug-hot",
-         
         },
         {
           title: "Cantidad de usuarios",
           value: 79,
           color: "success",
           icon: "fas fa-user-friends",
-          
         },
         {
           title: "Categorías de café",
           value: 49,
           color: "warning",
-          icon: "fas fa-store"
+          icon: "fas fa-store",
         },
       ],
       userQuantity: null,
@@ -55,11 +53,11 @@ class ContenRowProducts extends Component {
     );
   }
   async componentDidMount() {
-    const products = await fetch(
-      "http://localhost:3002/api/products"
-    ).catch((error) => {
-      console.log(error);
-    });
+    const products = await fetch("http://localhost:3002/api/products").catch(
+      (error) => {
+        console.log(error);
+      }
+    );
 
     const response = await products.json();
 
@@ -76,7 +74,7 @@ class ContenRowProducts extends Component {
       return countProducts;
     }
 
-    const users = await fetch("http://localhost:3002/api/table-users").catch(
+    const users = await fetch("http://localhost:3002/api/users").catch(
       (error) => {
         console.log(error);
       }
