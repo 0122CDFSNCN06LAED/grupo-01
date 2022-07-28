@@ -21,6 +21,12 @@ const mainController = {
             dark: dark,
           });
     },
+    nuestrosCafes: (req,res) =>{
+      res.render("nuestros-cafes")
+    },
+    contacto: (req,res) =>{
+      res.render("contacto")
+    }
    
 }
 
