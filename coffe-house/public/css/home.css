@@ -393,7 +393,7 @@ display: none;
     filter: drop-shadow(4px 10px 4px rgba(0, 0, 0, 0.35));
   }
   .nav-tablet {
-    width: 550px;
+    width: 400px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

@@ -56,7 +56,7 @@ class ContenRowProducts extends Component {
   }
   async componentDidMount() {
     const products = await fetch(
-      "http://localhost:3002/api/table-products"
+      "http://localhost:3002/api/products"
     ).catch((error) => {
       console.log(error);
     });

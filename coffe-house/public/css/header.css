@@ -198,7 +198,7 @@ main{
   flex-direction: row;
   align-items: center;
   position: relative;
-  right: -10px;
+  right: -118px;
   
 }
 .buscar input {
@@ -339,7 +339,7 @@ right: 5px;
   }
   .nav-tablet {
     display: block;
-    width: 550px;
+    width: 400px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

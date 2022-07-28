@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('./partials/head', {style: 'nuestros-cafes.css' , title: 'Nuestros cafés' }) %>
+
+  <body class="bg-white">
+    <%- include ('./partials/header') %>
+
+      <main>
+       <section class="color-verde-oscuro container-nuestros-cafes">
+        <div class="img-container">
+            <img src="/img/nuestroscafes.png" alt="cafe">
+        </div>
+        <div class="text-container">
+            <h1 class="titular-banner">Nuestros <strong>cafés.</strong></h1>
+            <div class="parrafos">
+            <p class="color-negro parrafo">De cuerpo entero, un poco ahumado, con notas cítricas, con fuerte presencia de chocolate… El desafío que tenemos constantemente es que cada uno de nuestros clientes encuentre su mezcla favorita y a la vez, que explore nuestras amplias selecciones más singulares.</p> 
+             <p class="color-negro parrafo">Para alcanzarlo nos abastecemos de los mejores granos de café arábicos siguiendo siempre estrictos principios éticos.</p>
+            </div>
+             <button class="button-amarillo">Saber más</button>
+        </div>
+       </section>
+
+      </main>
+
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>

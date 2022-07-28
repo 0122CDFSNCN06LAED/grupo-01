@@ -1,0 +1,68 @@
+@media screen and (max-width:1000px) {
+.container-nuestros-cafes{
+    display: flex;
+    width: 90%;
+    
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+.img-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.img-container img{
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.text-container {
+    margin-top:30px;
+    width: 80%;
+    text-align:left;
+margin-bottom: 80px;
+}
+.text-container button{
+    margin-top: 20px;
+}
+.text-container .parrafos{
+    margin-top: 15px;
+}
+
+}
+@media screen and (min-width:1001px) {
+.container-nuestros-cafes{
+    width: 60%;
+    padding-top: 60px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start
+}
+.img-container{
+    
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.img-container img{
+  width: 300px ;
+  height: auto;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+    margin-top: 40px;
+}
+.text-container h1{
+    margin-bottom: 20px;
+
+    
+}
+.text-container .parrafos{
+    margin-bottom: 35px;
+}
+}

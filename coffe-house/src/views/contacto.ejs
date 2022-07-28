@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('./partials/head', {style: 'contacto.css' , title: 'Contacto' }) %>
+
+  <body class="bg-white">
+    <%- include ('./partials/header') %>
+
+      <main>
+        <div class="img-titulo">
+          <img src="/img/banner-contactus.jpg" alt="">
+          <h1 class="titular-banner txt-img">Ponte en <strong>contacto</strong> con nosotros.</h1>
+          <div class="redes alineacion-horizontal">
+            <a href=""><img class="espacio-horizontal" src="/img/iconos/instagram.svg" alt=""></a>
+            <a href=><img class="espacio-horizontal" src="/img/iconos/facebook.svg" alt=""></a>
+            <a href=><img class="espacio-horizontal" src="/img/iconos/twitter.svg" alt=""></a>
+          </div>
+        </div>
+
+        <div class="titulo">
+          
+       <h1 class="titular-banner">Ponte en <strong>contacto</strong> con nosotros.</h1>
+       <p class="parrafo">¿Necesitas más información? Puedes contactarte con nuestra sucursal más cercana o puedes escribirnos en nuestras redes sociales. Será un placer continuar en contacto.</p>
+      
+       <div class="redes alineacion-horizontal">
+        <a href=""><img class="espacio-horizontal" src="/img/iconos/instagram.svg" alt=""></a>
+        <a href=><img class="espacio-horizontal" src="/img/iconos/facebook.svg" alt=""></a>
+        <a href=><img class="espacio-horizontal" src="/img/iconos/twitter.svg" alt=""></a>
+      </div>
+      </div>
+      
+      <h1 class="sucursales titular-banner">Nuestras sucursales:</h1>
+       <section class="container-address">
+        
+        <div class="argentina">
+            <h4 class="regular">ARGENTINA</h4>
+            <p class="region">Córdoba</p>
+           <p class="address regular"> Ituzaingó 179</p>
+            <p class="phone regular">+54 0351 15-881-7461</p>
+            <p class="mail regular">ch.cordoba@coffeehouse.com</p>
+            <button class="secundary-button">Ver ubicación</button>
+            
+        </div>
+        <div class="uruguay">
+            <h4 class="regular">URUGUAY</h4>
+            <p class="region">Rocha</p>
+           <p class="address regular"> Ronda Blanca, 7, 74º A</p>
+            <p class="phone regular">+598 657 70 2909</p>
+            <p class="mail regular">ch.rocha@coffeehouse.com</p>
+            <button class="secundary-button">Ver ubicación</button>
+
+        </div>
+        <div class="chile">
+            <h4 class="regular">CHILE</h4>
+            <p class="region">Valparaíso</p>
+           <p class="address regular">Callejón Salcido, Casa 7</p>
+            <p class="phone regular">+56 448 2739535</p>
+            <p class="mail regular">ch.valparaiso@coffeehouse.com</p>
+            <button class="secundary-button">Ver ubicación</button>
+
+        </div>
+       </section>
+      </main>
+
+      <%- include('./partials/footer') %>
+  </body>
+
+</html>

@@ -29,7 +29,8 @@
 .acciones {
     width: 230px;
     margin:10px 0;
-    border: 2px solid #6D9773;
+   /* 
+    border: 2px solid #6D9773; */
 }
 
 .acciones-client {
@@ -92,6 +93,10 @@ background-color: #6D9773;
 
 .button-mobile {
     display: none;
+}
+footer{
+    position: relative;
+    top:50px
 }
 
 
