@@ -149,6 +149,18 @@
   border:none;
   }
   
+  .button-verde {
+    color:white;
+    font-weight: 700;
+font-size: 16px;
+line-height: 160%;
+    width: 130px;
+    height: 35px;
+background: #0C3A2D;
+border-radius: 20px;
+border:none;
+}
+
   .secundary-button{
     color: #0C3A2D;
     font-weight: 700;
