@@ -23,15 +23,15 @@ module.exports = {
       .then(({ count, rows }) => {
         const users = rows.map((user) => {
           const userDB = {
-          id: user.id,
-          name:user.name,
-          lastname: user.lastname,
-          username: user.username,
-          email: user.email,
-          avatar:`http://localhost:3002/img/users/${user.avatar}`,
-          category: user.category.type
-        }
-         /*  user.password = null;  */
+            id: user.id,
+            name: user.name,
+            lastname: user.lastname,
+            username: user.username,
+            email: user.email,
+            avatar: `http://localhost:3002/img/users/${user.avatar}`,
+            category: user.category.type,
+          };
+          /*  user.password = null;  */
           return userDB;
         });
         let respuesta = {
@@ -49,5 +49,34 @@ module.exports = {
       .catch((error) => {
         console.log(error);
       });
+  },
+  allUsers: (req, res) => {
+    db.Users.findAndCountAll({
+      include: [{ all: true }],
+    }).then(({ count, rows }) => {
+      rows = rows.map((user, i) => {
+        const usersDb = {
+          id: user.id,
+          name: user.name,
+          lastname: user.lastname,
+          username: user.username,
+          email: user.email,
+          avatar: `http://localhost:3002/img/users/${user.avatar}`,
+          category: user.category.type,
+        };
+        return usersDb;
+      });
+
+      let respuesta = {
+        meta: {
+          status: 200,
+          total: count,
+          url: req.originalUrl,
+        },
+        data: rows,
+      };
+
+      res.json(respuesta);
+    });
   },
 };
