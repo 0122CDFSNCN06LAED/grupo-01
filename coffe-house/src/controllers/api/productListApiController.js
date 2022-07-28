@@ -11,7 +11,7 @@ module.exports = {
       offset: page * pageSize,
     }).then(({ count, rows }) => {
       rows = rows.map((product, i) => {
-        product = {
+        const productDb = {
           id: product.id,
           name: product.name,
           description: product.description,
@@ -21,7 +21,7 @@ module.exports = {
           category: product.productCategory.type,
           stock: product.stock,
         };
-        return product;
+        return productDb;
       });
 
       let respuesta = {
@@ -43,7 +43,7 @@ module.exports = {
       include: [{ all: true }],
     }).then(({ count, rows }) => {
       rows = rows.map((product, i) => {
-        product = {
+        const productDb = {
           id: product.id,
           name: product.name,
           description: product.description,
@@ -53,7 +53,7 @@ module.exports = {
           category: product.productCategory.type,
           stock: product.stock,
         };
-        return product;
+        return productDb;
       });
 
       let respuesta = {
