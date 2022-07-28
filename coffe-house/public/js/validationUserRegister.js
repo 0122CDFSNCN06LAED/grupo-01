@@ -1,7 +1,7 @@
 window.onload = async function () {
   //Fetch de la base de datos de usuarios. Donde solo obtengo una lista de mails de los usuarios.
   const fetchEmailsListUsers = await fetch(
-    "http://localhost:3000/api/user/list"
+    "http://localhost:3002/api/user/list"
   );
   const response = await fetchEmailsListUsers.json();
 
@@ -15,14 +15,14 @@ window.onload = async function () {
     //Comprueba si la url es de user/register.
     const urlRegister = () => {
       const locationHref = location.href;
-      const urlRegister = "http://localhost:3000/user/register";
+      const urlRegister = "http://localhost:3002/user/register";
 
       return locationHref == urlRegister ? true : false;
     };
     //Comprueba si la url es de user/login.
     const urlLogin = () => {
       const locationHref = location.href;
-      const urlLogin = "http://localhost:3000/user/login";
+      const urlLogin = "http://localhost:3002/user/login";
 
       return locationHref == urlLogin ? true : false;
     };
@@ -31,7 +31,7 @@ window.onload = async function () {
       const locationHref = location.href;
       const urlIndexOf = locationHref.lastIndexOf("/") + 1;
       const paramsId = locationHref.substring(urlIndexOf, locationHref.length);
-      const urlUserDetail = `http://localhost:3000/user/detail/${paramsId}`;
+      const urlUserDetail = `http://localhost:3002/user/detail/${paramsId}`;
 
       return locationHref == urlUserDetail ? true : false;
     };
@@ -180,8 +180,9 @@ window.onload = async function () {
             //Si es menor a ocho carateres, mensaje de error.
             if (inputValue.length < 8) {
               errors.push(`The ${inputName} must have at least 8 characters`);
-              elementMsgError.innerHTML = `The ${inputName == "password2" ? "password" : inputName
-                } must have at least 8 characters`;
+              elementMsgError.innerHTML = `The ${
+                inputName == "password2" ? "password" : inputName
+              } must have at least 8 characters`;
             }
             //Si las contraseñas no son iguales mensaje de error.
             else if (!(confirmPassword == inputValue)) {
@@ -197,8 +198,9 @@ window.onload = async function () {
             elementMsgError.innerHTML = "";
           } else {
             errors.push(`The ${inputName} field cannot be empty`);
-            elementMsgError.innerHTML = `The ${inputName == "password2" ? "password" : inputName
-              } field cannot be empty`;
+            elementMsgError.innerHTML = `The ${
+              inputName == "password2" ? "password" : inputName
+            } field cannot be empty`;
           }
         }
       }
