@@ -5,7 +5,9 @@
       
   }
   
-  
+  .text-danger{
+   color: #bb2929;
+  }
   .sin-estilos{
       text-decoration: none;
   }
@@ -197,6 +199,15 @@ border:none;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+  }
+
+  /*-----search------*/
+  .sin-coincidencias{
+    width: 80%;
+    height: 300px;
+    display: block;
+    margin: auto;
+    padding-top: 30px;
   }
   
   /*-------formularios--------*/

@@ -15,7 +15,11 @@
         <div class="categories-container">
 
           <section class="blonde">
-
+            <% if (products.length == 0) { %>
+             <div class="sin-coincidencias">
+              <h1 class="titular-banner">No existen coincidencias para tu búsqueda.</h1>
+             </div>
+            <% }  else { %>
             <div class="container-products-cards">
               <% products.forEach(product=> { %>
                 <article class="card-container">
@@ -36,6 +40,7 @@
                 </article>
                 <% }); %>
             </div>
+            <% } %>
           </section>
 
         </div>

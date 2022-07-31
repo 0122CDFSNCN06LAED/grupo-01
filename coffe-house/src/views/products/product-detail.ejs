@@ -25,7 +25,7 @@
               <%= product.description %>
             </p>
           </div>
-          <form action="">
+          <section>
             <div class="inputs-container">
               <div class="peso">
                 <label for="weight">Peso</label>
@@ -55,11 +55,12 @@
             <div class="price">
               <h2>$<%= product.price %>
               </h2>
-              <button class="agregar button-amarillo" type="submit">
-                Agregar <i src="/img/iconos/bolso-white.svg"></i>
-              </button>
+              <a href="/cart/<%=product.id%>"><button class="agregar button-amarillo" >
+                Agregar </button></a>
             </div>
-          </form>
+            
+            </section>
+         
           <% if(locals.isAdmin) { %>
             <div class="edit-delete-buttons">
               <a href="/product/edit/<%=product.id%>"><button class="secundary-button">Editar</button></a>

@@ -295,6 +295,14 @@ const productSequelizeController = {
   error: (req, res) => {
     res.render("products/product-error");
   },
+  cart: async (req, res) =>{
+    const id = req.params.id;
+    const product = await Products.findByPk(id).then(function(product){
+      res.render("products/cart", { product : product});
+    })
+      
+
+    }
 };
 
 module.exports = productSequelizeController;
