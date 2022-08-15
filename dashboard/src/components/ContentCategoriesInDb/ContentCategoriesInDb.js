@@ -35,7 +35,11 @@ class ContentCategoriesInDB extends Component {
             <div className="row">
               {this.state.categories.map((category) => {
                 return (
-                  <CategoriesInDB key={category.id} name={category.type} total={category.products.length} />
+                  <CategoriesInDB
+                    key={category.id}
+                    name={category.type}
+                    total={category.products.length}
+                  />
                 );
               })}
             </div>
