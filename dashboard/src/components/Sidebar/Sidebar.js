@@ -10,15 +10,14 @@ function Sidebar(props) {
       style={props.style}
     >
       {/* <!-- Sidebar - Brand --> */}
-      <NavLink
-        to="/"
-        exact
+      <a
+        href="http://localhost:3002/"
         className="sidebar-brand d-flex align-items-center justify-content-center"
       >
         <div className="sidebar-brand-icon">
           <img className="w-100" src={logo} alt="img Coffee House" />
         </div>
-      </NavLink>
+      </a>
 
       {/* <!-- Divider --> */}
       <hr className="sidebar-divider my-0" />
