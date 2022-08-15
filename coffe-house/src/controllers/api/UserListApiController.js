@@ -1,4 +1,7 @@
 const db = require("../../database/models");
+const {
+  userLoggedEmail,
+} = require("../../middlewares/userLoggedCookieMiddleware");
 
 module.exports = {
   userListEmails: async (req, res) => {
@@ -78,5 +81,43 @@ module.exports = {
 
       res.json(respuesta);
     });
+  },
+  userLogged: async (req, res) => {
+    let userLoggedOfDb;
+
+    const userLogEmail = userLoggedEmail();
+    const userAdmin = "@coffeehouse.com";
+
+    if (userLogEmail && userLogEmail.endsWith(userAdmin)) {
+      userLoggedOfDb = await db.Users.findAll({
+        where: { email: userLogEmail },
+      });
+
+      const respuesta = {
+        meta: {
+          status: 200,
+          total: 1,
+          url: req.originalUrl,
+        },
+        data: {
+          name: userLoggedOfDb[0].name,
+          avatar: `http://localhost:3002/img/users/${userLoggedOfDb[0].avatar}`,
+        },
+      };
+
+      return res.json(respuesta);
+    }
+    const respuesta = {
+      meta: {
+        status: 200,
+        total: 1,
+        url: req.originalUrl,
+      },
+      data: {
+        name: "Jordan Walke",
+        avatar: "http://localhost:3002/img/users/jordan-walke.png",
+      },
+    };
+    return res.json(respuesta);
   },
 };
