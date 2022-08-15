@@ -4,7 +4,6 @@ import Footer from "../Footer/Footer";
 import { Switch, Route } from "react-router-dom";
 import ContentRowTop from "../ContentRowTop/ContentRowTop";
 import LastsProductsInDB from "../LastsProductsInDB/LastsproductsInDB";
-// import ContentCategoriesInDb from "../ContentProductsInDb/ContentProductsInDb";
 import TableProductsList from "../TableProcuts/TableProducts";
 import TableUsersList from "../TableUsers/TableUsers";
 import ContentProductsInDB from "../ContentProductsInDb/ContentProductsInDb";
@@ -30,7 +29,6 @@ class ContentWrapper extends Component {
 
             <Switch>
               <Route path="/" exact={true} component={ContentRowTop} />
-
               <Route
                 path="/products"
                 exact={true}
