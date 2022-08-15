@@ -20,6 +20,7 @@ module.exports = {
         delete userToLogin[0].password;
         //guarda los datos del usuario en session.userLogged
         req.session.userLogged = userToLogin[0];
+
         if (req.body.remember_user) {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 });
         }
@@ -105,6 +106,7 @@ module.exports = {
   profile: (req, res) => {
     res.render("user/profile", {
       user: req.session.userLogged,
+      userUpdate: req.session.userUpdate,
     });
   },
   logout: (req, res) => {
@@ -115,8 +117,14 @@ module.exports = {
     return res.redirect("/");
   }, //al destruir la session el middleware de la ruta profile no me permite ingresar y me redirige.
   userDetail: async (req, res) => {
+    const userLoggedSession = req.session.userLogged;
+
+    const userLoggedOfDb = await db.Users.findAll({
+      where: { id: userLoggedSession.id },
+    });
+
     res.render("user/userDetail", {
-      oldData: req.session.userLogged,
+      oldData: userLoggedOfDb[0],
     });
   },
   update: async (req, res) => {
@@ -143,13 +151,17 @@ module.exports = {
       user_category_id: emailAdmin ? 1 : 2, //user admin  o  user client
     };
 
-    const userUpdated = await db.Users.update(
+    const userUpdatedOfDb = await db.Users.update(
       { ...userUpdate },
       { where: { id: req.params.id } }
     );
 
-    req.session.destroy();
-    res.redirect("/user/login");
+    delete userUpdate.password;
+    delete userUpdate.user_category_id;
+
+    req.session.userUpdate = userUpdate;
+
+    res.redirect("/user/profile");
   },
   destroy: async (req, res) => {
     try {
