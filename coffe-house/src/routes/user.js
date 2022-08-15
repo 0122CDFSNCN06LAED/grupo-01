@@ -7,6 +7,7 @@ const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const userSequelizeController = require("../controllers/userSequelizeController");
 const validateUserEditRegister = require("../middlewares/validationUserEditMiddleware");
+const { userLogMiddleware } = require("../middlewares/userLogMiddleware");
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -21,7 +22,11 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 router.get("/user/login", guestMiddleware, userSequelizeController.login);
-router.post("/user/login", userSequelizeController.loginProcess);
+router.post(
+  "/user/login",
+  userLogMiddleware,
+  userSequelizeController.loginProcess
+);
 router.get("/user/register", guestMiddleware, userSequelizeController.register);
 router.post(
   "/user/register",
