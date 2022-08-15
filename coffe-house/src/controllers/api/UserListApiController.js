@@ -1,7 +1,5 @@
 const db = require("../../database/models");
-const {
-  userLoggedEmail,
-} = require("../../middlewares/userLoggedCookieMiddleware");
+const { userLoggedEmail } = require("../../middlewares/userLogMiddleware");
 
 module.exports = {
   userListEmails: async (req, res) => {
