@@ -12,6 +12,8 @@ const cors = require("cors");
 const adminMiddleware = require("./middlewares/adminMiddleware");
 const userListApiRouter = require("./routes/api/UserListApiRouter");
 const productsApiRouter = require("./routes/api/ProductApiRouter");
+const cartRouter = require("./routes/cartRouter");
+const cartCheckoutRouter = require("./routes/cartCheckoutRouter");
 
 app.use(
   session({
@@ -45,3 +47,6 @@ app.use("/api", userListApiRouter);
 app.use("/api", productsApiRouter);
 
 app.use(rutaProduct);
+
+app.use(cartRouter);
+app.use("/checkout", cartCheckoutRouter);
