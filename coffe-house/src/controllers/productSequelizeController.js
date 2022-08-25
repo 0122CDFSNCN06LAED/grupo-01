@@ -11,37 +11,47 @@ const ProductCategory = db.ProductCategories;
 
 const productSequelizeController = {
   list: async (req, res) => {
-    const [products, productCategory] = await Promise.all ([
+    const emailUserLogged = req.session.userLogged;
+    const emailAdmin = "@coffeehouse.com";
+
+    const [products, productCategory] = await Promise.all([
       Products.findAll({
         include: [
           {
             association: "productCategory",
           },
         ],
+        where:
+          emailUserLogged && emailUserLogged.email.endsWith(emailAdmin)
+            ? ""
+            : { stock: { [Op.gt]: 0 } },
       }),
       ProductCategory.findAll({
         include: [
           {
             association: "products",
+            where:
+              emailUserLogged && emailUserLogged.email.endsWith(emailAdmin)
+                ? ""
+                : { stock: { [Op.gt]: 0 } },
           },
         ],
-      })
-    ])
-    
-   
+      }),
+    ]);
+
     const blonde = products.filter((p) => p.productCategory.type == "Blonde");
     const medium = products.filter((p) => p.productCategory.type == "Medium");
     const dark = products.filter((p) => p.productCategory.type == "Dark");
-    
-    res.render("products/products-index", {
-    productCategory:productCategory,
-      products:products,
+
+    return res.render("products/products-index", {
+      productCategory: productCategory,
+      products: products,
       blonde: blonde,
       medium: medium,
       dark: dark,
     });
   },
-  
+
   create: async (req, res) => {
     try {
       const [weight, grinds, productCategory] = await Promise.all([
@@ -274,8 +284,15 @@ const productSequelizeController = {
     }
   },
   search: async (req, res) => {
-    await Products.findAll({
+    const emailUserLogged = req.session.userLogged;
+    const emailAdmin = "@coffeehouse.com";
+
+    const products = await Products.findAll({
       where: {
+        stock:
+          emailUserLogged && emailUserLogged.email.endsWith(emailAdmin)
+            ? ""
+            : { [Op.gt]: 0 },
         [Op.or]: {
           name: {
             [Op.like]: "%" + req.query.search + "%",
@@ -288,21 +305,19 @@ const productSequelizeController = {
           },
         },
       },
-    }).then(function (products) {
-      res.render("products/search", { products: products });
     });
+
+    return res.render("products/search", { products: products });
   },
   error: (req, res) => {
     res.render("products/product-error");
   },
-  cart: async (req, res) =>{
+  cart: async (req, res) => {
     const id = req.params.id;
-    const product = await Products.findByPk(id).then(function(product){
-      res.render("products/cart", { product : product});
-    })
-      
-
-    }
+    const product = await Products.findByPk(id).then(function (product) {
+      res.render("products/cart", { product: product });
+    });
+  },
 };
 
 module.exports = productSequelizeController;
