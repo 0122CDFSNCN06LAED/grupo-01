@@ -55,12 +55,12 @@
             <div class="price">
               <h2>$<%= product.price %>
               </h2>
-              <a href="/cart/<%=product.id%>"><button class="agregar button-amarillo" >
-                Agregar </button></a>
+              <a href="/cart/add/<%=product.id%>"><button class="agregar button-amarillo">
+                  Agregar </button></a>
             </div>
-            
-            </section>
-         
+
+          </section>
+
           <% if(locals.isAdmin) { %>
             <div class="edit-delete-buttons">
               <a href="/product/edit/<%=product.id%>"><button class="secundary-button">Editar</button></a>
