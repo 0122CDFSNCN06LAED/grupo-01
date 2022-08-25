@@ -1,8 +1,6 @@
 const path = require("path");
 const express = require("express");
-const productController = require("../controllers/productController");
 const productSequelizeController = require("../controllers/productSequelizeController");
-const authMiddleware = require("../middlewares/authMiddleware")
 
 const multer = require("multer");
 const clientMiddleware = require("../middlewares/clientMiddleware");
@@ -71,9 +69,6 @@ router.delete(
 );
 //SEARCH
 router.get("/product/search", productSequelizeController.search);
-
-//CARRITO
-router.get("/cart/:id", authMiddleware, productSequelizeController.cart);
 
 // ERROR DE PRODUCTO
 router.get("/product/error", productSequelizeController.error);
