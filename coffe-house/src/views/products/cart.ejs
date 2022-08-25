@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('../partials/head', { style: "cart.css", title: "Cart" }) %>
+<%- include ('../partials/head', { style: "cart.css" , title: "Cart" }) %>
 
   <body class="bg-white">
 
@@ -8,53 +8,65 @@
 
       <main>
         <h1>Carrito de compras</h1>
-        <form action="">
+        <% let priceQuantity=0 %>
+          <% let price=0 %>
+            <form action="/cart">
+              <% productsAddCart.forEach(item=>{%>
+                <section class="cart-container">
+                  <div class="product-cart-container">
+                    <div class="img">
+                      <img src="/img/products/<%= item.image %> " alt="" />
+                    </div>
 
-          <section class="cart-container">
-            <div class="product-cart-container">
+                    <div class="text-container-cart">
+                      <div class="product-name">
+                        <h3>
+                          <%= item.name %>
+                        </h3>
+                        <i class="fas fa-times color-negro"></i>
+                      </div>
 
-              <div class="img">
-                <img src="/img/products/<%= product.image %> " alt="">
-              </div>
+                      <p>
+                        <%= item.description %>
+                      </p>
 
-              <div class="text-container-cart">
-
-                <div class="product-name">
-                  <h3> <%= product.name %> </h3>
-                  <i class="fas fa-times color-negro"></i>
+                      <div class="input-price">
+                        <input type="number" name="quantity" min="0" max="<%= item.stock %>" class="quantity"
+                          value="<%= item.quantity %>" onchange="submit()" />
+                        <% priceQuantity+=item.price * item.quantity %>
+                          <% price=item.price %>
+                            <h3 class="priceUnit" value="<%= item.price %>">
+                              <%= item.price %>
+                            </h3>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <% }) %>
+            </form>
+            <form action="/checkout/process" method="post">
+              <section class="total-container">
+                <div class="subtotal">
+                  <h4>Subtotal</h4>
+                  <h4 class="price" value="<%= price %> ">
+                    <%= priceQuantity %>
+                  </h4>
                 </div>
-
-                <p> <%= product.description %> </p>
-
-                <div class="input-price">
-                  <input type="number">
-                  <h3><%= product.price %> </h3>
+                <div class="descuento">
+                  <h4>Descuentos</h4>
+                  <h4>
+                    <%= priceQuantity*2/100 %>
+                  </h4>
                 </div>
-
-              </div>
-            </div>
-            
-
-          </section>
-          <section class="total-container">
-            <div class="subtotal">
-              <h4>Subtotal</h4>
-              <h4><%= product.price %> </h4>
-            </div>
-            <div class="descuento">
-              <h4>Descuentos</h4>
-              <h4>$0</h4>
-            </div>
-            <div class="total-compra">
-              <h3>TOTAL</h3>
-              <h3><%= product.price %> </h3>
-            </div>
-
-          </section>
-
-          <button class="comprar button-amarillo">Comprar</button>
-
-        </form>
+                <div class="total-compra">
+                  <h3>TOTAL</h3>
+                  <h3 class="price" value="<%= price %> ">
+                    <%= priceQuantity - priceQuantity*2/100 %>
+                  </h3>
+                </div>
+              </section>
+              <button class="comprar button-amarillo">Comprar</button>
+            </form>
       </main>
 
       <%- include('../partials/footer') %>
