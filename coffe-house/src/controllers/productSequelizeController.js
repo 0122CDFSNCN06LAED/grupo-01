@@ -11,8 +11,7 @@ const ProductCategory = db.ProductCategories;
 
 const productSequelizeController = {
   list: async (req, res) => {
-    const emailUserLogged = req.session.userLogged;
-    const emailAdmin = "@coffeehouse.com";
+    const emailUserLogged = req.session.emailUserLogged;
 
     const [products, productCategory] = await Promise.all([
       Products.findAll({
@@ -21,19 +20,13 @@ const productSequelizeController = {
             association: "productCategory",
           },
         ],
-        where:
-          emailUserLogged && emailUserLogged.email.endsWith(emailAdmin)
-            ? ""
-            : { stock: { [Op.gt]: 0 } },
+        where: emailUserLogged ? "" : { stock: { [Op.gt]: 0 } },
       }),
       ProductCategory.findAll({
         include: [
           {
             association: "products",
-            where:
-              emailUserLogged && emailUserLogged.email.endsWith(emailAdmin)
-                ? ""
-                : { stock: { [Op.gt]: 0 } },
+            where: emailUserLogged ? "" : { stock: { [Op.gt]: 0 } },
           },
         ],
       }),
@@ -284,15 +277,11 @@ const productSequelizeController = {
     }
   },
   search: async (req, res) => {
-    const emailUserLogged = req.session.userLogged;
-    const emailAdmin = "@coffeehouse.com";
+    const emailUserLogged = req.session.emailUserLogged;
 
     const products = await Products.findAll({
       where: {
-        stock:
-          emailUserLogged && emailUserLogged.email.endsWith(emailAdmin)
-            ? ""
-            : { [Op.gt]: 0 },
+        stock: emailUserLogged ? { [Op.gte]: 0 } : { [Op.gt]: 0 },
         [Op.or]: {
           name: {
             [Op.like]: "%" + req.query.search + "%",
