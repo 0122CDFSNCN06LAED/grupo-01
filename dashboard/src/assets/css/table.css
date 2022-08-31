@@ -1,0 +1,77 @@
+@media screen and (max-width: 40em) {
+  .h3-table {
+    font-size: calc(50% + 0.75rem);
+  }
+  .table-users-products {
+    overflow-x: inherit;
+    font-size: calc(50% + 0.21rem);
+  }
+}
+
+.responsiveTable {
+  width: 100%;
+}
+
+.responsiveTable td .tdBefore {
+  display: none;
+}
+
+@media screen and (min-width: 15em) and (max-width: 64em) {
+  .tr-table-margin-bottom {
+    margin-bottom: 0.5rem;
+  }
+
+  .img-padding-cero {
+    padding-left: 0 !important;
+  }
+
+  /*
+    Force table elements to not behave like tables anymore
+    Hide table headers (but not display: none;, for accessibility)
+  */
+
+  .responsiveTable table,
+  .responsiveTable thead,
+  .responsiveTable tbody,
+  .responsiveTable th,
+  .responsiveTable td,
+  .responsiveTable tr {
+    display: block;
+  }
+
+  .responsiveTable thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    border-bottom: 2px solid #333;
+  }
+
+  .responsiveTable tbody tr {
+    border: 1px solid #858796;
+    padding: 0.25em;
+  }
+
+  .responsiveTable td.pivoted {
+    /* Behave like a "row" */
+    border: none !important;
+    position: relative;
+    padding-left: calc(50% + 10px) !important;
+    text-align: left !important;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  .responsiveTable td .tdBefore {
+    /* Now like a table header */
+    position: absolute;
+    display: block;
+
+    /* Top/left values mimic padding */
+    left: 1rem;
+    width: calc(50% - 20px);
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    text-align: left !important;
+    font-weight: 600;
+  }
+}
