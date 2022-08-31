@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import "../../assets/css/table.css";
 
 class TableProductsList extends Component {
   constructor(props) {
@@ -41,51 +44,49 @@ class TableProductsList extends Component {
     return (
       <div className="col-lg-12 mb-4">
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
-          <h5 className="h3 mb-0 text-gray-800">
+          <h5 className="h3 mb-0 text-gray-800 h3-table">
             All the products in Database
           </h5>
         </div>
-        <div className="table-responsive">
-          <table className="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price$</th>
-                <th scope="col">Region</th>
-                <th scope="col">Image</th>
-                <th scope="col">Category</th>
-                <th scope="col">Stock</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* ------ Aqui van los datos de la tabla products ------*/}
-              {this.state.products.map((product) => {
-                return (
-                  <tr key={product.id}>
-                    <th scope="row">{product.id}</th>
-                    <td>{product.name}</td>
-                    <td>{product.description}</td>
-                    <td>{product.price}</td>
-                    <td>{product.region}</td>
-                    <td>
-                      <img
-                        className="img-fluid px-3 px-sm-4 mt-3 mb-4"
-                        style={{ width: "110rem" }}
-                        src={product.image}
-                        alt={product.image}
-                      />
-                    </td>
-                    <td>{product.category}</td>
-                    <td>{product.stock}</td>
-                  </tr>
-                );
-              })}
-              {/*------ Fin de los datos de la tabla products-------- */}
-            </tbody>
-          </table>
-        </div>
+        <Table className="table table-hover table-responsive-sm table-users-products table-md">
+          <Thead>
+            <Tr className="tr-table-margin-bottom">
+              <Th scope="col">Id</Th>
+              <Th scope="col">Name</Th>
+              <Th scope="col">Description</Th>
+              <Th scope="col">Price$</Th>
+              <Th scope="col">Region</Th>
+              <Th scope="col">Image</Th>
+              <Th scope="col">Category</Th>
+              <Th scope="col">Stock</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {/* ------ Aqui van los datos de la tabla products ------*/}
+            {this.state.products.map((product) => {
+              return (
+                <Tr key={product.id} className="tr-table-margin-bottom">
+                  <Td scope="row">{product.id}</Td>
+                  <Td>{product.name}</Td>
+                  <Td>{product.description}</Td>
+                  <Td>{product.price}</Td>
+                  <Td>{product.region}</Td>
+                  <Td>
+                    <img
+                      className="img-fluid px-3 px-sm-4 mt-3 mb-4 img-padding-cero"
+                      style={{ width: "110rem" }}
+                      src={product.image}
+                      alt={product.image}
+                    />
+                  </Td>
+                  <Td>{product.category}</Td>
+                  <Td>{product.stock}</Td>
+                </Tr>
+              );
+            })}
+            {/*------ Fin de los datos de la tabla products-------- */}
+          </Tbody>
+        </Table>
         <div className="d-flex justify-content-center">
           <button
             className="btn btn-primary"
